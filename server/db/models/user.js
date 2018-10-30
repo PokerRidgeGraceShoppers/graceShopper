@@ -13,12 +13,12 @@ const User = db.define('user', {
     allowNull: false,
     defaultValue: 'name not provided'
   },
-  userType: {
-    type: Sequelize.ENUM,
-    values: ['regular', 'admin'],
-    defaultValue: 'regular'
+  address: {
+    type: Sequelize.STRING
   },
-
+  creditCard: {
+    type: Sequelize.STRING
+  },
   email: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -26,6 +26,11 @@ const User = db.define('user', {
       isEmail: true
       // unique: true
     }
+  },
+  userType: {
+    type: Sequelize.ENUM,
+    values: ['regular', 'admin'],
+    defaultValue: 'regular'
   },
   image: {
     type: Sequelize.STRING,
