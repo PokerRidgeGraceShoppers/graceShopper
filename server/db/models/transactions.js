@@ -7,6 +7,6 @@ const Transaction = db.define('transactions', {
   },
 })
 
-module.exports = Transactions
+module.exports = Transaction
 
 
