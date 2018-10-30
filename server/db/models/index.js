@@ -24,6 +24,7 @@ Transaction.belongsTo(Product)
 
 Review.belongsTo(User)
 Review.belongsTo(Product)
+
 Product.hasMany(Review)
 User.hasMany(Review)
 

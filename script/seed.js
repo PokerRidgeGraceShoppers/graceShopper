@@ -1,18 +1,40 @@
 'use strict'
-
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const {User, Transaction, Review, Product} = require('../server/db/models')
+const userData = require('./data/users.json')
+const transactionData = require('./data/transactions.json')
+const reviewData = require('./data/reviews.json')
+const productData = require('./data/products.json')
+
+const getIndex = l => Math.floor(Math.random() * l)
 
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
 
-  const users = await Promise.all([
-    User.create({email: 'cody@email.com', password: '123'}),
-    User.create({email: 'murphy@email.com', password: '123'})
+  const data = await Promise.all([
+    Promise.all(userData.map(user => User.create(user))),
+    Promise.all(transactionData.map(trans => Transaction.create(trans))),
+    Promise.all(reviewData.map(review => Review.create(review))),
+    Promise.all(productData.map(review => Product.create(review)))
   ])
 
-  console.log(`seeded ${users.length} users`)
+  const [users, transactions, reviews, products] = data
+
+  await Promise.all([
+    Promise.all(
+      transactions.map(t => t.setUser(users[getIndex(users.length)]))
+    ),
+    Promise.all(
+      transactions.map(t => t.setProduct(products[getIndex(products.length)]))
+    ),
+    Promise.all(reviews.map(r => r.setUser(users[getIndex(users.length)]))),
+    Promise.all(
+      reviews.map(r => r.setProduct(products[getIndex(products.length)]))
+    )
+  ])
+
+  await console.log(`seeded ${users.length} users`)
   console.log(`seeded successfully`)
 }
 
