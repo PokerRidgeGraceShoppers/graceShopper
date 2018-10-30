@@ -1,5 +1,5 @@
 const User = require('./user')
-const Transaction = require('./transactions')
+const Transaction = require('./transaction')
 const Product = require('./product')
 const Review = require('./reviews')
 /**
