@@ -22,9 +22,10 @@ Transaction.belongsTo(User)
 Product.hasMany(Transaction)
 Transaction.belongsTo(Product)
 
-Review.belongsTo(User, {as: 'user'})
-Review.belongsTo(Product, {as: 'product'})
-Product.hasMany(Review, {as: 'review'})
+Review.belongsTo(User)
+Review.belongsTo(Product)
+Product.hasMany(Review)
+User.hasMany(Review)
 
 module.exports = {
   User,
