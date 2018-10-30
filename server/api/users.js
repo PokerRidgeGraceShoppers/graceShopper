@@ -2,17 +2,8 @@ const router = require('express').Router()
 const {User, Transaction, Review} = require('../db/models')
 module.exports = router
 
-const validFields = [
-  'firstName',
-  'lastName',
-  'userType',
-  'email',
-  'password',
-  'address'
-]
-
-const fieldReducer = bodyObj => {
-  return validFields.reduce((accum, curr) => {
+const fieldReducer = (bodyObj, options) => {
+  return options.reduce((accum, curr) => {
     if (bodyObj[curr]) {
       accum[curr] = bodyObj[curr]
     }
@@ -64,7 +55,16 @@ router.put('/:userId', async (req, res, next) => {
   try {
     const user = await User.findById(req.params.userId)
     if (user) {
-      await user.update(fieldReducer(req.body))
+      await user.update(
+        fieldReducer(req.body, [
+          'firstName',
+          'lastName',
+          'userType',
+          'email',
+          'password',
+          'address'
+        ])
+      )
     }
 
     res.json(user)
