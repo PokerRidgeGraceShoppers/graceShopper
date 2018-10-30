@@ -16,6 +16,8 @@ describe('User routes', () => {
 
     beforeEach(() => {
       return User.create({
+        firstName: 'Cody',
+        lastName: 'Test',
         email: codysEmail
       })
     })
@@ -28,5 +30,34 @@ describe('User routes', () => {
       expect(res.body).to.be.an('array')
       expect(res.body[0].email).to.be.equal(codysEmail)
     })
+
+    it('GET /api/users/', async () => {
+      const res = await request(app)
+        .get('/api/users/1')
+        .expect(200)
+
+      expect(res.body).to.be.an('object')
+      expect(res.body.firstName).to.be.equal('Cody')
+    })
+
+    it('POST /api/users', async () => {
+      const res = await request(app)
+        .post('/api/users')
+        .send({firstName: 'Jack', email: 'email@email.com'})
+        .expect(200)
+      expect(res.body).to.be.an('object')
+      expect(res.body.firstName).to.be.equal('Jack')
+    })
   }) // end describe('/api/users')
 }) // end describe('User routes')
+
+
+
+Collapse 
+
+Message Input
+
+Message @Kasim
+
+Files
+

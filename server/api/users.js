@@ -1,6 +1,24 @@
 const router = require('express').Router()
-const {User} = require('../db/models')
+const {User, Transaction, Review} = require('../db/models')
 module.exports = router
+
+const validFields = [
+  'firstName',
+  'lastName',
+  'userType',
+  'email',
+  'password',
+  'address'
+]
+
+const fieldReducer = bodyObj => {
+  return validFields.reduce((accum, curr) => {
+    if (bodyObj[curr]) {
+      accum[curr] = bodyObj[curr]
+    }
+    return accum
+  }, {})
+}
 
 router.get('/', async (req, res, next) => {
   try {
@@ -11,6 +29,54 @@ router.get('/', async (req, res, next) => {
       attributes: ['id', 'email']
     })
     res.json(users)
+  } catch (err) {
+    next(err)
+  }
+})
+router.get('/:userId', async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.userId, {
+      include: [{model: Review}, {model: Transaction}]
+    })
+    res.json(user)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.post('/', async (req, res, next) => {
+  try {
+    const user = await User.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      userType: req.body.userType,
+      email: req.body.email,
+      password: req.body.password,
+      address: req.body.address
+    })
+    res.json(user)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.put('/:userId', async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.userId)
+    if (user) {
+      await user.update(fieldReducer(req.body))
+    }
+
+    res.json(user)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.delete('/:userId', async (req, res, next) => {
+  try {
+    await User.destroy({where: {id: req.params.userId}})
+    return res.sendStatus(200)
   } catch (err) {
     next(err)
   }
