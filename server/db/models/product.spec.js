@@ -15,7 +15,8 @@ describe('Product model', () => {
         category: 'Igneous',
         price: 9.99,
         description: "it's a hecking rock",
-        availability: false
+        availability: false,
+        inventory: 25
       })
     })
     it('works', () => {

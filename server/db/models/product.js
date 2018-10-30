@@ -30,6 +30,14 @@ const Product = db.define('product', {
   availability: {
     type: Sequelize.BOOLEAN,
     defaultValue: true
+  },
+  inventory: {
+    type: Sequelize.INTEGER,
+    defaultValue: 1,
+    allowNull: false,
+    validate: {
+      min: 0
+    }
   }
 })
 
