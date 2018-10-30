@@ -50,14 +50,3 @@ describe('User routes', () => {
     })
   }) // end describe('/api/users')
 }) // end describe('User routes')
-
-
-
-Collapse 
-
-Message Input
-
-Message @Kasim
-
-Files
-
