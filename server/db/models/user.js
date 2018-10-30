@@ -24,7 +24,10 @@ const User = db.define('user', {
     allowNull: false,
     validate: {
       isEmail: true
-      // unique: true
+    },
+    unique: {
+      args: true,
+      msg: 'Email already in use!'
     }
   },
   userType: {
