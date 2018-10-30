@@ -43,7 +43,14 @@ describe('User routes', () => {
     it('POST /api/users', async () => {
       const res = await request(app)
         .post('/api/users')
-        .send({firstName: 'Jack', email: 'email@email.com'})
+        .send({
+          firstName: 'Jack',
+          lastName: 'tester',
+          email: 'email@email.com',
+          userType: 'admin',
+          password: 'test',
+          address: '1 testway'
+        })
         .expect(200)
       expect(res.body).to.be.an('object')
       expect(res.body.firstName).to.be.equal('Jack')
