@@ -22,6 +22,7 @@ const Product = db.define('product', {
   },
   image: {
     type: Sequelize.STRING,
+    defaultValue: 'https://image.flaticon.com/icons/svg/61/61205.svg',
     validate: {
       isUrl: true
     }
@@ -29,6 +30,14 @@ const Product = db.define('product', {
   availability: {
     type: Sequelize.BOOLEAN,
     defaultValue: true
+  },
+  inventory: {
+    type: Sequelize.INTEGER,
+    defaultValue: 1,
+    allowNull: false,
+    validate: {
+      min: 0
+    }
   }
 })
 

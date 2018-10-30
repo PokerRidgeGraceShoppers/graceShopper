@@ -9,6 +9,14 @@ const Review = db.define('review', {
   body: {
     type: Sequelize.TEXT,
     allowNull: false
+  },
+  rating: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    validate: {
+      min: 0,
+      max: 5
+    }
   }
 })
 

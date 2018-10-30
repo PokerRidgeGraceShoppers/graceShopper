@@ -4,20 +4,37 @@ const db = require('../db')
 
 const User = db.define('user', {
   firstName: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    allowNull: false,
+    defaultValue: 'name not provided'
   },
   lastName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    defaultValue: 'name not provided'
+  },
+  address: {
     type: Sequelize.STRING
+  },
+  creditCard: {
+    type: Sequelize.STRING
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      isEmail: true
+      // unique: true
+    }
   },
   userType: {
     type: Sequelize.ENUM,
-    values: ['regular', 'admin']
+    values: ['regular', 'admin'],
+    defaultValue: 'regular'
   },
-
-  email: {
+  image: {
     type: Sequelize.STRING,
-    unique: true,
-    allowNull: false
+    defaultValue: 'https://image.flaticon.com/icons/svg/1170/1170628.svg'
   },
   password: {
     type: Sequelize.STRING,
