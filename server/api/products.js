@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const {Product, User, Transaction, Review} = require('../db/models')
+const {isLoggedIn, isAdmin} = require('./userTypeChecker')
 module.exports = router
 
 const fieldReducer = (bodyObj, options) => {
@@ -30,7 +31,7 @@ router.get('/:productId', async (req, res, next) => {
   }
 })
 
-router.post('/', async (req, res, next) => {
+router.post('/', isAdmin, async (req, res, next) => {
   try {
     const product = await Product.create({
       title: req.body.title,
@@ -47,7 +48,8 @@ router.post('/', async (req, res, next) => {
   }
 })
 
-router.put('/:productId', async (req, res, next) => {
+router.put('/:productId', isAdmin, async (req, res, next) => {
+  // console.log('products api put req.user: ', req.user)
   try {
     const product = await Product.findById(req.params.productId)
     if (product) {
@@ -70,7 +72,7 @@ router.put('/:productId', async (req, res, next) => {
   }
 })
 
-router.delete('/:productId', async (req, res, next) => {
+router.delete('/:productId', isAdmin, async (req, res, next) => {
   try {
     await Product.destroy({where: {id: req.params.productId}})
     return res.sendStatus(200)
