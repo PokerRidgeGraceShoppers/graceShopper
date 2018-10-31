@@ -4,7 +4,7 @@ import {Provider} from 'react-redux'
 import {Router} from 'react-router-dom'
 import history from './history'
 import store from './store'
-import App from './app'
+import {default as App} from './app'
 
 // establishes socket connection
 import './socket'
