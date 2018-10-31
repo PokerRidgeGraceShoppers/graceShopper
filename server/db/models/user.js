@@ -24,7 +24,10 @@ const User = db.define('user', {
     allowNull: false,
     validate: {
       isEmail: true
-      // unique: true
+    },
+    unique: {
+      args: true,
+      msg: 'Email already in use!'
     }
   },
   userType: {
@@ -34,7 +37,10 @@ const User = db.define('user', {
   },
   image: {
     type: Sequelize.STRING,
-    defaultValue: 'https://image.flaticon.com/icons/svg/1170/1170628.svg'
+    defaultValue: 'https://image.flaticon.com/icons/svg/1170/1170628.svg',
+    validate: {
+      isUrl: true
+    }
   },
   password: {
     type: Sequelize.STRING,
