@@ -49,7 +49,6 @@ router.post('/', isAdmin, async (req, res, next) => {
 })
 
 router.put('/:productId', isAdmin, async (req, res, next) => {
-  // console.log('products api put req.user: ', req.user)
   try {
     const product = await Product.findById(req.params.productId)
     if (product) {
