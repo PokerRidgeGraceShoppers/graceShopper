@@ -7,20 +7,16 @@ describe('Product model', () => {
     return db.sync({force: true})
   })
 
-  describe('testing product', () => {
+  describe('product methods', () => {
     let aRock
     beforeEach(async () => {
       aRock = await Product.create({
         title: 'A rock',
         category: 'Igneous',
         price: 9.99,
-        description: "it's a hecking rock",
-        availability: false,
-        inventory: 25
+        description: "it's just a rock",
+        availability: false
       })
-    })
-    it('works', () => {
-      expect(aRock.availability).to.be.false
     })
   })
 })
