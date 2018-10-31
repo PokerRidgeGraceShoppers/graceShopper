@@ -3,4 +3,4 @@ import cart from './cart'
 import products from './products'
 import {combineReducers} from 'redux'
 
-export default combineReducers({user, products, cart})
+export default combineReducers({user, cart, products})

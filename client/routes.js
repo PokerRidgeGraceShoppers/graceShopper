@@ -19,16 +19,17 @@ class Routes extends Component {
 
     return (
       <Switch>
-        {/* <Route path="/cart" component={Cart} /> */}
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-        {/* <Route exact path="/products/:productId" component={SingleProduct} />
-        <Route exact path="/products" component={ProductList} /> */}
-        {/* {isLoggedIn && (
+        {console.log('hitting router')}
+        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/products/:productId" component={SingleProduct} />
+        <Route exact path="/products" component={ProductList} />
+        {isLoggedIn && (
           <Switch>
             <Route path="/home" component={UserHome} />
           </Switch>
-        )} */}
+        )}
         <Route component={Login} /> */}
       </Switch>
     )
