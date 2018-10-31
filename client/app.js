@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {withRouter} from 'react-router-dom'
 import {Navbar} from './components'
 import Routes from './routes'
 import {connect} from 'react-redux'
@@ -22,4 +22,4 @@ class App extends React.Component {
 const mapDispatchToProps = dispatch => ({
   loadProducts: () => dispatch(fetchProducts())
 })
-export default connect(null, mapDispatchToProps)(App)
+export default withRouter(connect(null, mapDispatchToProps)(App))
