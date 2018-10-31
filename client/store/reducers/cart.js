@@ -7,7 +7,6 @@ export default (state = [], action) => {
     case ADD_CART:
       return [...state, action.item]
     case REMOVE_CART:
-      console.log('remove cart')
       return state.filter(item => item.productId != action.id)
     default:
       return state

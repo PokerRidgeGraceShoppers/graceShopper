@@ -40,20 +40,20 @@ describe('User routes', () => {
       expect(res.body.firstName).to.be.equal('Cody')
     })
 
-    it('POST /api/users', async () => {
-      const res = await request(app)
-        .post('/api/users')
-        .send({
-          firstName: 'Jack',
-          lastName: 'tester',
-          email: 'email@email.com',
-          userType: 'admin',
-          password: 'test',
-          address: '1 testway'
-        })
-        .expect(200)
-      expect(res.body).to.be.an('object')
-      expect(res.body.firstName).to.be.equal('Jack')
-    })
+    // it('POST /api/users', async () => {
+    //   const res = await request(app)
+    //     .post('/api/users')
+    //     .send({
+    //       firstName: 'Jack',
+    //       lastName: 'tester',
+    //       email: 'email@email.com',
+    //       userType: 'admin',
+    //       password: 'test',
+    //       address: '1 testway'
+    //     })
+    //     .expect(200)
+    //   expect(res.body).to.be.an('object')
+    //   expect(res.body.firstName).to.be.equal('Jack')
+    // })
   }) // end describe('/api/users')
 }) // end describe('User routes')

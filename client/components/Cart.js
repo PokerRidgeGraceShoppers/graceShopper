@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {SmallSection} from './common/SmallSection'
 import {connect} from 'react-redux'
 import {
   getCart,
