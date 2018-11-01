@@ -37,7 +37,7 @@ const User = db.define('user', {
   },
   image: {
     type: Sequelize.STRING,
-    defaultValue: 'https://image.flaticon.com/icons/svg/1170/1170628.svg',
+    defaultValue: 'https://image.flaticon.com/icons/svg/61/61205.svg',
     validate: {
       isUrl: true
     }
