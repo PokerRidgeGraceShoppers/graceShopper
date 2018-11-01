@@ -1,4 +1,8 @@
-import {FETCH_PRODUCTS, FETCH_SINGLE_PRODUCT} from '../actions/products'
+import {
+  FETCH_PRODUCTS,
+  FETCH_SINGLE_PRODUCT,
+  UPDATE_QUANTITY
+} from '../actions/products'
 
 const initialState = {
   products: {},
@@ -6,7 +10,13 @@ const initialState = {
 }
 
 const products = (state = initialState, action) => {
+  console.log(action)
   switch (action.type) {
+    case UPDATE_QUANTITY:
+      return {
+        ...state,
+        products: {...state.products, [action.id]: action.product}
+      }
     case FETCH_PRODUCTS:
       return {...state, products: action.products}
     case FETCH_SINGLE_PRODUCT:

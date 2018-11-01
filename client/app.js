@@ -8,7 +8,7 @@ import {fetchCart} from './store/actions/cart'
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.fetchProducts()
+    this.props.fetchProducts().then(() => this.props.fetchCart())
   }
   render() {
     return (
