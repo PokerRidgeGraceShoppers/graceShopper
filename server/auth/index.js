@@ -39,8 +39,11 @@ router.post('/logout', (req, res) => {
 })
 
 router.get('/me', (req, res) => {
-  // res.json(req.user)
-  res.redirect(`/api/users/${req.user.id}`)
+  if (req.user && req.user.id) {
+    res.redirect(`/api/users/${req.user.id}`)
+  } else {
+    res.sendStatus(204)
+  }
 })
 
 router.use('/google', require('./google'))
