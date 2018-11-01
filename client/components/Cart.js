@@ -6,35 +6,44 @@ import {
   addCartThunk,
   removeCartThunk
 } from '../store/actions/cart'
-import {SmallSection, SectionColumn} from './common'
+import {SectionRow, SectionColumn, SmallSection} from './common'
 
 class Cart extends Component {
   render() {
+    const {cart, products} = this.props
+    let total = 0
     return (
       <SectionColumn>
-        <button
-          onClick={() =>
-            this.props.addCartThunk({productId: 5, quantity: 5, price: 3.25})
-          }
-        >
-          Add item
-        </button>
-        <button
-          onClick={() =>
-            this.props.removeCartThunk(this.props.cart[0].productId)
-          }
-        >
-          Remove item
-        </button>
-        <h1>This is the cart</h1>
-        {console.log(this.props.cart)}
-        {this.props.cart.map(({price, title, description, id}) => (
-          <SmallSection key={id}>
-            <h2>{title}</h2>
-            <p>{price}</p>
-            <p>{description}</p>
-          </SmallSection>
-        ))}
+        <SmallSection style={{width: '90%'}}>
+          <h1>This is the cart</h1>
+          {Object.keys(cart).map(id => {
+            const {title, price} = products[id]
+            total += parseFloat(price)
+            return (
+              <SectionRow
+                style={{justifyContent: 'space-between', width: '80%'}}
+                key={id}
+              >
+                <h2>{title}</h2>
+                <SectionRow
+                  style={{width: '40%', justifyContent: 'space-between'}}
+                >
+                  <p>{cart[id].quantity}</p>
+                  <p>{price}</p>
+                  <button onClick={() => this.props.removeCartThunk(id)}>
+                    Remove
+                  </button>
+                </SectionRow>
+              </SectionRow>
+            )
+          })}
+          <SectionRow style={{justifyContent: 'space-between', width: '80%'}}>
+            <h2>Total</h2>
+            <SectionRow style={{width: '40%'}}>
+              <p>{total.toFixed(2)}</p>
+            </SectionRow>
+          </SectionRow>
+        </SmallSection>
       </SectionColumn>
     )
   }

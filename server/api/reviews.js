@@ -1,6 +1,11 @@
 const router = require('express').Router()
 const {Review, User, Transaction, Product} = require('../db/models')
-const {isLoggedIn, isAdmin} = require('./userTypeChecker')
+const {
+  isLoggedIn,
+  isAdmin,
+  isLoggedInAsSelf
+  // isLoggedInEditReview
+} = require('./userTypeChecker')
 module.exports = router
 
 const fieldReducer = (bodyObj, options) => {
@@ -44,20 +49,25 @@ router.post('/', isLoggedIn, async (req, res, next) => {
   }
 })
 
-router.put('/:reviewId', isLoggedIn, async (req, res, next) => {
-  try {
-    const review = await Review.findById(req.params.reviewId)
-    if (review) {
-      await review.update(fieldReducer(req.body, ['title', 'body', 'rating']))
+router.put(
+  '/:reviewId/user/:userId',
+  isLoggedInAsSelf,
+  async (req, res, next) => {
+    try {
+      const review = await Review.findById(req.params.reviewId)
+      if (review) {
+        // isLoggedInEditReview(review, req)
+        await review.update(fieldReducer(req.body, ['title', 'body', 'rating']))
+      }
+
+      res.json(review)
+    } catch (err) {
+      next(err)
     }
-
-    res.json(review)
-  } catch (err) {
-    next(err)
   }
-})
+)
 
-router.delete('/:reviewId', isLoggedIn, async (req, res, next) => {
+router.delete('/:reviewId', isLoggedInAsSelf, async (req, res, next) => {
   try {
     await Review.destroy({where: {id: req.params.reviewId}})
     return res.sendStatus(200)

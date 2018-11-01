@@ -1,13 +1,14 @@
 import {GET_CART, ADD_CART, REMOVE_CART} from '../actions/cart'
 
-export default (state = [], action) => {
+export default (state = {}, action) => {
+  console.log(action)
   switch (action.type) {
     case GET_CART:
       return action.cart
     case ADD_CART:
-      return [...state, action.item]
+      return {...state, [action.id]: action.item}
     case REMOVE_CART:
-      return state.filter(item => item.productId != action.id)
+      return action.cart
     default:
       return state
   }
