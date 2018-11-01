@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const {User, Transaction, Review} = require('../db/models')
-const {isLoggedIn, isAdmin} = require('./userTypeChecker')
+const {isLoggedIn, isAdmin, isLoggedInAsSelf} = require('./userTypeChecker')
 module.exports = router
 
 const fieldReducer = (bodyObj, options) => {
@@ -12,12 +12,9 @@ const fieldReducer = (bodyObj, options) => {
   }, {})
 }
 
-router.get('/', async (req, res, next) => {
+router.get('/', isAdmin, async (req, res, next) => {
   try {
     const users = await User.findAll({
-      // explicitly select only the id and email fields - even though
-      // users' passwords are encrypted, it won't help if we just
-      // send everything to anyone who asks!
       attributes: {exclude: ['password']}
     })
     res.json(users)
@@ -25,10 +22,11 @@ router.get('/', async (req, res, next) => {
     next(err)
   }
 })
-router.get('/:userId', async (req, res, next) => {
+router.get('/:userId', isLoggedInAsSelf, async (req, res, next) => {
   try {
     const user = await User.findById(req.params.userId, {
-      include: [{model: Review}, {model: Transaction}]
+      include: [{model: Review}, {model: Transaction}],
+      attributes: {exclude: ['password']}
     })
     res.json(user)
   } catch (err) {
@@ -36,7 +34,7 @@ router.get('/:userId', async (req, res, next) => {
   }
 })
 
-router.post('/', isAdmin, async (req, res, next) => {
+router.post('/', async (req, res, next) => {
   try {
     const user = await User.create({
       firstName: req.body.firstName,
@@ -52,7 +50,7 @@ router.post('/', isAdmin, async (req, res, next) => {
   }
 })
 
-router.put('/:userId', isAdmin, async (req, res, next) => {
+router.put('/:userId', isLoggedInAsSelf, async (req, res, next) => {
   try {
     const user = await User.findById(req.params.userId)
     if (user) {

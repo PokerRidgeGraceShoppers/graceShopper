@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const {Review, User, Transaction, Product} = require('../db/models')
-const {isLoggedIn, isAdmin} = require('./userTypeChecker')
+const {isLoggedIn, isAdmin, isLoggedInAsSelf} = require('./userTypeChecker')
 module.exports = router
 
 const fieldReducer = (bodyObj, options) => {
@@ -12,7 +12,7 @@ const fieldReducer = (bodyObj, options) => {
   }, {})
 }
 
-router.get('/', async (req, res, next) => {
+router.get('/', isLoggedIn, async (req, res, next) => {
   try {
     const transaction = await Transaction.findAll()
     res.json(transaction)
@@ -20,10 +20,10 @@ router.get('/', async (req, res, next) => {
     next(err)
   }
 })
-router.get('/:transactionId', async (req, res, next) => {
+router.get('/:transactionId', isLoggedIn, async (req, res, next) => {
   try {
     const transaction = await Transaction.findById(req.params.transactionId, {
-      include: [{model: User}, {model: Product}]
+      include: [{model: User}]
     })
     res.json(transaction)
   } catch (err) {
@@ -31,7 +31,19 @@ router.get('/:transactionId', async (req, res, next) => {
   }
 })
 
-router.post('/', isAdmin, async (req, res, next) => {
+router.get('/users/:userId', isLoggedInAsSelf, async (req, res, next) => {
+  try {
+    const transaction = await Transaction.findAll({
+      where: {userId: req.params.userId},
+      include: [{model: User}]
+    })
+    res.json(transaction)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.post('/', isLoggedIn, async (req, res, next) => {
   try {
     const transaction = await Transaction.create({
       status: req.body.status,
@@ -44,7 +56,7 @@ router.post('/', isAdmin, async (req, res, next) => {
   }
 })
 
-router.put('/:transactionId', isAdmin, async (req, res, next) => {
+router.put('/:transactionId', isLoggedIn, async (req, res, next) => {
   try {
     const transaction = await Transaction.findById(req.params.transactionId)
     if (transaction) {
