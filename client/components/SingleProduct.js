@@ -1,39 +1,42 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
-import {fetchSingleProduct} from '../store/reducers/products'
+import {fetchSingleProduct} from '../store/actions/products'
+import {SectionColumn, SmallSection} from './common'
 
 class SingleProduct extends React.Component {
-  // constructor() {
-  //   super()
-  //   this.state = {}
-  // }
-
   componentDidMount() {
     const productId = Number(this.props.match.params.productId)
 
-    this.props.loadSingleProduct(productId)
+    this.props.fetchSingleProduct(productId)
   }
 
   render() {
-    //const productId = Number(this.props.match.params.productId)
+    const {singleProduct} = this.props
+    console.log(singleProduct)
     return (
-      <div>
+      <SectionColumn>
         <h1>Single Product </h1>
-        <div> Single Product should go here ----- </div>
-        ProdID: {this.props.singleProduct.id}
-        <br />
-        ProdTitle: {this.props.singleProduct.title}
-        <br />
-        category: {this.props.singleProduct.category}
-        <br />
-        Price: {this.props.singleProduct.price}
-        <br />
-        {/* <img src={this.state.product.image} /> <br /> */}
-        inventory: {this.props.singleProduct.inventory}
-        <br />
-        <div />
-      </div>
+        <h2>{singleProduct.title}</h2>
+        <SmallSection>
+          <img className="product-list-img" src={singleProduct.image} />
+        </SmallSection>
+        <h3>{`Category: ${singleProduct.category}`}</h3>
+        <h3>{`Price: ${singleProduct.price}`}</h3>
+        <h3>{`Inventory: ${singleProduct.inventory}`}</h3>
+        <h3>Description</h3>
+        <p>{singleProduct.description}</p>
+        <SectionColumn>
+          {singleProduct.reviews &&
+            singleProduct.reviews.map(review => {
+              return (
+                <SmallSection key={review.id} style={{width: '50%'}}>
+                  <h2>{review.title}</h2>
+                  <p>{review.body}</p>
+                </SmallSection>
+              )
+            })}
+        </SectionColumn>
+      </SectionColumn>
     )
   }
 }
@@ -42,11 +45,7 @@ const mapStateToProps = state => ({
   singleProduct: state.products.product
 })
 
-const mapDispatchToProps = dispatch => ({
-  loadSingleProduct: productId => dispatch(fetchSingleProduct(productId))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(SingleProduct)
+export default connect(mapStateToProps, {fetchSingleProduct})(SingleProduct)
 
 // product: {
 //   id: 1,

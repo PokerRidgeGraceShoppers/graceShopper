@@ -1,10 +1,9 @@
 import React from 'react'
 
-export const SectionColumn = props => {
+export const SectionRow = props => {
   const style = {
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     alignItems: 'center'
   }
 
