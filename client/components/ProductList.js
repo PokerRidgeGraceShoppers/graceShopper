@@ -1,30 +1,30 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {SmallSection, ColumnWrap, SectionColumn} from './common'
 
 class ProductList extends React.Component {
   render() {
     const products = this.props.products
     return (
-      <div>
+      <SectionColumn>
         <h1> ProductList </h1>
-        <div> Products should go here: </div>
-        <div>
-          {products.map(product => {
+        <ColumnWrap>
+          {Object.keys(products).map(productId => {
+            const {id, title, price, image} = products[productId]
             return (
-              <div key={product.id}>
-                Product id: {product.id} {'  '} <br />
-                <Link to={`/products/${product.id}`}>{product.title}</Link>
-                <br />
-                Price: {product.price}
-                <br />
-                <img src={product.image} /> <br />
-                <br />
-              </div>
+              <SmallSection style={{marginBottom: '40px'}} key={id}>
+                <Link to={`/products/${id}`}>{title}</Link>
+                <h2>{`Price: ${price}`}</h2>
+                <img className="product-list-img" src={image} />
+                <label htmlFor>Quantity</label>
+                <input name="quantity" type="number" value={this.props} />
+                <button onClick={() => console.log(id)}>Att To Cart</button>
+              </SmallSection>
             )
           })}
-        </div>
-      </div>
+        </ColumnWrap>
+      </SectionColumn>
     )
   }
 }

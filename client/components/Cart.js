@@ -6,15 +6,12 @@ import {
   addCartThunk,
   removeCartThunk
 } from '../store/actions/cart'
+import {SmallSection, SectionColumn} from './common'
 
 class Cart extends Component {
-  componentDidMount() {
-    this.props.fetchCart()
-  }
-
   render() {
     return (
-      <div className="cart">
+      <SectionColumn>
         <button
           onClick={() =>
             this.props.addCartThunk({productId: 5, quantity: 5, price: 3.25})
@@ -30,19 +27,23 @@ class Cart extends Component {
           Remove item
         </button>
         <h1>This is the cart</h1>
-        {this.props.cart.map(({productId, quantity, price}, i) => (
-          <div key={i}>
-            <h2>{productId}</h2>
-            <p>{quantity}</p>
+        {console.log(this.props.cart)}
+        {this.props.cart.map(({price, title, description, id}) => (
+          <SmallSection key={id}>
+            <h2>{title}</h2>
             <p>{price}</p>
-          </div>
+            <p>{description}</p>
+          </SmallSection>
         ))}
-      </div>
+      </SectionColumn>
     )
   }
 }
 
-const mapStateToProps = ({cart}) => ({cart})
+const mapStateToProps = ({cart, products}) => ({
+  cart,
+  products: products.products
+})
 
 export default connect(mapStateToProps, {
   getCart,

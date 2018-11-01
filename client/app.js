@@ -3,11 +3,12 @@ import {withRouter} from 'react-router-dom'
 import {Navbar} from './components'
 import Routes from './routes'
 import {connect} from 'react-redux'
-import {fetchProducts} from './store/reducers/products'
+import {fetchProducts} from './store/actions/products'
+import {fetchCart} from './store/actions/cart'
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.loadProducts()
+    this.props.fetchProducts()
   }
   render() {
     return (
@@ -19,7 +20,4 @@ class App extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  loadProducts: () => dispatch(fetchProducts())
-})
-export default withRouter(connect(null, mapDispatchToProps)(App))
+export default withRouter(connect(null, {fetchProducts, fetchCart})(App))
