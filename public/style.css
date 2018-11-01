@@ -19,3 +19,9 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+/* Product List */
+
+.product-list-img {
+  width: 100%;
+}

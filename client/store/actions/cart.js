@@ -25,10 +25,11 @@ export const removeCart = id => {
 
 export const fetchCart = () => {
   return (dispatch, getState) => {
-    const {user} = getState()
-
+    const {user, products} = getState()
     if (!user.id) {
-      dispatch(getCart(JSON.parse(window.localStorage.getItem('cart')) || []))
+      let cart = JSON.parse(window.localStorage.getItem('cart')) || []
+      let newCart = cart.map(item => products.products[item.productId])
+      dispatch(getCart(newCart))
     }
   }
 }
