@@ -18,6 +18,7 @@ describe('User model', () => {
           firstName: 'cody',
           lastName: 'the pug',
           userType: 'regular',
+          address: '123 Here street',
           email: 'cody@puppybook.com',
           password: 'bones'
         })
