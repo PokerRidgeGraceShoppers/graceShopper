@@ -7,8 +7,7 @@ const style = {
   background: 'white',
   border: '1px solid #fff',
   borderRadius: '5px',
-  boxShadow: '0px 2px 10px 2px rgba(0,0,0,0.4)',
-  width: '100%'
+  boxShadow: '0px 2px 10px 2px rgba(0,0,0,0.4)'
 }
 
 class Dropdown extends React.Component {
