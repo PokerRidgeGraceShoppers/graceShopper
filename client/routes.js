@@ -2,16 +2,27 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, UserHome, ProductList, SingleProduct} from './components'
+import {
+  Login,
+  Signup,
+  UserHome,
+  ProductPage,
+  SingleProduct,
+  Cart
+} from './components'
 import {me} from './store/actions/users'
-import Cart from './components/Cart'
+import {fetchProducts} from './store/actions/products'
+import {fetchCart} from './store/actions/cart'
 
 /**
  * COMPONENT
  */
 class Routes extends Component {
   componentDidMount() {
-    this.props.loadInitialData()
+    this.props
+      .me()
+      .then(() => this.props.fetchProducts())
+      .then(() => this.props.fetchCart())
   }
 
   render() {
@@ -19,12 +30,11 @@ class Routes extends Component {
 
     return (
       <Switch>
-        {console.log('hitting router')}
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/products/:productId" component={SingleProduct} />
-        <Route exact path="/products" component={ProductList} />
+        <Route exact path="/products" component={ProductPage} />
         {isLoggedIn && (
           <Switch>
             <Route path="/home" component={UserHome} />
@@ -47,22 +57,15 @@ const mapState = state => {
   }
 }
 
-const mapDispatch = dispatch => {
-  return {
-    loadInitialData() {
-      dispatch(me())
-    }
-  }
-}
-
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
-export default withRouter(connect(mapState, mapDispatch)(Routes))
+export default withRouter(
+  connect(mapState, {me, fetchProducts, fetchCart})(Routes)
+)
 
 /**
  * PROP TYPES
  */
 Routes.propTypes = {
-  loadInitialData: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }
