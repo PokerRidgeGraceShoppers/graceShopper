@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchSingleProduct} from '../store/actions/products'
 import {SectionColumn, SmallSection} from './common'
+import ReviewForm from './ReviewForm'
 
 class SingleProduct extends React.Component {
   componentDidMount() {
@@ -36,6 +37,7 @@ class SingleProduct extends React.Component {
               )
             })}
         </SectionColumn>
+        <ReviewForm productId={singleProduct.id} />
       </SectionColumn>
     )
   }
