@@ -1,5 +1,5 @@
 export const GET_CART = 'GET_CART'
-export const ADD_CART = 'ADD_CART'
+export const UPDATE_CART = 'UPDATE_CART'
 export const REMOVE_CART = 'REMOVE_CART'
 
 const addToCartHelper = ({cart, id, quantity}) => {
@@ -16,27 +16,11 @@ const removeCartHelper = ({cart, id}) => {
   }, {})
 }
 
-export const getCart = cart => {
-  return {
-    type: GET_CART,
-    cart
-  }
-}
+export const getCart = cart => ({type: GET_CART, cart})
 
-export const addCart = (id, item) => {
-  return {
-    type: ADD_CART,
-    item,
-    id
-  }
-}
+export const updateCart = (id, item) => ({type: UPDATE_CART, item, id})
 
-export const removeCart = cart => {
-  return {
-    type: REMOVE_CART,
-    cart
-  }
-}
+export const removeCart = cart => ({type: REMOVE_CART, cart})
 
 export const fetchCart = () => {
   return (dispatch, getState) => {
@@ -52,7 +36,17 @@ export const addCartThunk = id => {
   return (dispatch, getState) => {
     const {user, products: {products}, cart} = getState()
     const quantity = products[id].quantity
-    dispatch(addCart(id, addToCartHelper({id, cart, quantity})))
+    dispatch(updateCart(id, addToCartHelper({id, cart, quantity})))
+    if (!user.id) {
+      window.localStorage.setItem('cart', JSON.stringify(getState().cart))
+    }
+  }
+}
+
+export const updateCartThunk = (id, item) => {
+  return (dispatch, getState) => {
+    const {user} = getState()
+    dispatch(updateCart(id, item))
     if (!user.id) {
       window.localStorage.setItem('cart', JSON.stringify(getState().cart))
     }
@@ -63,7 +57,6 @@ export const removeCartThunk = id => {
   return (dispatch, getState) => {
     const {user, cart} = getState()
     let newCart = removeCartHelper({cart, id})
-    console.log('new cart object', newCart)
     dispatch(removeCart(newCart))
     if (!user.id) {
       window.localStorage.setItem('cart', JSON.stringify(getState().cart))
