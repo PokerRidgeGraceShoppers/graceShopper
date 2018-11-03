@@ -12,7 +12,9 @@ describe('Order model', () => {
     beforeEach(async () => {
       newOrder = await Order.create({
         address: 'somewhere else',
-        total: 9.99
+        total: 9.99,
+        firstName: 'Ryan',
+        lastName: 'Powers'
       })
     })
     it('works', () => {

@@ -1,8 +1,13 @@
 'use strict'
 const db = require('../server/db')
-const {User, Transaction, Review, Product} = require('../server/db/models')
+const {
+  User,
+  Transaction,
+  Review,
+  Product,
+  Order
+} = require('../server/db/models')
 const userData = require('./data/users.json')
-const transactionData = require('./data/transactions.json')
 const reviewData = require('./data/reviews.json')
 const productData = require('./data/products.json')
 
@@ -14,24 +19,65 @@ async function seed() {
 
   const data = await Promise.all([
     Promise.all(userData.map(user => User.create(user))),
-    Promise.all(transactionData.map(trans => Transaction.create(trans))),
     Promise.all(reviewData.map(review => Review.create(review))),
     Promise.all(productData.map(review => Product.create(review)))
   ])
 
-  const [users, transactions, reviews, products] = data
+  const [users, reviews, products] = data
+
+  await Promise.all(
+    reviews.map(review => {
+      return Promise.all([
+        review.setUser(users[getIndex(users.length)]),
+        review.setProduct(products[getIndex(products.length)])
+      ])
+    })
+  )
+
+  const [user1, user2] = users
+
+  async function createOrder(status, user, items) {
+    const order = await Order.create({
+      firstName: user.firstName,
+      lastName: user.lastName,
+      address: user.address,
+      userId: user.id,
+      total: 100,
+      status
+    })
+
+    const transactions = []
+
+    for (let i = 0; i < items; i++) {
+      const t = Transaction.create({
+        status,
+        price: Math.floor(Math.random() * 100),
+        userId: user.id,
+        productId: products[Math.floor(Math.random() * products.length)].id,
+        orderId: order.id,
+        quantity: Math.floor(Math.random() * 5) + 1
+      })
+
+      transactions.push(t)
+    }
+
+    await Promise.all(transactions)
+  }
 
   await Promise.all([
-    Promise.all(
-      transactions.map(t => t.setUser(users[getIndex(users.length)]))
-    ),
-    Promise.all(
-      transactions.map(t => t.setProduct(products[getIndex(products.length)]))
-    ),
-    Promise.all(reviews.map(r => r.setUser(users[getIndex(users.length)]))),
-    Promise.all(
-      reviews.map(r => r.setProduct(products[getIndex(products.length)]))
-    )
+    createOrder('pending', user1, 3),
+    createOrder('purchased', user1, 5),
+    createOrder('purchased', user1, 5),
+    createOrder('purchased', user1, 5),
+    createOrder('purchased', user1, 5),
+    createOrder('purchased', user1, 5),
+    createOrder('purchased', user1, 5),
+    createOrder('purchased', user1, 5),
+    createOrder('purchased', user1, 5),
+    createOrder('purchased', user2, 5),
+    createOrder('purchased', user2, 5),
+    createOrder('purchased', user2, 5),
+    createOrder('purchased', user2, 5)
   ])
 
   await console.log(`seeded ${users.length} users`)
