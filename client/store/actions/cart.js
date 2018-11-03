@@ -67,6 +67,7 @@ const mergeCartThunk = (userCart, guestCart) => {
     )
 
     dispatch(getCart(cart))
+    window.localStorage.removeItem('cart')
   }
 }
 
