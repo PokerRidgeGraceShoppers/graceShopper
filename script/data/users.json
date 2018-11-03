@@ -1,21 +1,21 @@
 [
   {
-    "firstName": "Cart",
-    "lastName": "Pidler",
-    "email": "cpidler0@chronoengine.com",
+    "firstName": "Test1",
+    "lastName": "Test1",
+    "email": "Test1@email.com",
     "address": "732 Prairieview Crossing",
     "creditCard": "378905018382238",
-    "password": "RtWiH7MwCYS",
+    "password": "password",
     "userType": "regular",
     "image": "https://robohash.org/eiusvitaeet.png?size=50x50&set=set1"
   },
   {
-    "firstName": "Pepito",
-    "lastName": "Leist",
-    "email": "pleist1@google.cn",
+    "firstName": "Test2",
+    "lastName": "Test2",
+    "email": "Test2@email.com",
     "address": "3 Dixon Street",
     "creditCard": "3535965436904058",
-    "password": "BaRvuAjDVi",
+    "password": "password",
     "userType": "admin",
     "image":
       "https://robohash.org/facilissitexercitationem.png?size=50x50&set=set1"
