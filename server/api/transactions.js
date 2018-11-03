@@ -5,9 +5,7 @@ module.exports = router
 
 const fieldReducer = (bodyObj, options) => {
   return options.reduce((accum, curr) => {
-    if (bodyObj[curr]) {
-      accum[curr] = bodyObj[curr]
-    }
+    if (bodyObj[curr] !== undefined) accum[curr] = bodyObj[curr]
     return accum
   }, {})
 }
@@ -44,11 +42,14 @@ router.get('/users/:userId', isLoggedInAsSelf, async (req, res, next) => {
 })
 
 router.post('/', isLoggedIn, async (req, res, next) => {
+  const {productId, status, price, userId, quantity} = req.body
   try {
     const transaction = await Transaction.create({
-      status: req.body.status,
-      price: req.body.price,
-      quantity: req.body.quantity
+      productId,
+      status,
+      price,
+      userId,
+      quantity
     })
     res.json(transaction)
   } catch (err) {
@@ -71,11 +72,15 @@ router.put('/:transactionId', isLoggedIn, async (req, res, next) => {
   }
 })
 
-router.delete('/:transactionId', isAdmin, async (req, res, next) => {
-  try {
-    await Transaction.destroy({where: {id: req.params.transactionId}})
-    return res.sendStatus(200)
-  } catch (err) {
-    next(err)
+router.delete(
+  '/:transactionId/user/:userId',
+  isLoggedInAsSelf,
+  async (req, res, next) => {
+    try {
+      await Transaction.destroy({where: {id: req.params.transactionId}})
+      return res.sendStatus(200)
+    } catch (err) {
+      next(err)
+    }
   }
-})
+)

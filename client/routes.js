@@ -20,10 +20,8 @@ import {fetchCart} from './store/actions/cart'
  */
 class Routes extends Component {
   componentDidMount() {
-    this.props
-      .me()
-      .then(() => this.props.fetchProducts())
-      .then(() => this.props.fetchCart())
+    this.props.me()
+    this.props.fetchProducts()
   }
 
   render() {

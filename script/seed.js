@@ -49,11 +49,12 @@ async function seed() {
     const transactions = []
 
     for (let i = 0; i < items; i++) {
+      const product = products[Math.floor(Math.random() * products.length)]
       const t = Transaction.create({
         status,
-        price: Math.floor(Math.random() * 100),
+        price: product.price,
         userId: user.id,
-        productId: products[Math.floor(Math.random() * products.length)].id,
+        productId: product.id,
         orderId: order.id,
         quantity: Math.floor(Math.random() * 5) + 1
       })

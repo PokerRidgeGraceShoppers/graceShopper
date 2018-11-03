@@ -11,13 +11,12 @@ function isLoggedIn(req, res, next) {
 }
 
 function isLoggedInAsSelf(req, res, next) {
-  // req is meant to be req.user
-  if (
-    req.user.userType === 'regular' &&
+  if (!req.user) {
+    res.status(401).send('You are not authorized to do that.')
+  } else if (
+    req.user.userType === 'admin' ||
     req.user.id === Number(req.params.userId)
   ) {
-    next()
-  } else if (req.user.userType === 'admin') {
     next()
   } else {
     res.status(401).send('You are not authorized to do that.')
