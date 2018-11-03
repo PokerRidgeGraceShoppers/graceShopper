@@ -16,12 +16,12 @@ install:
 before_script:
   - psql -c 'create database "PokerRidgeGraceShopper-test";' -U postgres # remember to change this name if you change it elsewhere (e.g. package.json)
 
-# before_deploy:
-#   - npm run build-client # make the bundle
-#   - rm -rf node_modules # omit from the tarball, since we skip cleanup
-# deploy:
-#   skip_cleanup: true # prevents travis from deleting the build
-#   provider: heroku
-#   app: YOUR-HEROKU-APP-NAME-HERE # see README
-#   api_key:
-#     secure: YOUR-***ENCRYPTED***-API-KEY-HERE # see README
+before_deploy:
+  - npm run build-client # make the bundle
+  - rm -rf node_modules # omit from the tarball, since we skip cleanup
+deploy:
+  skip_cleanup: true # prevents travis from deleting the build
+  provider: heroku
+  app: poker-ridge-grace-shopper # see README
+  api_key:
+    secure: 'ZbWhZcfZd812bttcxfa6F3Na/oyerVKp52zwfe/sthD0a9x51mOSr37rhcD5yuiXm5QLlzSWyUm2X091vdarLAjF/sD6/avuwxN/kctYOf4bGpIVHlIcqZOYYMfccLWDWZIEzZvOCyGH6A4L/vM7DDb8a5AHJfipSkOXU8KUIw0rhpb4dEN53FwAZ4tz53ePAlb+gJEEsa3mSrlD++CRS6qVxA4/K6XGXJwKK5fzZqYAu9kZE+kF3zAfwgX1p0xtNywgU160stuex6Y5bEx6wMKZLDRQwOICzCT8NAfpZnyRS5vjcYF6DkNdNM5iEpIHmAWk5stRkBxriCCnbnM5t+5Q/piRI1jxcBTcrauSYSK29SbN6X0E9DffLl1FkmYLufcTup/wBCZly/kcTbRhAcEk262OHOLqdQdIv0VlL/3UEQLyVMN3Dd/mE1Ny4Ry5OPamnHoHgioPvKqLDt/BoVdhYmUgVupKseNMknGnypIIbJBI2v5iF9O49S1gBWlnGJBnzu+qql7jmbNlIxF1ctm2ph+14u3HsOWQLZfi2XjKpDJca2q9uCZdg8/Wji2tjTGkdksgV8E1+ZQu2Xy9G0veFV3hgjzlfN64A5SJQm1iiPcAEY6nh574+218s1Jedfm+kA7cOzHuDJoOv++4v6jqOnVTio3jNI/h3Bz29ek=' # see README
