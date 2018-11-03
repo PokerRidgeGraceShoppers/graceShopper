@@ -1,5 +1,3 @@
-import Checkout from './CheckoutPages/Checkout'
-
 /**
  * `components/index.js` exists simply as a 'central export' for our components.
  * This way, we can import all of our components from the same place, rather than

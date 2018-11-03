@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {User, Transaction, Review} = require('../db/models')
+const {User, Transaction, Review, Order} = require('../db/models')
 const {isLoggedIn, isAdmin, isLoggedInAsSelf} = require('./userTypeChecker')
 module.exports = router
 
@@ -76,6 +76,18 @@ router.delete('/:userId', isAdmin, async (req, res, next) => {
   try {
     await User.destroy({where: {id: req.params.userId}})
     return res.sendStatus(200)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.get('/cart/:userId', isLoggedInAsSelf, async (req, res, next) => {
+  try {
+    const cart = await User.findOne({
+      where: {id: req.params.userId},
+      include: [{model: Transaction, where: {status: 'pending'}}]
+    })
+    res.json(cart)
   } catch (err) {
     next(err)
   }
