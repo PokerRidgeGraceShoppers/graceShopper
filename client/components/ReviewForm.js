@@ -54,14 +54,9 @@ class ReviewForm extends React.Component {
             </label>
             <input onChange={this.handleChange} name="body" type="text" />
           </div>
-          {/* <div>
-          <label htmlFor="reviewRating">
-            <small>Rating</small>
-          </label>
-          <input name="reviewRating" type="number" />
-        </div> */}
+
           <select onChange={this.handleChange} name="rating">
-            <option value="0">0 Stars</option>
+            {/* <option value="0">0 Stars</option> */}
             <option value="1">1 Star</option>
             <option value="2">2 Stars</option>
             <option value="3">3 Stars</option>
@@ -69,7 +64,13 @@ class ReviewForm extends React.Component {
             <option value="5">5 Stars</option>
           </select>
           <div>
-            <button type="submit">Submit</button>
+            {this.state.body.length <= 99 ? (
+              <button type="submit" disabled>
+                Submit
+              </button>
+            ) : (
+              <button type="submit">Submit</button>
+            )}
           </div>
         </form>
       </div>
