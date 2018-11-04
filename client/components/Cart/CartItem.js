@@ -2,14 +2,7 @@ import React from 'react'
 import {SectionRow} from '../common'
 import QuantityButton from '../Quantity'
 
-const CartItem = ({
-  id,
-  title,
-  cart,
-  handleClickQuantity,
-  removeCartThunk,
-  price
-}) => {
+const CartItem = ({id, title, cart, handleClickQuantity, removeCartThunk}) => {
   return (
     <SectionRow style={{justifyContent: 'space-between', width: '80%'}}>
       <h2>{title}</h2>
@@ -19,7 +12,7 @@ const CartItem = ({
           handleClickQuantity={handleClickQuantity}
           quantity={cart[id].quantity}
         />
-        <p>{price}</p>
+        <p>{cart[id].price}</p>
         <button onClick={() => removeCartThunk(id)}>Remove</button>
       </SectionRow>
     </SectionRow>
