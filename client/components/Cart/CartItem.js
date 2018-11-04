@@ -8,7 +8,6 @@ const CartItem = ({
   cart,
   handleClickQuantity,
   removeCartThunk,
-  price,
   image
 }) => {
   return (
@@ -21,7 +20,7 @@ const CartItem = ({
           handleClickQuantity={handleClickQuantity}
           quantity={cart[id].quantity}
         />
-        <p>{price}</p>
+        <p>{cart[id].price}</p>
         <button onClick={() => removeCartThunk(id)}>Remove</button>
       </SectionRow>
     </SectionRow>

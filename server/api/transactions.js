@@ -18,6 +18,7 @@ router.get('/', isLoggedIn, async (req, res, next) => {
     next(err)
   }
 })
+
 router.get('/:transactionId', isLoggedIn, async (req, res, next) => {
   try {
     const transaction = await Transaction.findById(req.params.transactionId, {
@@ -84,3 +85,25 @@ router.delete(
     }
   }
 )
+
+router.post('/cart/:userId', async (req, res, next) => {
+  const promises = await Promise.all(
+    Object.keys(req.body).map(key => {
+      const item = fieldReducer(req.body[key], [
+        'productId',
+        'quantity',
+        'price',
+        'userId',
+        'status'
+      ])
+
+      const id = req.body[key].id
+
+      return id
+        ? Transaction.update(item, {where: {id}, returning: true})
+        : Transaction.create(item)
+    })
+  )
+
+  res.json(promises)
+})
