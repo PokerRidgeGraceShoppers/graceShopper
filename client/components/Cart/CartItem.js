@@ -8,12 +8,14 @@ const CartItem = ({
   cart,
   handleClickQuantity,
   removeCartThunk,
-  price
+  price,
+  image
 }) => {
   return (
     <SectionRow style={{justifyContent: 'space-between', width: '80%'}}>
       <h2>{title}</h2>
       <SectionRow style={{width: '40%', justifyContent: 'space-between'}}>
+        <img src={image} height="42" width="42" />
         <QuantityButton
           id={id}
           handleClickQuantity={handleClickQuantity}
