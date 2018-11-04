@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchSingleProduct} from '../store/actions/products'
-import {SectionColumn, SmallSection} from './common'
+import {SectionColumn, SmallSection, SectionRow} from './common'
 import ReviewForm from './ReviewForm'
 
 class SingleProduct extends React.Component {
@@ -31,7 +31,15 @@ class SingleProduct extends React.Component {
             singleProduct.reviews.map(review => {
               return (
                 <SmallSection key={review.id} style={{width: '50%'}}>
-                  <h2>{review.title}</h2>
+                  <SectionRow
+                    style={{width: '80%', justifyContent: 'space-between'}}
+                  >
+                    <h2>{review.title}</h2>
+                    <h3>
+                      Rating:{' '}
+                      {!review.rating ? '0*' : '*'.repeat(review.rating)}
+                    </h3>
+                  </SectionRow>
                   <p>{review.body}</p>
                 </SmallSection>
               )

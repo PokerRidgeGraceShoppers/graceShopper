@@ -1,6 +1,7 @@
 import React from 'react'
 import {SectionRow} from '../common'
 import QuantityButton from '../Quantity'
+import {Link} from 'react-router-dom'
 
 const CartItem = ({
   id,
@@ -12,7 +13,9 @@ const CartItem = ({
 }) => {
   return (
     <SectionRow style={{justifyContent: 'space-between', width: '80%'}}>
-      <h2>{title}</h2>
+      <Link to={`/products/${id}`}>
+        <h2>{title}</h2>
+      </Link>
       <SectionRow style={{width: '40%', justifyContent: 'space-between'}}>
         <img src={image} height="42" width="42" />
         <QuantityButton
