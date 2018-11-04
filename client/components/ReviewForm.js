@@ -52,7 +52,12 @@ class ReviewForm extends React.Component {
             <label htmlFor="body">
               <small>Review</small>
             </label>
-            <input onChange={this.handleChange} name="body" type="text" />
+            <input
+              onChange={this.handleChange}
+              name="body"
+              type="text"
+              placeholder="must be over 100 characters"
+            />
           </div>
 
           <select onChange={this.handleChange} name="rating">
