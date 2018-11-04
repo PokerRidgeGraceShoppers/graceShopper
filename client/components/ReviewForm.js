@@ -46,7 +46,12 @@ class ReviewForm extends React.Component {
             <label htmlFor="title">
               <small>Title</small>
             </label>
-            <input onChange={this.handleChange} name="title" type="text" />
+            <input
+              onChange={this.handleChange}
+              name="title"
+              type="text"
+              placeholder="review must have a name"
+            />
           </div>
           <div>
             <label htmlFor="body">
