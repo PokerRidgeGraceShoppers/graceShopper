@@ -6,6 +6,7 @@ import {
   addCartThunk,
   removeCartThunk,
   updateCartThunk,
+  updateTotal,
   fetchCart
 } from '../../store/actions/cart'
 import {me} from '../../store/actions/users'
@@ -42,6 +43,7 @@ class Cart extends Component {
             products={products}
             handleClickQuantity={this.handleClickQuantity}
             removeCartThunk={this.props.removeCartThunk}
+            updateTotal={this.props.updateTotal}
           />
         )}
       </SectionColumn>
@@ -59,6 +61,7 @@ export default connect(mapStateToProps, {
   addCartThunk,
   removeCartThunk,
   updateCartThunk,
+  updateTotal,
   fetchCart,
   me
 })(Cart)

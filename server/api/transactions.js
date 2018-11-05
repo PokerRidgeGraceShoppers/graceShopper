@@ -95,7 +95,8 @@ router.post('/cart/:userId', async (req, res, next) => {
         'quantity',
         'price',
         'userId',
-        'status'
+        'status',
+        'total'
       ])
 
       const id = req.body[key].id

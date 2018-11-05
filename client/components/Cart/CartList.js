@@ -4,25 +4,30 @@ import {SectionRow, SmallSection} from '../common'
 import {withRouter} from 'react-router-dom'
 
 class CartList extends React.Component {
-  constructor({cart, products, handleClickQuantity, removeCartThunk}) {
-    super({cart, products, handleClickQuantity, removeCartThunk})
-  }
   render() {
+    const {
+      cart,
+      products,
+      handleClickQuantity,
+      removeCartThunk,
+      history
+    } = this.props
+
     return (
       <SmallSection style={{width: '90%'}}>
         <h1>This is the cart</h1>
-        {Object.keys(this.props.cart).map(id => {
-          const {title} = this.props.products[id]
+        {Object.keys(cart).map(id => {
+          const {title} = products[id]
           return (
             <CartItem
               key={id}
               id={id}
               title={title}
-              cart={this.props.cart}
-              handleClickQuantity={this.props.handleClickQuantity}
-              removeCartThunk={this.props.removeCartThunk}
-              image={this.props.products[id].image}
-              price={this.props.products[id].price}
+              cart={cart}
+              handleClickQuantity={handleClickQuantity}
+              removeCartThunk={removeCartThunk}
+              image={products[id].image}
+              price={products[id].price}
             />
           )
         })}
@@ -37,8 +42,8 @@ class CartList extends React.Component {
           >
             <h2>
               {`$${Number.parseFloat(
-                Object.keys(this.props.cart).reduce((acc, currItem) => {
-                  return acc + this.props.cart[currItem].total
+                Object.keys(cart).reduce((acc, currItem) => {
+                  return acc + cart[currItem].total
                 }, 0) / 100
               ).toFixed(2)}`}
             </h2>
@@ -46,7 +51,7 @@ class CartList extends React.Component {
           <button
             type="submit"
             onClick={() => {
-              this.props.history.push('/checkout')
+              history.push('/checkout')
             }}
           >
             Checkout
