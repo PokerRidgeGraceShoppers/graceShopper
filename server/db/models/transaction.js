@@ -8,11 +8,11 @@ const Transaction = db.define('transaction', {
     defaultValue: 'pending'
   },
   price: {
-    type: Sequelize.FLOAT,
+    type: Sequelize.INTEGER,
     allowNull: false,
-    defaultValue: 0.0,
+    defaultValue: 0,
     validate: {
-      min: 0.0
+      min: 0
     }
   },
   quantity: {

@@ -15,8 +15,8 @@ const Order = db.define('order', {
     values: ['pending', 'purchased']
   },
   total: {
-    type: Sequelize.FLOAT,
-    defaultValue: 0.0
+    type: Sequelize.INTEGER,
+    defaultValue: 0
   },
   address: {
     type: Sequelize.STRING
