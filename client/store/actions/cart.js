@@ -3,6 +3,7 @@ import axios from 'axios'
 export const GET_CART = 'GET_CART'
 export const UPDATE_CART = 'UPDATE_CART'
 export const REMOVE_CART = 'REMOVE_CART'
+export const UPDATE_TOTAL = 'UPDATE_TOTAL'
 
 const addToCartHelper = ({cart, id, products}) => {
   let {quantity, price} = products[id]
@@ -31,6 +32,8 @@ export const getCart = cart => ({type: GET_CART, cart})
 export const updateCart = (id, item) => ({type: UPDATE_CART, item, id})
 
 export const removeCart = cart => ({type: REMOVE_CART, cart})
+
+export const updateTotal = total => ({type: UPDATE_TOTAL, total})
 
 export const fetchCart = () => {
   return async (dispatch, getState) => {

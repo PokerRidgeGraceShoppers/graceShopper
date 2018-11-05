@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import {CardElement, injectStripe} from 'react-stripe-elements'
 import axios from 'axios'
 import ShippingAddressForm from './ShippingAddressForm'
@@ -30,15 +31,18 @@ class Checkout extends Component {
   }
 
   render() {
+    console.log(this.props)
     if (this.state.complete)
       return <h1>Purchase Complete (go back to orders? or home )</h1>
 
     return (
       <div>
         Checkout Page:
-        <ShippingAddressForm />
         <div className="checkout">
           {this.state.error && <p>Invalid Card info</p>}
+          <p>{this.props.firstName}</p>
+          <p>{this.props.lastName}</p>
+          <p>{this.props.street_address}</p>
           <p>Please enter in your card info below to complete your order: </p>
           <CardElement />
           <button onClick={this.submit}>Place your order</button>
@@ -48,4 +52,6 @@ class Checkout extends Component {
   }
 }
 
-export default injectStripe(Checkout)
+const mapStateToProps = ({cart}) => ({cart})
+
+export default connect(mapStateToProps, null)(injectStripe(Checkout))

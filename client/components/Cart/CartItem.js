@@ -8,7 +8,7 @@ const CartItem = ({
   cart,
   handleClickQuantity,
   removeCartThunk,
-  price
+  products
 }) => {
   return (
     <SectionRow style={{justifyContent: 'space-between', width: '80%'}}>
@@ -19,7 +19,7 @@ const CartItem = ({
           handleClickQuantity={handleClickQuantity}
           quantity={cart[id].quantity}
         />
-        <p>{price}</p>
+        <p>{products[id].price * cart[id].quantity}</p>{' '}
         <button onClick={() => removeCartThunk(id)}>Remove</button>
       </SectionRow>
     </SectionRow>
