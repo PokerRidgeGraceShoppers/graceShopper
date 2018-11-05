@@ -23,7 +23,9 @@ const CartItem = ({
           handleClickQuantity={handleClickQuantity}
           quantity={cart[id].quantity}
         />
-        <p>{cart[id].price}</p>
+        <p>{`$${Number.parseFloat(
+          cart[id].quantity * cart[id].price / 100
+        ).toFixed(2)}`}</p>
         <button onClick={() => removeCartThunk(id)}>Remove</button>
       </SectionRow>
     </SectionRow>

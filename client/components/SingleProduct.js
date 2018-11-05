@@ -12,15 +12,10 @@ class SingleProduct extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleChange(e, id) {
-    console.log(
-      'singleProduct handleChange event.target.value: ',
-      e.target.value
-    )
     const updatedProduct = {
       ...this.props.products[id],
       quantity: Number(e.target.value)
     }
-    console.log('singleProduct handleChange updatedProduct:', updatedProduct)
     this.props.updateQuantity(id, updatedProduct)
   }
 
@@ -46,7 +41,9 @@ class SingleProduct extends React.Component {
         </SmallSection>
         <h3>{`Category: ${singleProduct.category}`}</h3>
         <SmallSection style={{marginBottom: '40px'}}>
-          <h3>{`Price: ${singleProduct.price}`}</h3>
+          <h3>{`Price: $${Number.parseFloat(singleProduct.price / 100).toFixed(
+            2
+          )}`}</h3>
           <form
             style={{
               display: 'flex',

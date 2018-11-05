@@ -9,7 +9,12 @@ const addToCartHelper = ({cart, id, products}) => {
 
   quantity = cart[id] ? quantity + cart[id].quantity : quantity
 
-  return {productId: id, quantity, price, status: 'pending'}
+  return {
+    productId: id,
+    quantity,
+    price,
+    status: 'pending'
+  }
 }
 
 const removeCartHelper = ({cart, id}) => {
@@ -96,11 +101,15 @@ export const updateCartThunk = (id, item) => {
     const {user} = getState()
 
     if (user.id) {
-      const {data} = await axios.put(`/api/transactions/${item.id}`, item)
+      const {data} = await axios.put(`/api/transactions/${item.id}`, {
+        ...item,
+        total: item.quantity * item.price
+      })
       item = data
+      console.log('cartActions updateCartThuk item: ', item)
     }
 
-    dispatch(updateCart(id, item))
+    dispatch(updateCart(id, {...item, total: item.quantity * item.price}))
 
     if (!user.id) {
       window.localStorage.setItem('cart', JSON.stringify(getState().cart))
@@ -112,6 +121,8 @@ export const addCartThunk = id => {
   return async (dispatch, getState) => {
     const {user, products: {products}, cart} = getState()
     let item = addToCartHelper({id, cart, products})
+    item = {...item, total: item.quantity * item.price}
+    console.log('cartActions addCartThuk item: ', item)
 
     if (cart[id]) {
       dispatch(updateCartThunk(id, {...cart[id], ...item}))
@@ -122,7 +133,7 @@ export const addCartThunk = id => {
       })
       item = data
     }
-
+    console.log('addCartThunk !cart[id] & item', item)
     dispatch(updateCart(id, item))
 
     if (!user.id) {
