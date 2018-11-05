@@ -9,7 +9,6 @@ class Checkout extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      totalcost: 50,
       complete: false,
       error: false
     }
@@ -20,30 +19,32 @@ class Checkout extends Component {
     this.props.fetchCart()
   }
 
-  async submit(ev) {
+  async submit() {
     // User clicked submit
-    const {address, firstName, lastName} = this.props
+    const {address, firstName, lastName, cart} = this.props
     try {
       let {token} = await this.props.stripe.createToken({name: 'Name'})
 
-      let response = await axios.post('/charge', {
+      const total = Object.keys(cart).reduce((acc, currItem) => {
+        return acc + cart[currItem].total
+      }, 0)
+
+      await axios.post('/charge', {
         token: token.id,
-        totalcost: this.state.totalcost
+        total
       })
       this.setState({complete: true})
 
-      let orderRes = await axios.post(
+      await axios.post(
         `/api/orders/${this.props.user.id ? this.props.user.id : 'guest'}`,
         {
-          total: this.state.totalcost,
+          total,
           address,
           firstName,
           lastName,
-          cart: this.props.cart
+          cart
         }
       )
-
-      console.log(orderRes)
     } catch (err) {
       this.setState({error: true})
     }

@@ -85,10 +85,10 @@ const createApp = () => {
 
   app.post('/charge', async (req, res) => {
     console.log(req.body)
-    console.log('charge is hitting')
+    console.log('charge is hitting', typeof req.body.total, req.body.total)
     try {
       let {status} = await stripe.charges.create({
-        amount: req.body.totalcost,
+        amount: req.body.total,
         currency: 'usd',
         description: 'An example charge',
         source: req.body.token

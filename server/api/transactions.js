@@ -43,14 +43,15 @@ router.get('/users/:userId', isLoggedInAsSelf, async (req, res, next) => {
 })
 
 router.post('/', isLoggedIn, async (req, res, next) => {
-  const {productId, status, price, userId, quantity} = req.body
+  const {productId, status, price, userId, quantity, total} = req.body
   try {
     const transaction = await Transaction.create({
       productId,
       status,
       price,
       userId,
-      quantity
+      quantity,
+      total
     })
     res.json(transaction)
   } catch (err) {
@@ -63,7 +64,7 @@ router.put('/:transactionId', isLoggedIn, async (req, res, next) => {
     const transaction = await Transaction.findById(req.params.transactionId)
     if (transaction) {
       await transaction.update(
-        fieldReducer(req.body, ['status', 'price', 'quantity'])
+        fieldReducer(req.body, ['status', 'price', 'quantity', 'total'])
       )
     }
 
@@ -94,7 +95,8 @@ router.post('/cart/:userId', async (req, res, next) => {
         'quantity',
         'price',
         'userId',
-        'status'
+        'status',
+        'total'
       ])
 
       const id = req.body[key].id

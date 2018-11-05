@@ -14,7 +14,7 @@ const ProductItem = ({
   return (
     <SmallSection style={{marginBottom: '40px'}}>
       <Link to={`/products/${id}`}>{title}</Link>
-      <h2>{`Price: ${price}`}</h2>
+      <h2>{`Price: $${Number.parseFloat(price / 100).toFixed(2)}`}</h2>
 
       <Link to={`/products/${id}`}>
         <img className="product-list-img" src={image} />
