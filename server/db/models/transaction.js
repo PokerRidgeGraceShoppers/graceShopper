@@ -21,6 +21,13 @@ const Transaction = db.define('transaction', {
     validate: {
       min: 1
     }
+  },
+  total: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0,
+    validate: {
+      min: 0
+    }
   }
 })
 
