@@ -15,7 +15,11 @@ const ProductItem = ({
     <SmallSection style={{marginBottom: '40px'}}>
       <Link to={`/products/${id}`}>{title}</Link>
       <h2>{`Price: ${price}`}</h2>
-      <img className="product-list-img" src={image} />
+
+      <Link to={`/products/${id}`}>
+        <img className="product-list-img" src={image} />
+      </Link>
+
       <form
         style={{
           display: 'flex',

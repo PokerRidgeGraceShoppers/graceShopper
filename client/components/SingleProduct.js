@@ -1,10 +1,33 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchSingleProduct} from '../store/actions/products'
-import {SectionColumn, SmallSection} from './common'
+import {fetchSingleProduct, updateQuantity} from '../store/actions/products'
+import {SectionColumn, SmallSection, SectionRow, Input} from './common'
 import ReviewForm from './ReviewForm'
+import {addCartThunk} from '../store/actions/cart'
 
 class SingleProduct extends React.Component {
+  constructor() {
+    super()
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+  handleChange(e, id) {
+    console.log(
+      'singleProduct handleChange event.target.value: ',
+      e.target.value
+    )
+    const updatedProduct = {
+      ...this.props.products[id],
+      quantity: Number(e.target.value)
+    }
+    console.log('singleProduct handleChange updatedProduct:', updatedProduct)
+    this.props.updateQuantity(id, updatedProduct)
+  }
+
+  handleSubmit(id) {
+    this.props.addCartThunk(id)
+  }
+
   componentDidMount() {
     const productId = Number(this.props.match.params.productId)
 
@@ -22,7 +45,26 @@ class SingleProduct extends React.Component {
           <img className="product-list-img" src={singleProduct.image} />
         </SmallSection>
         <h3>{`Category: ${singleProduct.category}`}</h3>
-        <h3>{`Price: ${singleProduct.price}`}</h3>
+        <SmallSection style={{marginBottom: '40px'}}>
+          <h3>{`Price: ${singleProduct.price}`}</h3>
+          <form
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between'
+            }}
+          >
+            <Input
+              handleChange={this.handleChange}
+              value={singleProduct.quantity}
+              id={singleProduct.id}
+              name="quantity"
+              label="Quantity:"
+            />
+          </form>
+          <button onClick={() => this.handleSubmit(singleProduct.id)}>
+            Add To Cart
+          </button>
+        </SmallSection>
         <h3>{`Inventory: ${singleProduct.inventory}`}</h3>
         <h3>Description</h3>
         <p>{singleProduct.description}</p>
@@ -31,7 +73,15 @@ class SingleProduct extends React.Component {
             singleProduct.reviews.map(review => {
               return (
                 <SmallSection key={review.id} style={{width: '50%'}}>
-                  <h2>{review.title}</h2>
+                  <SectionRow
+                    style={{width: '80%', justifyContent: 'space-between'}}
+                  >
+                    <h2>{review.title}</h2>
+                    <h3>
+                      Rating:{' '}
+                      {!review.rating ? '0*' : '*'.repeat(review.rating)}
+                    </h3>
+                  </SectionRow>
                   <p>{review.body}</p>
                 </SmallSection>
               )
@@ -44,10 +94,15 @@ class SingleProduct extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  singleProduct: state.products.product
+  singleProduct: state.products.product,
+  products: state.products.products
 })
 
-export default connect(mapStateToProps, {fetchSingleProduct})(SingleProduct)
+export default connect(mapStateToProps, {
+  fetchSingleProduct,
+  updateQuantity,
+  addCartThunk
+})(SingleProduct)
 
 // product: {
 //   id: 1,

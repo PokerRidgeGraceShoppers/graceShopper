@@ -26,6 +26,8 @@ const CartList = ({
             handleClickQuantity={handleClickQuantity}
             removeCartThunk={removeCartThunk}
             products={products}
+            image={products[id].image}
+            price={products[id].price}
           />
         )
       })}

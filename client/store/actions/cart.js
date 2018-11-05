@@ -27,6 +27,29 @@ const reduceCart = transactions => {
   }, {})
 }
 
+const mergeCarts = (userCart, guestCart, userId) => {
+  Object.keys(guestCart).forEach(key => {
+    userCart[key]
+      ? (userCart[key].quantity += guestCart[key].quantity)
+      : (userCart[key] = {...guestCart[key], userId})
+  })
+
+  return userCart
+}
+
+const flatten = (arr, newArr = []) => {
+  if (!Array.isArray(arr)) {
+    newArr.push(arr)
+  }
+
+  arr.forEach(item => {
+    if (Array.isArray(item)) flatten(item, newArr)
+    else newArr.push(item)
+  })
+
+  return newArr
+}
+
 export const getCart = cart => ({type: GET_CART, cart})
 
 export const updateCart = (id, item) => ({type: UPDATE_CART, item, id})
@@ -35,18 +58,38 @@ export const removeCart = cart => ({type: REMOVE_CART, cart})
 
 export const updateTotal = total => ({type: UPDATE_TOTAL, total})
 
+const mergeCartThunk = (userCart, guestCart) => {
+  return async (dispatch, getState) => {
+    const {user} = getState()
+    const {data} = await axios.post(
+      `/api/transactions/cart/${user.id}`,
+      mergeCarts(userCart, guestCart, user.id)
+    )
+    const cart = reduceCart(
+      flatten(data).filter(item => typeof item === 'object')
+    )
+
+    dispatch(getCart(cart))
+    window.localStorage.removeItem('cart')
+  }
+}
+
 export const fetchCart = () => {
   return async (dispatch, getState) => {
     const {user} = getState()
-    if (!user.id) {
-      let guestCart = JSON.parse(window.localStorage.getItem('cart')) || []
+    let guestCart = JSON.parse(window.localStorage.getItem('cart')) || {}
 
+    if (!user.id) {
       dispatch(getCart(guestCart))
     } else {
       let {data} = await axios.get(`/api/users/cart/${user.id}`)
-      let transactions = data ? data.transactions : []
+      let userCart = reduceCart(data ? data.transactions : [])
 
-      dispatch(getCart(reduceCart(transactions)))
+      if (Object.keys(guestCart).length) {
+        dispatch(mergeCartThunk(userCart, guestCart))
+      }
+
+      dispatch(getCart(userCart))
     }
   }
 }
@@ -57,7 +100,6 @@ export const updateCartThunk = (id, item) => {
 
     if (user.id) {
       const {data} = await axios.put(`/api/transactions/${item.id}`, item)
-      console.log(data)
       item = data
     }
 

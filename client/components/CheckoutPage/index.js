@@ -11,15 +11,15 @@ class CheckoutPage extends React.Component {
       hasOrderInfo: false,
       firstName: '',
       lastName: '',
-      street_address: ''
+      address: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   validateInfo() {
-    const {firstName, lastName, street_address} = this.state
-    return firstName && lastName && street_address
+    const {firstName, lastName, address} = this.state
+    return firstName && lastName && address
   }
 
   handleChange(event) {

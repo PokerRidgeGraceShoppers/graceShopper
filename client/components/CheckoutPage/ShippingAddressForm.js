@@ -19,8 +19,8 @@ const ShippingAddressForm = props => {
           onChange={props.handleChange}
         />
         <input
-          name={'street_address'}
-          value={props.street_address}
+          name={'address'}
+          value={props.address}
           placeholder={'Street Address'}
           onChange={props.handleChange}
         />
