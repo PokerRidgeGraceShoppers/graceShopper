@@ -1,10 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchSingleProduct, updateQuantity} from '../store/actions/products'
-import {SectionColumn, SmallSection, SectionRow, Input} from './common'
+import {SectionColumn, SmallSection, SectionRow} from './common'
 import ReviewForm from './ReviewForm'
 import {addCartThunk} from '../store/actions/cart'
-import {Button} from 'semantic-ui-react'
+import {Button, Card, Image, Icon, Input, ButtonGroup} from 'semantic-ui-react'
 
 class SingleProduct extends React.Component {
   constructor() {
@@ -36,33 +36,37 @@ class SingleProduct extends React.Component {
     return (
       <SectionColumn>
         <h1>Single Product </h1>
-        <h2>{singleProduct.title}</h2>
-        <SmallSection>
-          <img className="product-list-img" src={singleProduct.image} />
-        </SmallSection>
+        <Card>
+          <Card.Content>
+            <Card.Header>{singleProduct.title}</Card.Header>
+          </Card.Content>
+          <Image src={singleProduct.image} />
+        </Card>
         <h3>{`Category: ${singleProduct.category}`}</h3>
-        <SmallSection style={{marginBottom: '40px'}}>
-          <h3>{`Price: $${Number.parseFloat(singleProduct.price / 100).toFixed(
-            2
-          )}`}</h3>
-          <form
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between'
-            }}
-          >
-            <Input
-              handleChange={this.handleChange}
-              value={singleProduct.quantity}
-              id={singleProduct.id}
-              name="quantity"
-              label="Quantity:"
-            />
-          </form>
-          <Button onClick={() => this.handleSubmit(singleProduct.id)}>
-            Add To Cart
+
+        <Card>
+          <Card.Content>
+            <Card.Header>{`Price: $${Number.parseFloat(
+              singleProduct.price / 100
+            ).toFixed(2)}`}</Card.Header>
+            <Button onClick={() => this.handleSubmit(singleProduct.id)}>
+              Add To Cart
+            </Button>
+          </Card.Content>
+          <Input
+            handleChange={this.handleChange}
+            value={singleProduct.quantity}
+            id={singleProduct.id}
+            name="quantity"
+            label="Quantity:"
+          />
+          <Button attached="left">
+            <Icon fitted name="angle up" />
           </Button>
-        </SmallSection>
+          <Button attached="right">
+            <Icon fitted name="angle down" />
+          </Button>
+        </Card>
         <h3>{`Inventory: ${singleProduct.inventory}`}</h3>
         <h3>Description</h3>
         <p>{singleProduct.description}</p>
