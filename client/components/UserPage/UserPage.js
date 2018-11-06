@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {SectionColumn, SmallSection, SectionRow, Input} from '../common'
-import {fetchUserData} from '../../store/actions/users'
+import {fetchUserData} from '../../store/actions'
 // import PropTypes from 'prop-types'
 
 const UserPage = props => {
