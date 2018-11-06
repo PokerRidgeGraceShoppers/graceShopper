@@ -77,7 +77,6 @@ class SingleProduct extends React.Component {
           <Dropdown
             button
             floating
-            search
             selection
             compact
             options={inventoryOptions}
