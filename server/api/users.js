@@ -24,10 +24,7 @@ router.get('/', isAdmin, async (req, res, next) => {
 })
 router.get('/:userId', isLoggedInAsSelf, async (req, res, next) => {
   try {
-    const user = await User.findById(req.params.userId, {
-      include: [{model: Review}, {model: Transaction}],
-      attributes: {exclude: ['password']}
-    })
+    const user = await User.getUserData(req.params.id)
     res.json(user)
   } catch (err) {
     next(err)
