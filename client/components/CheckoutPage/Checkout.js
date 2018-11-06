@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {CardElement, injectStripe} from 'react-stripe-elements'
 import axios from 'axios'
-import {fetchCart, getCart} from '../../store/actions'
+import {fetchCart, deleteCart} from '../../store/actions'
 import CheckoutSuccess from './CheckoutSuccess'
 import {Button} from 'semantic-ui-react'
 
@@ -55,13 +55,14 @@ class Checkout extends Component {
         `/api/orders/${this.props.user.id ? this.props.user.id : 'guest'}`,
         {total, address, firstName, lastName, cart}
       )
+
+      this.props.deleteCart()
     } catch (err) {
       this.setState({error: true})
     }
   }
 
   render() {
-    console.log(this.props)
     if (this.state.complete) return <CheckoutSuccess />
 
     return (
@@ -86,6 +87,6 @@ class Checkout extends Component {
 
 const mapStateToProps = ({cart, user}) => ({cart, user})
 
-export default connect(mapStateToProps, {fetchCart, getCart})(
+export default connect(mapStateToProps, {fetchCart, deleteCart})(
   injectStripe(Checkout)
 )
