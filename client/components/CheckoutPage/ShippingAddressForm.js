@@ -1,4 +1,5 @@
 import React from 'react'
+import {Button} from 'semantic-ui-react'
 
 const ShippingAddressForm = props => {
   return (
@@ -24,7 +25,7 @@ const ShippingAddressForm = props => {
           placeholder={'Street Address'}
           onChange={props.handleChange}
         />
-        <button onSubmit={props.handleSubmit}>Submit</button>
+        <Button onSubmit={props.handleSubmit}>Submit</Button>
       </form>
     </div>
   )

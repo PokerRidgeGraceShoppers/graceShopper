@@ -4,6 +4,7 @@ import {fetchSingleProduct, updateQuantity} from '../store/actions/products'
 import {SectionColumn, SmallSection, SectionRow, Input} from './common'
 import ReviewForm from './ReviewForm'
 import {addCartThunk} from '../store/actions/cart'
+import {Button} from 'semantic-ui-react'
 
 class SingleProduct extends React.Component {
   constructor() {
@@ -58,9 +59,9 @@ class SingleProduct extends React.Component {
               label="Quantity:"
             />
           </form>
-          <button onClick={() => this.handleSubmit(singleProduct.id)}>
+          <Button onClick={() => this.handleSubmit(singleProduct.id)}>
             Add To Cart
-          </button>
+          </Button>
         </SmallSection>
         <h3>{`Inventory: ${singleProduct.inventory}`}</h3>
         <h3>Description</h3>

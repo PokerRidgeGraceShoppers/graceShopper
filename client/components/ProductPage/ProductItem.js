@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {SmallSection, Input} from '../common'
+import {Button} from 'semantic-ui-react'
 
 const ProductItem = ({
   handleChange,
@@ -34,7 +35,7 @@ const ProductItem = ({
           label="Quantity:"
         />
       </form>
-      <button onClick={() => handleSubmit(id)}>Add To Cart</button>
+      <Button onClick={() => handleSubmit(id)}>Add To Cart</Button>
     </SmallSection>
   )
 }

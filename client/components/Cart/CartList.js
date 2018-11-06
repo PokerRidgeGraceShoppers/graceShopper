@@ -2,6 +2,7 @@ import React from 'react'
 import CartItem from './CartItem'
 import {SectionRow, SmallSection} from '../common'
 import {withRouter} from 'react-router-dom'
+import {Button} from 'semantic-ui-react'
 
 class CartList extends React.Component {
   render() {
@@ -48,14 +49,16 @@ class CartList extends React.Component {
               ).toFixed(2)}`}
             </h2>
           </SectionRow>
-          <button
+
+          <Button
+            content="Checkout"
+            basic
+            color="red"
             type="submit"
             onClick={() => {
               history.push('/checkout')
             }}
-          >
-            Checkout
-          </button>
+          />
         </SectionRow>
       </SmallSection>
     )
