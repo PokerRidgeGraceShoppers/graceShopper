@@ -36,6 +36,13 @@ Order.hasMany(Transaction)
 Order.belongsTo(User)
 User.hasMany(Order)
 
+User.getUserData = id => {
+  return User.findById(id, {
+    include: [{model: Review}, {model: Order, include: [{model: Transaction}]}],
+    attributes: {exclude: ['password']}
+  })
+}
+
 module.exports = {
   User,
   Product,
