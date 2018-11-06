@@ -10,7 +10,7 @@ const sessionStore = new SequelizeStore({db})
 const PORT = process.env.PORT || 8080
 const app = express()
 const socketio = require('socket.io')
-const stripe = require('stripe')('sk_test_UMGwEcz1QBjkgZf6k9Gl8ljZ')
+const stripe = require('stripe')('sk_test_YDgNulHBsKCzDl0cKOEx1h3i')
 
 module.exports = app
 
