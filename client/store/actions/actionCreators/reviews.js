@@ -1,16 +1,13 @@
 import axios from 'axios'
 import {fetchSingleProduct} from './products'
+import {
+  GET_REVIEWS_FROM_DB,
+  GET_SINGLE_REVIEW_FROM_DB,
+  EDIT_REVIEW_IN_DB,
+  DELETE_REVIEW_FROM_DB
+} from '../actionTypes'
 
-const GET_REVIEWS_FROM_DB = 'GET_REVIEWS_FROM_DB'
-
-const GET_SINGLE_REVIEW_FROM_DB = 'GET_SINGLE_REVIEW_FROM_DB'
-
-const EDIT_REVIEW_IN_DB = 'EDIT_REVIEW_IN_DB'
-
-const GET_NEW_REVIEW_FROM_DB = 'GET_NEW_REVIEW_FROM_DB'
-
-const DELETE_REVIEW_FROM_DB = 'DELETE_REVIEW_FROM_DB'
-
+// Actions
 const getReviewsFromDb = reviews => ({
   type: GET_REVIEWS_FROM_DB,
   reviews
@@ -26,28 +23,22 @@ const editReviewInDb = review => ({
   review
 })
 
-const getNewReviewFromDb = review => ({
-  type: GET_NEW_REVIEW_FROM_DB,
-  review
-})
-
 const deleteReviewFromDb = reviewId => ({
   type: DELETE_REVIEW_FROM_DB,
   reviewId
 })
 
+// Thunks
 export const reviewSearch = () => {
   return async dispatch => {
     const {data: reviews} = await axios.get('/api/reviews')
-    console.log('reviewSearch in reducer data: ', reviews)
     dispatch(getReviewsFromDb(reviews))
   }
 }
 
 export const singleReviewSearch = id => async dispatch => {
-  const response = await axios.get(`/api/reviews/${id}`)
-  const reviewData = response.data
-  dispatch(getSingleReviewFromDb(reviewData))
+  const {data} = await axios.get(`/api/reviews/${id}`)
+  dispatch(getSingleReviewFromDb(data))
 }
 
 export const addNewReview = review => {

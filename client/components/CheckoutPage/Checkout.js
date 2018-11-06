@@ -2,8 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {CardElement, injectStripe} from 'react-stripe-elements'
 import axios from 'axios'
-import ShippingAddressForm from './ShippingAddressForm'
-import {fetchCart} from '../../store/actions/cart'
+import {fetchCart, getCart} from '../../store/actions'
 
 class Checkout extends Component {
   constructor(props) {
@@ -20,7 +19,6 @@ class Checkout extends Component {
   }
 
   async submit() {
-    // User clicked submit
     const {address, firstName, lastName, cart} = this.props
     try {
       let {token} = await this.props.stripe.createToken({name: 'Name'})
@@ -29,21 +27,12 @@ class Checkout extends Component {
         return acc + cart[currItem].total
       }, 0)
 
-      await axios.post('/charge', {
-        token: token.id,
-        total
-      })
+      await axios.post('/charge', {token: token.id, total})
       this.setState({complete: true})
 
       await axios.post(
         `/api/orders/${this.props.user.id ? this.props.user.id : 'guest'}`,
-        {
-          total,
-          address,
-          firstName,
-          lastName,
-          cart
-        }
+        {total, address, firstName, lastName, cart}
       )
     } catch (err) {
       this.setState({error: true})
@@ -51,7 +40,6 @@ class Checkout extends Component {
   }
 
   render() {
-    console.log(this.props)
     if (this.state.complete)
       return <h1>Purchase Complete (go back to orders? or home )</h1>
 
@@ -74,4 +62,6 @@ class Checkout extends Component {
 
 const mapStateToProps = ({cart, user}) => ({cart, user})
 
-export default connect(mapStateToProps, {fetchCart})(injectStripe(Checkout))
+export default connect(mapStateToProps, {fetchCart, getCart})(
+  injectStripe(Checkout)
+)

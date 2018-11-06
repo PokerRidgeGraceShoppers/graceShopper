@@ -1,9 +1,7 @@
 import axios from 'axios'
-import history from '../../history'
+import history from '../../../history'
 import {getCart} from './cart'
-
-export const GET_USER = 'GET_USER'
-export const REMOVE_USER = 'REMOVE_USER'
+import {GET_USER, REMOVE_USER} from '../actionTypes'
 
 export const getUser = user => ({type: GET_USER, user})
 export const removeUser = () => ({type: REMOVE_USER})

@@ -4,7 +4,7 @@ import {
   EDIT_REVIEW_IN_DB,
   GET_NEW_REVIEW_FROM_DB,
   DELETE_REVIEW_FROM_DB
-} from '../actions/reviews'
+} from '../actions'
 
 const initialState = {
   reviews: [],
@@ -14,7 +14,6 @@ const initialState = {
 const reviews = (state = initialState, action) => {
   switch (action.type) {
     case GET_REVIEWS_FROM_DB:
-      // console.log('reviewreducer getReviews action: ', action)
       return {...state, reviews: action.reviews}
     case GET_SINGLE_REVIEW_FROM_DB:
       return {...state, selectedReview: action.review}
@@ -24,7 +23,6 @@ const reviews = (state = initialState, action) => {
         selectedREVIEW: action.review
       }
     case GET_NEW_REVIEW_FROM_DB:
-      console.log('action in review reducer', action)
       return {...state, reviews: [...state.reviews, action.review]}
     case DELETE_REVIEW_FROM_DB:
       return {

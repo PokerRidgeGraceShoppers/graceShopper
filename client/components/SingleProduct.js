@@ -1,9 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchSingleProduct, updateQuantity} from '../store/actions/products'
+import {
+  fetchSingleProduct,
+  updateQuantity,
+  addCartThunk
+} from '../store/actions'
 import {SectionColumn, SmallSection, SectionRow, Input} from './common'
 import ReviewForm from './ReviewForm'
-import {addCartThunk} from '../store/actions/cart'
 
 class SingleProduct extends React.Component {
   constructor() {

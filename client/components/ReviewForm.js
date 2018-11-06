@@ -6,7 +6,7 @@ import {
   addNewReview,
   editReview,
   deleteReview
-} from '../store/actions/reviews'
+} from '../store/actions'
 
 class ReviewForm extends React.Component {
   constructor(props) {
