@@ -14,7 +14,8 @@ import {
   Icon,
   Input,
   Dropdown,
-  Label
+  Label,
+  Loader
 } from 'semantic-ui-react'
 
 class SingleProduct extends React.Component {
@@ -24,9 +25,10 @@ class SingleProduct extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleChange(e, id) {
+    console.log(e.target)
     const updatedProduct = {
       ...this.props.products[id],
-      quantity: Number(e.target.value)
+      quantity: Number(e.target.children[0].textContent)
     }
     this.props.updateQuantity(id, updatedProduct)
   }
@@ -42,13 +44,16 @@ class SingleProduct extends React.Component {
   }
 
   render() {
-    const {singleProduct} = this.props
+    const {singleProduct, products} = this.props
+    const id = this.props.match.params.productId
     const inventoryOptions = []
     for (let i = 1; i <= singleProduct.inventory; i++) {
-      inventoryOptions.push({value: i, text: `${i}`})
+      inventoryOptions.push({key: i, value: i, text: `${i}`})
     }
-    console.log(singleProduct)
-    return (
+
+    return !Object.keys(products).length ? (
+      <Loader active inline="centered" size="massive" />
+    ) : (
       <SectionColumn>
         <h1>Single Product </h1>
         <Card>
@@ -68,23 +73,17 @@ class SingleProduct extends React.Component {
               Add To Cart
             </Button>
           </Card.Content>
-          <Label>HECKING QANNITTY</Label>
+          <Label>Quantity</Label>
           <Dropdown
             button
-            basic
             floating
             search
+            selection
+            compact
             options={inventoryOptions}
-            defaultValue="1"
-            placeholder="ONE"
+            value={products[id].quantity}
+            onChange={e => this.handleChange(e, singleProduct.id)}
           />
-          {/* <Input
-            handleChange={this.handleChange}
-            value={singleProduct.quantity}
-            id={singleProduct.id}
-            name="quantity"
-            label="Quantity:"
-          /> */}
         </Card>
         <h3>Description</h3>
         <p>{singleProduct.description}</p>
