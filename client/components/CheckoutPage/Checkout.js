@@ -4,6 +4,7 @@ import {CardElement, injectStripe} from 'react-stripe-elements'
 import axios from 'axios'
 import ShippingAddressForm from './ShippingAddressForm'
 import {fetchCart} from '../../store/actions/cart'
+import {Button} from 'semantic-ui-react'
 
 class Checkout extends Component {
   constructor(props) {
@@ -65,7 +66,7 @@ class Checkout extends Component {
           <p>{this.props.street_address}</p>
           <p>Please enter in your card info below to complete your order: </p>
           <CardElement />
-          <button onClick={this.submit}>Place your order</button>
+          <Button onClick={this.submit}>Place your order</Button>
         </div>
       </div>
     )

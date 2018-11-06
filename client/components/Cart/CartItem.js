@@ -2,6 +2,7 @@ import React from 'react'
 import {SectionRow} from '../common'
 import QuantityButton from '../Quantity'
 import {Link} from 'react-router-dom'
+import {Button} from 'semantic-ui-react'
 
 const CartItem = ({
   id,
@@ -27,7 +28,7 @@ const CartItem = ({
         <p>{`$${Number.parseFloat(
           cart[id].quantity * cart[id].price / 100
         ).toFixed(2)}`}</p>
-        <button onClick={() => removeCartThunk(id)}>Remove</button>
+        <Button onClick={() => removeCartThunk(id)}>Remove</Button>
       </SectionRow>
     </SectionRow>
   )

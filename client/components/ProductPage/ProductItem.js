@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {SmallSection, Input} from '../common'
+import {Button, Image} from 'semantic-ui-react'
 
 const ProductItem = ({
   handleChange,
@@ -17,7 +18,7 @@ const ProductItem = ({
       <h2>{`Price: $${Number.parseFloat(price / 100).toFixed(2)}`}</h2>
 
       <Link to={`/products/${id}`}>
-        <img className="product-list-img" src={image} />
+        <Image className="product-list-img" src={image} size="large" />
       </Link>
 
       <form
@@ -34,7 +35,7 @@ const ProductItem = ({
           label="Quantity:"
         />
       </form>
-      <button onClick={() => handleSubmit(id)}>Add To Cart</button>
+      <Button onClick={() => handleSubmit(id)}>Add To Cart</Button>
     </SmallSection>
   )
 }
