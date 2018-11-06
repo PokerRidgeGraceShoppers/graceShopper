@@ -3,33 +3,50 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store/actions'
+import {Menu, Header, Button} from 'semantic-ui-react'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
-  <div style={{position: 'relative'}}>
-    <h1>PokerRidgeGraceShopper</h1>
-    <nav>
-      <div style={{display: 'flex', flexDirection: 'row-reverse'}}>
-        <Link to="/cart">Cart</Link>
-        <Link to="/products">See all Products</Link>
-      </div>
-      {isLoggedIn ? (
-        <div>
-          {/* The navbar will show these links after you log in */}
+  <Menu inverted>
+    <Header as="h1" inverted color="red">
+      PokerRidgeGraceShopper
+    </Header>
+
+    <Menu.Item>
+      <Link to="/products">See all Products</Link>
+    </Menu.Item>
+
+    <Menu.Item>
+      <Link to="/cart">Cart</Link>
+    </Menu.Item>
+
+    {isLoggedIn ? (
+      <Menu.Menu position="right">
+        {/* The navbar will show these links after you log in */}
+        <Menu.Item>
           <Link to="/home">Home</Link>
+        </Menu.Item>
+        <Menu.Item>
           <a href="#" onClick={handleClick}>
             Logout
           </a>
-        </div>
-      ) : (
-        <div>
-          {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
-        </div>
-      )}
-    </nav>
-    <hr />
-  </div>
+        </Menu.Item>
+      </Menu.Menu>
+    ) : (
+      <Menu.Menu position="right">
+        {/* The navbar will show these links before you log in */}
+        <Menu.Item>
+          <Button primary>
+            <Link to="/signup">Sign Up</Link>
+          </Button>
+        </Menu.Item>
+        <Menu.Item>
+          <Button>
+            <Link to="/login">Login</Link>
+          </Button>
+        </Menu.Item>
+      </Menu.Menu>
+    )}
+  </Menu>
 )
 
 /**
