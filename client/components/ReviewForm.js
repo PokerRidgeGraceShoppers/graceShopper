@@ -7,7 +7,7 @@ import {
   editReview,
   deleteReview
 } from '../store/actions'
-import {Button, Form, TextArea} from 'semantic-ui-react'
+import {Button, Form, TextArea, Dropdown} from 'semantic-ui-react'
 
 class ReviewForm extends React.Component {
   constructor(props) {

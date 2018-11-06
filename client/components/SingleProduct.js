@@ -6,8 +6,16 @@ import {
   updateQuantity,
   addCartThunk
 } from '../store/actions'
-import {SectionColumn, SmallSection, SectionRow, Input} from './common'
-import {Button, Card, Image, Icon, Input, ButtonGroup} from 'semantic-ui-react'
+import {SectionColumn, SmallSection, SectionRow} from './common'
+import {
+  Button,
+  Card,
+  Image,
+  Icon,
+  Input,
+  Dropdown,
+  Label
+} from 'semantic-ui-react'
 
 class SingleProduct extends React.Component {
   constructor() {
@@ -35,6 +43,10 @@ class SingleProduct extends React.Component {
 
   render() {
     const {singleProduct} = this.props
+    const inventoryOptions = []
+    for (let i = 1; i <= singleProduct.inventory; i++) {
+      inventoryOptions.push({value: i, text: `${i}`})
+    }
     console.log(singleProduct)
     return (
       <SectionColumn>
@@ -56,21 +68,24 @@ class SingleProduct extends React.Component {
               Add To Cart
             </Button>
           </Card.Content>
-          <Input
+          <Label>HECKING QANNITTY</Label>
+          <Dropdown
+            button
+            basic
+            floating
+            search
+            options={inventoryOptions}
+            defaultValue="1"
+            placeholder="ONE"
+          />
+          {/* <Input
             handleChange={this.handleChange}
             value={singleProduct.quantity}
             id={singleProduct.id}
             name="quantity"
             label="Quantity:"
-          />
-          <Button attached="left">
-            <Icon fitted name="angle up" />
-          </Button>
-          <Button attached="right">
-            <Icon fitted name="angle down" />
-          </Button>
+          /> */}
         </Card>
-        <h3>{`Inventory: ${singleProduct.inventory}`}</h3>
         <h3>Description</h3>
         <p>{singleProduct.description}</p>
         <SectionColumn>
