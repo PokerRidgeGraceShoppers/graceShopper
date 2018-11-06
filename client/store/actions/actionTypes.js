@@ -17,4 +17,5 @@ export const DELETE_REVIEW_FROM_DB = 'DELETE_REVIEW_FROM_DB'
 
 // Action Types users
 export const GET_USER = 'GET_USER'
+export const GET_USER_DATA = 'GET_USER_DATA'
 export const REMOVE_USER = 'REMOVE_USER'

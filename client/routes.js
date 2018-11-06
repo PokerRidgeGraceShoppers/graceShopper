@@ -11,6 +11,7 @@ import {
   Cart,
   CheckoutPage
 } from './components'
+import UserPage from './components/UserPage/UserPage'
 import {me, fetchProducts, fetchCart} from './store/actions'
 
 /**
@@ -33,12 +34,13 @@ class Routes extends Component {
         <Route exact path="/products/:productId" component={SingleProduct} />
         <Route exact path="/products" component={ProductPage} />
         <Route exact path="/checkout" component={CheckoutPage} />
+        <Route exact path="/profile" component={UserPage} />
         {isLoggedIn && (
           <Switch>
             <Route path="/home" component={UserHome} />
           </Switch>
         )}
-        <Route component={Login} /> */}
+        <Route component={Login} />
       </Switch>
     )
   }

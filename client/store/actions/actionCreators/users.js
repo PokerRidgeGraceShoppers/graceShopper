@@ -1,9 +1,11 @@
 import axios from 'axios'
 import history from '../../../history'
 import {getCart} from './cart'
-import {GET_USER, REMOVE_USER} from '../actionTypes'
+
+import {GET_USER, GET_USER_DATA, REMOVE_USER} from '../actionTypes'
 
 export const getUser = user => ({type: GET_USER, user})
+export const getUserData = user => ({type: GET_USER_DATA, user})
 export const removeUser = () => ({type: REMOVE_USER})
 
 export const me = () => async dispatch => {
@@ -28,6 +30,15 @@ export const auth = (email, password, method) => async dispatch => {
     history.push('/home')
   } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr)
+  }
+}
+
+export const fetchUserData = userId => async dispatch => {
+  try {
+    const {data} = await axios.get(`/api/users/${userId}`)
+    dispatch(getUserData(data))
+  } catch (error) {
+    console.error(error)
   }
 }
 

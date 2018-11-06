@@ -23,7 +23,7 @@ router.get('/', async (req, res, next) => {
 router.get('/:productId', async (req, res, next) => {
   try {
     const product = await Product.findById(req.params.productId, {
-      include: [{model: Review}, {model: Transaction}]
+      include: [{model: Review}]
     })
     res.json(product)
   } catch (err) {

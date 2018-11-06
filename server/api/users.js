@@ -24,7 +24,7 @@ router.get('/', isAdmin, async (req, res, next) => {
 })
 router.get('/:userId', isLoggedInAsSelf, async (req, res, next) => {
   try {
-    const user = await User.getUserData(req.params.id)
+    const user = await User.getUserData(req.params.userId)
     res.json(user)
   } catch (err) {
     next(err)
