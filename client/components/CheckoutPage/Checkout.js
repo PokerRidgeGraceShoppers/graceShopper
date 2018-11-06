@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {CardElement, injectStripe} from 'react-stripe-elements'
 import axios from 'axios'
-import {fetchCart} from '../../store/actions/cart'
+import {fetchCart, getCart} from '../../store/actions'
 import CheckoutSuccess from './CheckoutSuccess'
 import {Button} from 'semantic-ui-react'
 
@@ -53,13 +53,7 @@ class Checkout extends Component {
       this.setState({complete: true})
       await axios.post(
         `/api/orders/${this.props.user.id ? this.props.user.id : 'guest'}`,
-        {
-          total,
-          address,
-          firstName,
-          lastName,
-          cart
-        }
+        {total, address, firstName, lastName, cart}
       )
     } catch (err) {
       this.setState({error: true})
@@ -92,4 +86,6 @@ class Checkout extends Component {
 
 const mapStateToProps = ({cart, user}) => ({cart, user})
 
-export default connect(mapStateToProps, {fetchCart})(injectStripe(Checkout))
+export default connect(mapStateToProps, {fetchCart, getCart})(
+  injectStripe(Checkout)
+)

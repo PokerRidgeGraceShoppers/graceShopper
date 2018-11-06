@@ -1,68 +1,20 @@
 import axios from 'axios'
+import {REMOVE_CART, UPDATE_TOTAL, GET_CART, UPDATE_CART} from '../actionTypes'
+import {
+  mergeCarts,
+  reduceCart,
+  flatten,
+  addToCartHelper,
+  removeCartHelper
+} from '../helpers'
 
-export const GET_CART = 'GET_CART'
-export const UPDATE_CART = 'UPDATE_CART'
-export const REMOVE_CART = 'REMOVE_CART'
-export const UPDATE_TOTAL = 'UPDATE_TOTAL'
-
-const addToCartHelper = ({cart, id, products}) => {
-  let {quantity, price} = products[id]
-
-  quantity = cart[id] ? quantity + cart[id].quantity : quantity
-
-  return {
-    productId: id,
-    quantity,
-    price,
-    status: 'pending'
-  }
-}
-
-const removeCartHelper = ({cart, id}) => {
-  return Object.keys(cart).reduce((acc, val) => {
-    if (val !== id) acc[val] = cart[val]
-    return acc
-  }, {})
-}
-
-const reduceCart = transactions => {
-  return transactions.reduce((acc, val) => {
-    acc[val.productId] = val
-    return acc
-  }, {})
-}
-
-const mergeCarts = (userCart, guestCart, userId) => {
-  Object.keys(guestCart).forEach(key => {
-    userCart[key]
-      ? (userCart[key].quantity += guestCart[key].quantity)
-      : (userCart[key] = {...guestCart[key], userId})
-  })
-
-  return userCart
-}
-
-const flatten = (arr, newArr = []) => {
-  if (!Array.isArray(arr)) {
-    newArr.push(arr)
-  }
-
-  arr.forEach(item => {
-    if (Array.isArray(item)) flatten(item, newArr)
-    else newArr.push(item)
-  })
-
-  return newArr
-}
-
+// Actions
 export const getCart = cart => ({type: GET_CART, cart})
-
 export const updateCart = (id, item) => ({type: UPDATE_CART, item, id})
-
 export const removeCart = cart => ({type: REMOVE_CART, cart})
-
 export const updateTotal = total => ({type: UPDATE_TOTAL, total})
 
+// Thunks
 const mergeCartThunk = (userCart, guestCart) => {
   return async (dispatch, getState) => {
     const {user} = getState()
@@ -82,19 +34,17 @@ const mergeCartThunk = (userCart, guestCart) => {
 export const fetchCart = () => {
   return async (dispatch, getState) => {
     const {user} = getState()
-    let guestCart = JSON.parse(window.localStorage.getItem('cart')) || {}
+    const guestCart = JSON.parse(window.localStorage.getItem('cart')) || {}
 
     if (!user.id) {
       dispatch(getCart(guestCart))
     } else {
-      let {data} = await axios.get(`/api/users/cart/${user.id}`)
-      let userCart = reduceCart(data ? data.transactions : [])
+      const {data} = await axios.get(`/api/users/cart/${user.id}`)
+      const userCart = reduceCart(data ? data.transactions : [])
 
-      if (Object.keys(guestCart).length) {
-        dispatch(mergeCartThunk(userCart, guestCart))
-      }
-
-      dispatch(getCart(userCart))
+      Object.keys(guestCart).length
+        ? dispatch(mergeCartThunk(userCart, guestCart))
+        : dispatch(getCart(userCart))
     }
   }
 }
@@ -109,7 +59,6 @@ export const updateCartThunk = (id, item) => {
         total: item.quantity * item.price
       })
       item = data
-      console.log('cartActions updateCartThuk item: ', item)
     }
 
     dispatch(updateCart(id, {...item, total: item.quantity * item.price}))
@@ -124,8 +73,6 @@ export const addCartThunk = id => {
   return async (dispatch, getState) => {
     const {user, products: {products}, cart} = getState()
     let item = addToCartHelper({id, cart, products})
-    item = {...item, total: item.quantity * item.price}
-    console.log('cartActions addCartThuk item: ', item)
 
     if (cart[id]) {
       dispatch(updateCartThunk(id, {...cart[id], ...item}))
@@ -136,7 +83,7 @@ export const addCartThunk = id => {
       })
       item = data
     }
-    console.log('addCartThunk !cart[id] & item', item)
+
     dispatch(updateCart(id, item))
 
     if (!user.id) {

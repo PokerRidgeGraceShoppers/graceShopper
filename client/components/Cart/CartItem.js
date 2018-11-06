@@ -10,7 +10,6 @@ const CartItem = ({
   cart,
   handleClickQuantity,
   removeCartThunk,
-  products,
   image
 }) => {
   return (

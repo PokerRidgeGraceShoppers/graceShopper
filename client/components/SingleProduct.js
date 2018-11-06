@@ -1,9 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchSingleProduct, updateQuantity} from '../store/actions/products'
+import {
+  fetchSingleProduct,
+  updateQuantity,
+  addCartThunk
+} from '../store/actions'
 import {SectionColumn, SmallSection, SectionRow, Input} from './common'
 import ReviewForm from './ReviewForm'
-import {addCartThunk} from '../store/actions/cart'
 import {Button} from 'semantic-ui-react'
 
 class SingleProduct extends React.Component {
@@ -101,12 +104,3 @@ export default connect(mapStateToProps, {
   updateQuantity,
   addCartThunk
 })(SingleProduct)
-
-// product: {
-//   id: 1,
-//   title: 'Wine - Chardonnay South',
-//   category: 'category-1',
-//   price: 57.83,
-//   image: 'https://image.flaticon.com/icons/svg/61/61205.svg',
-//   inventory: 91
-// }

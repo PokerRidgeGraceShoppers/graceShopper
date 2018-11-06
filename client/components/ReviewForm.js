@@ -6,7 +6,7 @@ import {
   addNewReview,
   editReview,
   deleteReview
-} from '../store/actions/reviews'
+} from '../store/actions'
 import {Button} from 'semantic-ui-react'
 
 class ReviewForm extends React.Component {

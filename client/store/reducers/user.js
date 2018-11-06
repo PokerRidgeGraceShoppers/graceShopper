@@ -1,4 +1,4 @@
-import {GET_USER, REMOVE_USER} from '../actions/users'
+import {GET_USER, REMOVE_USER} from '../actions'
 
 export default function(state = {total: 0}, action) {
   switch (action.type) {

@@ -11,9 +11,7 @@ import {
   Cart,
   CheckoutPage
 } from './components'
-import {me} from './store/actions/users'
-import {fetchProducts} from './store/actions/products'
-import {fetchCart} from './store/actions/cart'
+import {me, fetchProducts, fetchCart} from './store/actions'
 
 /**
  * COMPONENT

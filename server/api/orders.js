@@ -18,11 +18,11 @@ router.post('/guest', async (req, res, next) => {
 
     const promiseArr = Object.keys(cart).map(item => {
       const transaction = cart[item]
-      return Transaction.findById(transaction.id)
-        .then(data => {
-          return data.update({orderId: order.id, status: 'purchased'})
-        })
-        .catch(err => console.log(err))
+      return Transaction.create({
+        ...transaction,
+        orderId: order.id,
+        status: 'purchased'
+      }).catch(err => console.log(err))
     })
 
     await Promise.all(promiseArr)
