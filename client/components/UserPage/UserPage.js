@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import {connect} from 'react-redux'
 
-import {fetchUserData} from '../../store/actions/users'
+import {fetchUserData} from '../../store/actions/actionCreators/users'
 // import PropTypes from 'prop-types'
 
 class UserPage extends React.Component {
@@ -39,9 +39,9 @@ class UserPage extends React.Component {
                   <p>Date of order: {orderDate} </p>
                   <p>
                     Items in Order:{' '}
-                    {order.transactions.map(item => {
-                      let products
-                    })}
+                    {/* {order.transactions.map(item => {
+                      const products
+                    })} */}
                   </p>
                   <p>------------------------------------------</p>
                 </div>
