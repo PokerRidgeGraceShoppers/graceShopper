@@ -37,6 +37,12 @@ class UserPage extends React.Component {
                   </p>
                   <p>Address: {order.address} </p>
                   <p>Date of order: {orderDate} </p>
+                  <p>
+                    Items in Order:{' '}
+                    {order.transactions.map(item => {
+                      let products
+                    })}
+                  </p>
                   <p>------------------------------------------</p>
                 </div>
               )

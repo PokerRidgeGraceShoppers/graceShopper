@@ -2,8 +2,28 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {CardElement, injectStripe} from 'react-stripe-elements'
 import axios from 'axios'
-import ShippingAddressForm from './ShippingAddressForm'
-import {fetchCart} from '../../store/actions/cart'
+import {fetchCart, getCart} from '../../store/actions'
+import CheckoutSuccess from './CheckoutSuccess'
+import {Button} from 'semantic-ui-react'
+
+const style = {
+  base: {
+    iconColor: '#8898AA',
+    color: 'black',
+    lineHeight: '36px',
+    fontWeight: 300,
+    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+    fontSize: '19px',
+
+    '::placeholder': {
+      color: '#8898AA'
+    }
+  },
+  invalid: {
+    iconColor: '#e85746',
+    color: '#e85746'
+  }
+}
 
 class Checkout extends Component {
   constructor(props) {
@@ -20,30 +40,20 @@ class Checkout extends Component {
   }
 
   async submit() {
-    // User clicked submit
     const {address, firstName, lastName, cart} = this.props
     try {
       let {token} = await this.props.stripe.createToken({name: 'Name'})
-
       const total = Object.keys(cart).reduce((acc, currItem) => {
         return acc + cart[currItem].total
       }, 0)
-
       await axios.post('/charge', {
         token: token.id,
         total
       })
       this.setState({complete: true})
-
       await axios.post(
         `/api/orders/${this.props.user.id ? this.props.user.id : 'guest'}`,
-        {
-          total,
-          address,
-          firstName,
-          lastName,
-          cart
-        }
+        {total, address, firstName, lastName, cart}
       )
     } catch (err) {
       this.setState({error: true})
@@ -52,19 +62,21 @@ class Checkout extends Component {
 
   render() {
     console.log(this.props)
-    if (this.state.complete)
-      return <h1>Purchase Complete (go back to orders? or home )</h1>
+    if (this.state.complete) return <CheckoutSuccess />
 
     return (
       <div>
         Checkout Page:
         <div className="checkout">
-          {this.state.error && <p>Invalid Card info</p>}
-          <p>{this.props.firstName}</p>
-          <p>{this.props.lastName}</p>
-          <p>{this.props.street_address}</p>
-          <p>Please enter in your card info below to complete your order: </p>
-          <CardElement />
+          <p>
+            {this.props.firstName} {this.props.lastName}
+          </p>
+          <p>{this.props.address}</p>
+          {this.state.error && <p>Invalid Card info - try again</p>}
+          {!this.state.error && (
+            <p>Please enter in your card info below to complete your order: </p>
+          )}
+          <CardElement style={style} />
           <button onClick={this.submit}>Place your order</button>
         </div>
       </div>
@@ -74,4 +86,6 @@ class Checkout extends Component {
 
 const mapStateToProps = ({cart, user}) => ({cart, user})
 
-export default connect(mapStateToProps, {fetchCart})(injectStripe(Checkout))
+export default connect(mapStateToProps, {fetchCart, getCart})(
+  injectStripe(Checkout)
+)

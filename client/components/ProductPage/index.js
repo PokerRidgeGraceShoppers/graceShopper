@@ -1,8 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {SectionColumn} from '../common'
-import {updateQuantity} from '../../store/actions/products'
-import {addCartThunk} from '../../store/actions/cart'
+import {addCartThunk, updateQuantity} from '../../store/actions'
 import ProductList from './ProductList'
 
 class ProductPage extends React.Component {
@@ -16,7 +15,12 @@ class ProductPage extends React.Component {
       ...this.props.products[id],
       quantity: Number(e.target.value)
     }
-    this.props.updateQuantity(id, updatedProduct)
+
+    console.log(updatedProduct.quantity)
+
+    if (updatedProduct.quantity > 0 && updatedProduct.quantity < 11) {
+      this.props.updateQuantity(id, updatedProduct)
+    }
   }
 
   handleSubmit(id) {

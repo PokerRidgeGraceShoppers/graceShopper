@@ -6,7 +6,8 @@ import {
   addNewReview,
   editReview,
   deleteReview
-} from '../store/actions/reviews'
+} from '../store/actions'
+import {Button} from 'semantic-ui-react'
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -75,11 +76,11 @@ class ReviewForm extends React.Component {
           </select>
           <div>
             {this.state.body.length <= 99 ? (
-              <button type="submit" disabled>
+              <Button type="submit" disabled>
                 Submit
-              </button>
+              </Button>
             ) : (
-              <button type="submit">Submit</button>
+              <Button type="submit">Submit</Button>
             )}
           </div>
         </form>

@@ -7,9 +7,9 @@ import {
   removeCartThunk,
   updateCartThunk,
   updateTotal,
-  fetchCart
-} from '../../store/actions/cart'
-import {me} from '../../store/actions/users'
+  fetchCart,
+  me
+} from '../../store/actions'
 
 class Cart extends Component {
   constructor(props) {
@@ -28,7 +28,9 @@ class Cart extends Component {
   handleClickQuantity(n, id) {
     const {cart} = this.props
     const quantity = cart[id].quantity + n
-    if (quantity > 0) this.props.updateCartThunk(id, {...cart[id], quantity})
+    if (quantity > 0 && quantity < 11) {
+      this.props.updateCartThunk(id, {...cart[id], quantity})
+    }
   }
 
   render() {

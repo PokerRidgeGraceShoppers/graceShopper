@@ -1,5 +1,4 @@
 import React from 'react'
-//import {connect} from 'react-redux'
 import Checkout from './Checkout'
 import ShippingAddressForm from './ShippingAddressForm'
 import {Elements, StripeProvider} from 'react-stripe-elements'
@@ -28,11 +27,7 @@ class CheckoutPage extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    if (this.validateInfo()) {
-      console.log(this.state)
-      this.setState({hasOrderInfo: true})
-    }
-    // this.props.dispatch function
+    if (this.validateInfo()) this.setState({hasOrderInfo: true})
   }
 
   render() {

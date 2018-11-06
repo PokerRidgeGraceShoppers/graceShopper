@@ -1,10 +1,8 @@
 import axios from 'axios'
-import history from '../../history'
+import history from '../../../history'
 import {getCart} from './cart'
 
-export const GET_USER = 'GET_USER'
-export const GET_USER_DATA = 'GET_USER_DATA'
-export const REMOVE_USER = 'REMOVE_USER'
+import {GET_USER, GET_USER_DATA, REMOVE_USER} from '../actionTypes'
 
 export const getUser = user => ({type: GET_USER, user})
 export const getUserData = user => ({type: GET_USER_DATA, user})

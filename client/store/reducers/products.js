@@ -1,8 +1,4 @@
-import {
-  FETCH_PRODUCTS,
-  FETCH_SINGLE_PRODUCT,
-  UPDATE_QUANTITY
-} from '../actions/products'
+import {FETCH_PRODUCTS, FETCH_SINGLE_PRODUCT, UPDATE_QUANTITY} from '../actions'
 
 const initialState = {
   products: {},
