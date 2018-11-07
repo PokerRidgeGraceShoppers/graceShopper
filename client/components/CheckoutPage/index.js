@@ -14,6 +14,7 @@ class CheckoutPage extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.changeShipping = this.changeShipping.bind(this)
   }
 
   validateInfo() {
@@ -23,6 +24,10 @@ class CheckoutPage extends React.Component {
 
   handleChange(event) {
     this.setState({[event.target.name]: event.target.value})
+  }
+
+  changeShipping() {
+    this.setState({hasOrderInfo: false})
   }
 
   handleSubmit(event) {
@@ -42,7 +47,7 @@ class CheckoutPage extends React.Component {
         ) : (
           <StripeProvider apiKey="pk_test_H4ovcpVmhZxbl2vCUQqrLIEx">
             <Elements>
-              <Checkout {...this.state} />
+              <Checkout {...this.state} changeShipping={this.changeShipping} />
             </Elements>
           </StripeProvider>
         )}
