@@ -4,7 +4,6 @@ const {isLoggedIn, isAdmin, isLoggedInAsSelf} = require('./userTypeChecker')
 module.exports = router
 
 router.post('/guest', async (req, res, next) => {
-  console.log(req.body)
   const {firstName, lastName, address, total, cart} = req.body
 
   try {
@@ -25,16 +24,15 @@ router.post('/guest', async (req, res, next) => {
       }).catch(err => console.log(err))
     })
 
-    await Promise.all(promiseArr)
+    const transactions = await Promise.all(promiseArr)
 
-    res.json(order)
+    res.json({order, transactions})
   } catch (err) {
     next(err)
   }
 })
 
 router.post('/:userId', isLoggedInAsSelf, async (req, res, next) => {
-  console.log(req.body)
   const {firstName, lastName, address, total, cart} = req.body
 
   try {
@@ -56,9 +54,9 @@ router.post('/:userId', isLoggedInAsSelf, async (req, res, next) => {
         .catch(err => console.log(err))
     })
 
-    await Promise.all(promiseArr)
+    const transactions = await Promise.all(promiseArr)
 
-    res.json(order)
+    res.json({order, transactions})
   } catch (err) {
     next(err)
   }

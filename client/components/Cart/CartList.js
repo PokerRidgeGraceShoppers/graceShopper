@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {Component} from 'react'
 import CartItem from './CartItem'
 import {SectionRow, SmallSection} from '../common'
 import {withRouter} from 'react-router-dom'
-import {Button} from 'semantic-ui-react'
 
-class CartList extends React.Component {
+class CartList extends Component {
   render() {
+    console.log('creating wrapper for cartList')
+
     const {
       cart,
       products,
@@ -50,15 +51,14 @@ class CartList extends React.Component {
             </h2>
           </SectionRow>
 
-          <Button
-            content="Checkout"
-            basic
-            color="red"
-            type="submit"
+          <button
+            className="btn-submit"
             onClick={() => {
               history.push('/checkout')
             }}
-          />
+          >
+            Checkout
+          </button>
         </SectionRow>
       </SmallSection>
     )

@@ -24,6 +24,7 @@ const gotSingleProductFromServer = product => ({
 export const fetchProducts = () => async dispatch => {
   const {data: products} = await axios.get('/api/products')
   dispatch(gotProductsFromServer(mapProductsToObject(products)))
+  npm
 }
 
 export const fetchSingleProduct = productId => async dispatch => {

@@ -4,7 +4,7 @@ import {CardElement, injectStripe} from 'react-stripe-elements'
 import axios from 'axios'
 import {fetchCart, deleteCart} from '../../store/actions'
 import CheckoutSuccess from './CheckoutSuccess'
-import {Button} from 'semantic-ui-react'
+import {withRouter} from 'react-router-dom'
 
 const style = {
   base: {
@@ -30,7 +30,8 @@ class Checkout extends Component {
     super(props)
     this.state = {
       complete: false,
-      error: false
+      error: false,
+      order: null
     }
     this.submit = this.submit.bind(this)
   }
@@ -50,11 +51,13 @@ class Checkout extends Component {
         token: token.id,
         total
       })
-      this.setState({complete: true})
-      await axios.post(
+
+      const {data} = await axios.post(
         `/api/orders/${this.props.user.id ? this.props.user.id : 'guest'}`,
         {total, address, firstName, lastName, cart}
       )
+
+      this.setState({order: data, complete: true})
 
       this.props.deleteCart()
     } catch (err) {
@@ -63,30 +66,41 @@ class Checkout extends Component {
   }
 
   render() {
-    if (this.state.complete) return <CheckoutSuccess />
+    if (this.state.complete)
+      return (
+        <CheckoutSuccess
+          products={this.props.products}
+          data={this.state.order}
+          history={this.props.history}
+        />
+      )
 
     return (
-      <div>
-        Checkout Page:
+      <div className="checkout-container">
+        <h2>Checkout Page:</h2>
         <div className="checkout">
-          <p>
-            {this.props.firstName} {this.props.lastName}
-          </p>
-          <p>{this.props.address}</p>
+          <p>{`Name:  ${this.props.firstName} ${this.props.lastName}`}</p>
+          <p>{`Address:  ${this.props.address}`}</p>
           {this.state.error && <p>Invalid Card info - try again</p>}
           {!this.state.error && (
             <p>Please enter in your card info below to complete your order: </p>
           )}
           <CardElement style={style} />
-          <button onClick={this.submit}>Place your order</button>
+          <button className="btn-submit" onClick={this.submit}>
+            Submit
+          </button>
         </div>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({cart, user}) => ({cart, user})
+const mapStateToProps = ({cart, user, products}) => ({
+  cart,
+  user,
+  products: products.products
+})
 
-export default connect(mapStateToProps, {fetchCart, deleteCart})(
-  injectStripe(Checkout)
+export default withRouter(
+  connect(mapStateToProps, {fetchCart, deleteCart})(injectStripe(Checkout))
 )

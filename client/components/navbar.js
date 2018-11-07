@@ -5,15 +5,15 @@ import {Link} from 'react-router-dom'
 import {logout} from '../store/actions'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
-  <div style={{position: 'relative'}}>
+  <div style={{position: 'relative'}} className="section-navbar">
     <h1>PokerRidgeGraceShopper</h1>
-    <nav>
-      <div style={{display: 'flex', flexDirection: 'row-reverse'}}>
+    <nav className="nav-items">
+      <div className="nav-item">
         <Link to="/cart">Cart</Link>
         <Link to="/products">See all Products</Link>
       </div>
       {isLoggedIn ? (
-        <div>
+        <div className="nav-item">
           {/* The navbar will show these links after you log in */}
           <Link to="/home">Home</Link>
           <a href="#" onClick={handleClick}>
@@ -21,14 +21,13 @@ const Navbar = ({handleClick, isLoggedIn}) => (
           </a>
         </div>
       ) : (
-        <div>
+        <div className="nav-item">
           {/* The navbar will show these links before you log in */}
           <Link to="/login">Login</Link>
           <Link to="/signup">Sign Up</Link>
         </div>
       )}
     </nav>
-    <hr />
   </div>
 )
 

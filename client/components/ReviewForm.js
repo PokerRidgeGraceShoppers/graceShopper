@@ -43,7 +43,7 @@ class ReviewForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className="form-group">
             <label htmlFor="title">
               <small>Title</small>
             </label>
@@ -54,14 +54,14 @@ class ReviewForm extends React.Component {
               placeholder="review must have a name"
             />
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="body">
               <small>Review</small>
             </label>
-            <input
+            <textarea
+              style={{height: '100px', width: '500px'}}
               onChange={this.handleChange}
               name="body"
-              type="text"
               placeholder="must be over 100 characters"
             />
           </div>

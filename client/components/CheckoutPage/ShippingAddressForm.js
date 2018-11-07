@@ -1,11 +1,11 @@
 import React from 'react'
-import {Button} from 'semantic-ui-react'
+import {Button, Input} from 'semantic-ui-react'
 
 const ShippingAddressForm = props => {
   return (
-    <div>
-      Please enter in your shipping information below:
-      <form onSubmit={props.handleSubmit}>
+    <div className="checkout-form-container">
+      <h3>Please enter in your shipping information below:</h3>
+      <form className="checkout-form" onSubmit={props.handleSubmit}>
         <input
           name="firstName"
           value={props.firstName}
@@ -24,7 +24,9 @@ const ShippingAddressForm = props => {
           placeholder="Street Address"
           onChange={props.handleChange}
         />
-        <Button onSubmit={props.handleSubmit}>Submit</Button>
+        <button className="btn-submit" onSubmit={props.handleSubmit}>
+          Submit
+        </button>
       </form>
     </div>
   )
