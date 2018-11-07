@@ -27,7 +27,7 @@ router.post('/guest', async (req, res, next) => {
 
     await Promise.all(promiseArr)
 
-    res.json(order)
+    res.json({order, cart})
   } catch (err) {
     next(err)
   }
@@ -58,7 +58,7 @@ router.post('/:userId', isLoggedInAsSelf, async (req, res, next) => {
 
     await Promise.all(promiseArr)
 
-    res.json(order)
+    res.json({order, cart})
   } catch (err) {
     next(err)
   }

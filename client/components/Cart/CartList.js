@@ -16,7 +16,7 @@ class CartList extends React.Component {
 
     return (
       <SmallSection style={{width: '90%'}}>
-        <h1>This is the cart</h1>
+        <h1>Cart</h1>
         {Object.keys(cart).map(id => {
           const {title} = products[id]
           return (
@@ -50,15 +50,28 @@ class CartList extends React.Component {
             </h2>
           </SectionRow>
 
-          <Button
-            content="Checkout"
-            basic
-            color="red"
-            type="submit"
-            onClick={() => {
-              history.push('/checkout')
-            }}
-          />
+          {Object.keys(cart).length > 0 ? (
+            <Button
+              content="Checkout"
+              basic
+              color="red"
+              type="submit"
+              onClick={() => {
+                history.push('/checkout')
+              }}
+            />
+          ) : (
+            <Button
+              content="Checkout"
+              basic
+              color="red"
+              type="submit"
+              onClick={() => {
+                history.push('/checkout')
+              }}
+              disabled
+            />
+          )}
         </SectionRow>
       </SmallSection>
     )
