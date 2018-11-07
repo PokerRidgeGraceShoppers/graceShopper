@@ -33,14 +33,22 @@ class Checkout extends Component {
       error: false,
       order: null
     }
-    this.submit = this.submit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchCart()
   }
+  handleChange = ({error}) => {
+    if (error) {
+      this.setState({errorMessage: error.message})
+    } else {
+      this.setState({errorMessage: ''})
+    }
+  }
 
-  async submit() {
+  async handleSubmit() {
     const {address, firstName, lastName, cart} = this.props
     try {
       let {token} = await this.props.stripe.createToken({name: 'Name'})

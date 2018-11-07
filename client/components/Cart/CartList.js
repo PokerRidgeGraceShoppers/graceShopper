@@ -17,7 +17,7 @@ class CartList extends Component {
 
     return (
       <SmallSection style={{width: '90%'}}>
-        <h1>This is the cart</h1>
+        <h1>Cart</h1>
         {Object.keys(cart).map(id => {
           const {title} = products[id]
           return (

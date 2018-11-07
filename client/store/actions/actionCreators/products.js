@@ -29,5 +29,5 @@ export const fetchProducts = () => async dispatch => {
 
 export const fetchSingleProduct = productId => async dispatch => {
   const {data: product} = await axios.get(`/api/products/${productId}`)
-  dispatch(gotSingleProductFromServer(product))
+  dispatch(gotSingleProductFromServer({...product, quantity: 1}))
 }

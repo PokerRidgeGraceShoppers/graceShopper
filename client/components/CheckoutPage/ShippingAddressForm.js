@@ -1,5 +1,4 @@
 import React from 'react'
-import {Button, Input} from 'semantic-ui-react'
 
 const ShippingAddressForm = props => {
   return (
@@ -25,7 +24,7 @@ const ShippingAddressForm = props => {
           onChange={props.handleChange}
         />
         <button className="btn-submit" onSubmit={props.handleSubmit}>
-          Submit
+          Cherckout
         </button>
       </form>
     </div>

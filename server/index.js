@@ -1,3 +1,5 @@
+if (process.env.NODE_ENV !== 'production') require('../secrets')
+
 const path = require('path')
 const express = require('express')
 const morgan = require('morgan')
@@ -10,8 +12,7 @@ const sessionStore = new SequelizeStore({db})
 const PORT = process.env.PORT || 8080
 const app = express()
 const socketio = require('socket.io')
-const stripe = require('stripe')('sk_test_YDgNulHBsKCzDl0cKOEx1h3i')
-
+const stripe = require('stripe')(process.env.STRIPE_SECRETKEY)
 module.exports = app
 
 // This is a global Mocha hook, used for resource cleanup.
@@ -28,7 +29,7 @@ if (process.env.NODE_ENV === 'test') {
  * keys as environment variables, so that they can still be read by the
  * Node process on process.env
  */
-if (process.env.NODE_ENV !== 'production') require('../secrets')
+// if (process.env.NODE_ENV !== 'production') require('../secrets')
 
 // passport registration
 passport.serializeUser((user, done) => done(null, user.id))

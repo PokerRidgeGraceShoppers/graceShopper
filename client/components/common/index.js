@@ -1,6 +1,5 @@
 export * from './SmallSection'
 export * from './ColumnWrap'
 export * from './SectionColumn'
-export * from './Dropdown'
 export * from './SectionRow'
 export * from './Input'

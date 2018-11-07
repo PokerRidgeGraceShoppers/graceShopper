@@ -7,7 +7,6 @@ import {
   editReview,
   deleteReview
 } from '../store/actions'
-import {Button} from 'semantic-ui-react'
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -24,7 +23,6 @@ class ReviewForm extends React.Component {
 
   handleSubmit(evt) {
     evt.preventDefault()
-    console.log('hit handleSubmit in reviewForm & evt', evt.target)
     const {productId, userId} = this.props
     this.props.makeReview({...this.state, productId, userId})
   }
@@ -47,7 +45,7 @@ class ReviewForm extends React.Component {
             <label htmlFor="title">
               <small>Title</small>
             </label>
-            <input
+            <textarea
               onChange={this.handleChange}
               name="title"
               type="text"
@@ -74,13 +72,14 @@ class ReviewForm extends React.Component {
             <option value="4">4 Stars</option>
             <option value="5">5 Stars</option>
           </select>
+
           <div>
             {this.state.body.length <= 99 ? (
-              <Button type="submit" disabled>
+              <button type="submit" disabled>
                 Submit
-              </Button>
+              </button>
             ) : (
-              <Button type="submit">Submit</Button>
+              <button type="submit">Submit</button>
             )}
           </div>
         </form>

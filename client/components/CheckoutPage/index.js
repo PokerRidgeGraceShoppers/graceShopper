@@ -15,6 +15,7 @@ class CheckoutPage extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.changeShipping = this.changeShipping.bind(this)
   }
 
   validateInfo() {
@@ -24,6 +25,10 @@ class CheckoutPage extends React.Component {
 
   handleChange(event) {
     this.setState({[event.target.name]: event.target.value})
+  }
+
+  changeShipping() {
+    this.setState({hasOrderInfo: false})
   }
 
   handleSubmit(event) {
