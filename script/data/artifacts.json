@@ -1,0 +1,430 @@
+[
+  {
+    "title": "Rider and Birds",
+    "category": "Drinking cups",
+    "price": 57020,
+    "description":
+      "A majestic rider surrounded by birds and attended by a winged deity greets you as the wine recedes.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/Rider_BM_B1.jpg",
+    "availability": true,
+    "inventory": 9
+  },
+  {
+    "title": "Vase with Beats",
+    "category": "Vases",
+    "price": 88404,
+    "description":
+      "Various mythical and powerful creatures decorate this striking 6th Century Corinthian vase. It's resemblance to temple friezes is certainly not accidental.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/Corinthian_jug_animal_frieze_580_BC_Staatliche_Antikensammlungen.jpg",
+    "availability": true,
+    "inventory": 3
+  },
+  {
+    "title": "Zeus versus Typhon",
+    "category": "Vases",
+    "price": 57613,
+    "description":
+      "This 6th century amphora depicts the confrontation between the king of the gods, Zeus, and the hideous, winged, serpentine giant, Typhon. With Typhon's defeat, the thunderbolt-weilding deity secured his status as supreme Hellenic deity. For some reason the painter chose to depict Typhon with pointed ears.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/Zeus_Typhon_Staatliche_Antikensammlungen_596.jpg",
+    "availability": true,
+    "inventory": 8
+  },
+  {
+    "title": "Dionysus Reclining on the Waves",
+    "category": "Drinking cups",
+    "price": 58534,
+    "description":
+      "This kylix was painted by the unparalleled Exekias, a master of the Athenian black-figure technique. Here he has depicted the the god of the vine and madness, Dionysus, reclining while on a trireme. Dolphins surround the ship and the mast is overtaken by a climbing and fruitful vine that reaches to the heavens.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/Exekias_Dionysos_Staatliche_Antikensammlungen_2044_n2.jpg",
+    "availability": true,
+    "inventory": 5
+  },
+  {
+    "title": "Achilles and Patroclus",
+    "category": "Drinking cups",
+    "price": 52818,
+    "description":
+      "The great warrior Achilles tends to a wound of his mentor and beloved friend Patroclus. The young hero focuses with sublime serenity on his task while the older fighter strains against the very edge of the painting in pain.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/Akhilleus_Patroklos_Antikensammlung_Berlin_F2278.jpg",
+    "availability": true,
+    "inventory": 7
+  },
+  {
+    "title": "Bust of Homer",
+    "category": "Statues",
+    "price": 85129,
+    "description":
+      "If you listen closely, you can almost hear whispered tales of unwilting heroic glory from this famous bust of the famed bard.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/statues/Homeros_Caetani_Louvre_Ma440_n1.jpg",
+    "availability": true,
+    "inventory": 7
+  },
+  {
+    "title": "Vale of York Cup",
+    "category": "Trinkets",
+    "price": 50162,
+    "description":
+      "This beauteous little cup once held a great tresure. Perhaps it will bring this blessing to you.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/trinkets/Vale_of_York_Hoard_Cup.jpg",
+    "availability": true,
+    "inventory": 6
+  },
+  {
+    "title": "Kithara player",
+    "category": "Drinking cups",
+    "price": 78121,
+    "description":
+      "A young woman steps around the border on her way to play at her next drinking party.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/Woman_kithara_CdM_581.jpg",
+    "availability": true,
+    "inventory": 9
+  },
+  {
+    "title": "Heracles and the Hydra - Etruscan",
+    "category": "Vases",
+    "price": 29009,
+    "description":
+      "The greatest of all Greek heroes, Heracles, faces off against the many-headed Hydra. Heracles prepares to smash one head of the beast with his club, while his nephew slices off another. But they'll need to use fire to keep the heads from growing back!",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/Herakles_and_the_Hydra_Water_Jar_(Etruscan%2C_c._525_BC)_--_Getty_Villa_-_Collection.jpg",
+    "availability": true,
+    "inventory": 5
+  },
+  {
+    "title": "Mycenean hunting dagger",
+    "category": "Arms and armaments",
+    "price": 62820,
+    "description":
+      "This bronze dagger was inlaid with gold and silver to depict a lion hunt. Though this dagger is ancient, a little buffing will have it shining like new. That's the miracle of bronze!",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/arms_and_armor/Hunting_Mycenaean_Dagger.jpg",
+    "availability": true,
+    "inventory": 10
+  },
+  {
+    "title": "Writing tablet",
+    "category": "Writing",
+    "price": 93207,
+    "description":
+      "Students learned to write on such a writing tablet. The writing surface was made of wax. With a little smudging previous incisions could be erased, permitting easy reuse.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/writing/Schoolchild_excercies-IMG_6288.jpg",
+    "availability": true,
+    "inventory": 7
+  },
+  {
+    "title": "Boar tusk helmet",
+    "category": "Arms and armaments",
+    "price": 34612,
+    "description":
+      "Only the most elite warriors could afford to adorn themselves with a helmet made out of the tusks of wild boars.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/arms_and_armor/Eberzahnhelm_01.jpg",
+    "availability": true,
+    "inventory": 8
+  },
+  {
+    "title": "Bronze Segmented Armor",
+    "category": "Arms and armaments",
+    "price": 77769,
+    "description":
+      "No spear ever penetrated this cozy armor. Your whole torso is protected without sacrificing mobility. A perfect match with a boar-tusk helmet. (Helemt not included)",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/arms_and_armor/Mycenaean_armour_from_chamber_tomb_12_of_Dendra_1.JPG",
+    "availability": true,
+    "inventory": 9
+  },
+  {
+    "title": "Minoan board game",
+    "category": "Cool",
+    "price": 24691,
+    "description":
+      "We have the pieces and the board for this game from the Bronze Age; we couldn't figure out the rules, so that's up to you.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/cool/Zatrikion.jpg",
+    "availability": true,
+    "inventory": 1
+  },
+  {
+    "title": "Wild boar",
+    "category": "Drinking cups",
+    "price": 14978,
+    "description":
+      "This stylized piece depicts that legendary boar which once drew many great heroes to the slopes of Aetolia. The heavens and earth seem to bend to the will of this monstrous creature.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/Calydonian_Hunt_British_Museum.jpg",
+    "availability": true,
+    "inventory": 7
+  },
+  {
+    "title": "Standard of Ur",
+    "category": "Cool",
+    "price": 61215,
+    "description":
+      "Though this wooden box never seems to have been used, what it lacks in content it handily makes up in decoration. On one side is depicted scense of piece; on the other scenes of war. The cylce between war and peace characterized urban human life in the Bronze Age.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/cool/standard+of+ur.jpg",
+    "availability": true,
+    "inventory": 8
+  },
+  {
+    "title": "Heracles and the Hydra - Athenaian",
+    "category": "Vases",
+    "price": 86236,
+    "description":
+      "This 6th century amphora shows Heracles and his nephew Iphicles struggling agains the many-headed hydra. Heracles wears the impenetrable hide of the Nemean lion for protection, but has forgone his trusty club for a sword for this battle.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/Anfora_attica_con_heraclee_l'idra%2C_560-540_ac_ca.%2C_da_tarquinia_(MAN_tarquiniense).jpg",
+    "availability": true,
+    "inventory": 5
+  },
+  {
+    "title": "Terracotta house",
+    "category": "Trinkets",
+    "price": 53110,
+    "description":
+      "Few houses from the Bronze Age survive for us to examine. But this charming little model gives us a good idea of what they looked like.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/trinkets/Clay_model_of_a_house_from_Archanes_02.jpg",
+    "availability": true,
+    "inventory": 4
+  },
+  {
+    "title": "Gold wreath",
+    "category": "Cool",
+    "price": 23540,
+    "description":
+      "Victors of the ancient athletic games won an olive or laurel wreath. Rest assured, as this gold crown resembles an ivy wreath, you won't be accused of resting on your laurels.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/trinkets/SF643047.jpg",
+    "availability": true,
+    "inventory": 6
+  },
+  {
+    "title": "Terracotta swing",
+    "category": "Trinkets",
+    "price": 655,
+    "description":
+      "This charming little model is unlike any ancient artifact you have ever seen. The significance of the swinging figure is a mystery yet uncovered. Is it a deity? An acrobat? A child's plaything?",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/trinkets/The_Swing_archmus_Heraklion.jpg",
+    "availability": true,
+    "inventory": 10
+  },
+  {
+    "title": "Phaistos Disk",
+    "category": "Cool",
+    "price": 93128,
+    "description":
+      "The jury is still out on the authenticity of this strange disk. If it is real, great rewards await whoever manages to decipher these glyphs!",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/writing/%CE%94%CE%AF%CF%83%CE%BA%CE%BF%CF%82_%CF%84%CE%B7%CF%82_%CE%A6%CE%B1%CE%B9%CF%83%CF%84%CE%BF%CF%8D_%CF%80%CE%BB%CE%B5%CF%85%CF%81%CE%AC_%CE%91_6380.jpg",
+    "availability": true,
+    "inventory": 4
+  },
+  {
+    "title": "Terracotta temple",
+    "category": "Trinkets",
+    "price": 51819,
+    "description":
+      "What is likely depicted here is a temple or shrine within which sits either a goddess or priestess. The two figures peering in to the roof of the model have brought with them a calf. We have here a many-layered, irresistible mystery.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/trinkets/%CE%9F%CE%BC%CE%BF%CE%AF%CF%89%CE%BC%CE%B1_%CE%BD%CE%B1%CE%BF%CF%8D_%CF%84%CE%BF%CF%85_%CF%84%CF%8D%CF%80%CE%BF%CF%85_%CF%84%CE%B7%CF%82_%CE%B8%CE%B5%CE%AC%CF%82_%CE%BC%CE%B5_%CF%85%CF%88%CF%89%CE%BC%CE%AD%CE%BD%CE%B1_%CF%87%CE%AD%CF%81%CE%B9%CE%B1_%CE%91%CE%9C%CE%97_9145.jpg",
+    "availability": true,
+    "inventory": 5
+  },
+  {
+    "title": "Bronze shield",
+    "category": "Arms and armaments",
+    "price": 27224,
+    "description":
+      "This beautiful bronze shield is undamaged; it is unlikely to have ever been used in battle. The bestial head is nevertheless imposing in the center of this shield. Scenes of hunts of wild animals, like those depicted around the periphery of this piece, were a common preoccupation in ancient art.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/statues/%CE%A7%CE%AC%CE%BB%CE%BA%CE%B9%CE%BD%CE%B7_%CE%B1%CF%83%CF%80%CE%AF%CE%B4%CE%B1_%CE%B1%CF%80%CF%8C_%CF%84%CE%BF_%CE%99%CE%B4%CE%B1%CE%AF%CE%BF_%CE%86%CE%BD%CE%B4%CF%81%CE%BF_9101.jpg",
+    "availability": true,
+    "inventory": 7
+  },
+  {
+    "title": "Students",
+    "category": "Drinking cups",
+    "price": 98584,
+    "description":
+      "As you finish your wine, you see on the bottom of your kylix two women. On further inspection you notice the female on the left holding a stylus and writing tablets, reluctantly drawn by her companion. Perhaps the reluctant student neglected to finish carving her homework into her tablet.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/DT11671.jpg",
+    "availability": true,
+    "inventory": 7
+  },
+  {
+    "title": "Geometric vase",
+    "category": "Vases",
+    "price": 37480,
+    "description":
+      "This extraordinary piece evidences a mind that has a developed a reverential approach to the natural world. The geometric patterns that decorate the vase are abstracted from observations of nature. Various ungulates draw attention to the center of the vase, with the centerpiece being the deer or goat that nibble on a tree. These contrast with the horses tied within stbles. The solemnity of this piece is apropos, as this was once used as this oversized vase as originally used as a grave marker.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/DT7212.jpg",
+    "availability": true,
+    "inventory": 6
+  },
+  {
+    "title": "Boars",
+    "category": "Vases",
+    "price": 95301,
+    "description":
+      "Two wild boars come head-to-head on this vase. The two stand in metaphorical place of two warriors vying to excel in combat.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/DT1067.jpg",
+    "availability": true,
+    "inventory": 4
+  },
+  {
+    "title": "Octopus",
+    "category": "Vases",
+    "price": 61564,
+    "description":
+      "Octopuses? Octopi? Octopodes? However you choose to pluralize the name of this creature, rest easy, for this vase only depicts one.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/DT255.jpg",
+    "availability": true,
+    "inventory": 8
+  },
+  {
+    "title": "Plate of fish",
+    "category": "Trinkets",
+    "price": 48010,
+    "description":
+      "For the fine diner who wants the appeal of having a plate full of fish without the fish.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/DT4896.jpg",
+    "availability": true,
+    "inventory": 6
+  },
+  {
+    "title": "Dionysus",
+    "category": "Drinking cups",
+    "price": 2565,
+    "description":
+      "The god of wine and madness is in pure ecstasy here, as vines grow from him in every direction. Such is the bountiful power of Dionysus.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/Coupe_%C3%A0_l'oiseleur_Louvre_F68.jpg",
+    "availability": true,
+    "inventory": 5
+  },
+  {
+    "title": "Medusa Triskelion",
+    "category": "Arms and armaments",
+    "price": 47021,
+    "description":
+      "This bronze boss is ideal for a warrior's shield. The gorgon head strikes fear into your enemies, while the three wings lighten your load in battle.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/arms_and_armor/OlympiaGorgo_retouched.jpg",
+    "availability": true,
+    "inventory": 9
+  },
+  {
+    "title": "Cup of Nestor",
+    "category": "Cool",
+    "price": 13480,
+    "description":
+      "This fragmentary cup seems unremarkable at first glance, but a knowledgeable consumer, like you, knows well that the cup of Nestor is one of the earlies examples of the Greek alphabet.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/writing/Nestorbecher_Ischia.jpg",
+    "availability": true,
+    "inventory": 5
+  },
+  {
+    "title": "Rosetta Stone",
+    "category": "Cool",
+    "price": 8816319,
+    "description": "Yes, THE Rosetta Stone. It's a one-of-a-kind, so act now!",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/writing/The_Rosetta_Stone_(1878)_-_TIMEA.jpg",
+    "availability": true,
+    "inventory": 1
+  },
+  {
+    "title": "Mycenean Dagger with Animals",
+    "category": "Arms and armaments",
+    "price": 761501,
+    "description":
+      "This beautiful bronze dagger is decorated with dynamic animals.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/arms_and_armor/Dagger_with_animals_Mycenean_culture%2C_NAMA_8340_080876.jpg",
+    "availability": true,
+    "inventory": 10
+  },
+  {
+    "title": "Terracotta Animal Cup",
+    "category": "Trinkets",
+    "price": 186215,
+    "description":
+      "What is this strange animal? A pig? A bear? A badger? Why was this animal chosen? There's only one way to find out, and that's with hands-on examination!",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/trinkets/Rhyton_pig_ECII_NAMA_N6176_080765.jpg",
+    "availability": true,
+    "inventory": 72
+  },
+  {
+    "title": "Lion Statue",
+    "category": "Statues",
+    "price": 63450,
+    "description":
+      "This larger-than-life statue depicts a lion, in a way. By the time this was carved, lions were nearly extinct in Europe. The sculptor had little refrence for a lion, so modeled the creature's pose on that of a dog. Thus we have an intimidating, but playful lion.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/statues/lion-acts-like-dog.jpg",
+    "availability": true,
+    "inventory": 2
+  },
+  {
+    "title": "Sheep Rhyton",
+    "category": "Cool",
+    "price": 27082,
+    "description":
+      "This lovely piece is ideal for libations. The head of the sheep is stunningly lifelike and the small figures on the periphery seem playful.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/GR1036.jpg",
+    "availability": true,
+    "inventory": 6
+  },
+  {
+    "title": "Teacher/Student Writing tablet",
+    "category": "Cool",
+    "price": 80565,
+    "description":
+      "We have a marvellous find here: On the top lines, a master scribe has written a text for a student to copy. On the bottom four lines, the student has made their best attempt at the assignment. The text reads, «Σοφοῦ παρ’ ἀνδρὸς προσδέχου συμβουλίαν» «Μὴ πᾶσιν εἰκῇ τοῖς φίλοις πιστεύεται» i.e. 'Accept advice from wise men' and 'Do not trust your friends haphazardly.' Shrewed advice from a man who mispelled the last word.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/writing/Wax_writing_tablet_(2nd_C)_-_BL_Add_MS_34186.jpg",
+    "availability": true,
+    "inventory": 7
+  },
+  {
+    "title": "Bronze griffin head",
+    "category": "Statues",
+    "price": 99138,
+    "description":
+      "Griffins have appeared through Eurasian art for millenia. This griffin head would be as home in Ancient Persia as it would in the late Byzantine Empire.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/statues/DT7204.jpg",
+    "availability": true,
+    "inventory": 4
+  },
+  {
+    "title": "Eyes cup",
+    "category": "Drinking cups",
+    "price": 91901,
+    "description":
+      "The eyes have it! Between two wide eyes, sits Dionysus attended by maenads and satyrs. Doubtlessly this cup would be all the rage at any drinking party, as your guests briefly take on the comic appearance of a character from a comedy while downing the last dregs of wine.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/DP273730.jpg",
+    "availability": true,
+    "inventory": 7
+  }
+]

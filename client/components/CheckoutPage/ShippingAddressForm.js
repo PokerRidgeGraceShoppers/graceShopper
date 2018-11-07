@@ -24,7 +24,7 @@ const ShippingAddressForm = props => {
           onChange={props.handleChange}
         />
         <button className="btn-submit" onSubmit={props.handleSubmit}>
-          Cherckout
+          Checkout
         </button>
       </form>
     </div>

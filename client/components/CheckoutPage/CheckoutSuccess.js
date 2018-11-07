@@ -1,6 +1,7 @@
 import React from 'react'
 
 const CheckoutSuccess = ({data, products, history}) => {
+  console.log(data)
   const {order, transactions} = data
   return (
     <div className="checkout-order">

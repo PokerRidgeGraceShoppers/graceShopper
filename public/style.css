@@ -219,3 +219,9 @@ a {
   font-size: 18px;
   font-weight: 600;
 }
+
+.single-product-image {
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+}

@@ -34,18 +34,10 @@ class Checkout extends Component {
       order: null
     }
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchCart()
-  }
-  handleChange = ({error}) => {
-    if (error) {
-      this.setState({errorMessage: error.message})
-    } else {
-      this.setState({errorMessage: ''})
-    }
   }
 
   async handleSubmit() {
@@ -94,7 +86,7 @@ class Checkout extends Component {
             <p>Please enter in your card info below to complete your order: </p>
           )}
           <CardElement style={style} />
-          <button className="btn-submit" onClick={this.submit}>
+          <button className="btn-submit" onClick={this.handleSubmit}>
             Submit
           </button>
         </div>

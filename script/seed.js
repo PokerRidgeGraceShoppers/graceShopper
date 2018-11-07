@@ -9,7 +9,7 @@ const {
 } = require('../server/db/models')
 const userData = require('./data/users.json')
 const reviewData = require('./data/reviews.json')
-const productData = require('./data/products.json')
+const productData = require('./data/artifacts.json')
 
 const getIndex = l => Math.floor(Math.random() * l)
 
