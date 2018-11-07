@@ -4,7 +4,6 @@ import {CardElement, injectStripe} from 'react-stripe-elements'
 import axios from 'axios'
 import {fetchCart, getCart} from '../../store/actions'
 import CheckoutSuccess from './CheckoutSuccess'
-import {Link} from 'react-router-dom'
 
 class Checkout extends Component {
   constructor(props) {
