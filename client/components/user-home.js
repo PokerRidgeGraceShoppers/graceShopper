@@ -9,15 +9,18 @@ import {Link} from 'react-router-dom'
 export const UserHome = props => {
   const {user} = props
 
+  console.log('props', props)
+
   return (
-    <div>
-      <h3>
-        Welcome, {user.firstname} {user.lastName}
-      </h3>
-      <Link to={'/products'}>
+    <div id="userData">
+      <h2 className="userName">
+        Welcome, {user.firstName} {user.lastName}
+      </h2>
+      <h2 className="userEmail">Email: {user.email}</h2>
+      <Link to="/products">
         <h3>Click here to see our products!</h3>
       </Link>
-      <Link to={'/profile'}>
+      <Link to="/profile">
         <h3>Click here to see your profile!</h3>
       </Link>
     </div>
@@ -29,7 +32,6 @@ export const UserHome = props => {
  */
 const mapState = state => {
   return {
-    email: state.user.email,
     user: state.user
   }
 }
@@ -40,5 +42,7 @@ export default connect(mapState)(UserHome)
  * PROP TYPES
  */
 UserHome.propTypes = {
-  email: PropTypes.string
+  email: PropTypes.string,
+  firstName: PropTypes.string,
+  lastName: PropTypes.string
 }
