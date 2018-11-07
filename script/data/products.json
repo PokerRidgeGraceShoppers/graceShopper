@@ -1,876 +1,430 @@
 [
   {
-    "title": "Wine - Chardonnay South",
-    "category": "category-1",
-    "price": 5783,
-    "description": "Nullam molestie nibh in lectus.",
-    "available ": true,
-    "inventory": 91
-  },
-  {
-    "title": "Rosemary - Primerba, Paste",
-    "category": "category-1",
-    "price": 884,
+    "title": "Rider and Birds",
+    "category": "Drinking cups",
+    "price": 57020,
     "description":
-      "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
-    "available ": false,
-    "inventory": 13
-  },
-  {
-    "title": "Cheese - Comtomme",
-    "category": "category-3",
-    "price": 5713,
-    "description": "Etiam justo.",
-    "available ": false,
-    "inventory": 48
-  },
-  {
-    "title": "Sugar - Brown",
-    "category": "category-1",
-    "price": 585,
-    "description": "Proin eu mi. Nulla ac enim.",
-    "available ": false,
-    "inventory": 57
-  },
-  {
-    "title": "Milk - 2%",
-    "category": "category-1",
-    "price": 5288,
-    "description":
-      "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
-    "available ": true,
-    "inventory": 79
-  },
-  {
-    "title": "Chevril",
-    "category": "category-4",
-    "price": 8529,
-    "description":
-      "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.",
-    "available ": false,
-    "inventory": 17
-  },
-  {
-    "title": "Flower - Dish Garden",
-    "category": "category-1",
-    "price": 5062,
-    "description":
-      "Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.",
-    "available ": false,
-    "inventory": 63
-  },
-  {
-    "title": "Syrup - Monin, Amaretta",
-    "category": "category-4",
-    "price": 781,
-    "description":
-      "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
-    "available ": true,
-    "inventory": 11
-  },
-  {
-    "title": "Capers - Pickled",
-    "category": "category-1",
-    "price": 2909,
-    "description":
-      "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.",
-    "available ": false,
-    "inventory": 35
-  },
-  {
-    "title": "Flour - Rye",
-    "category": "category-2",
-    "price": 6282,
-    "description":
-      "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
-    "available ": false,
-    "inventory": 30
-  },
-  {
-    "title": "Brownies - Two Bite, Chocolate",
-    "category": "category-3",
-    "price": 9327,
-    "description": "Phasellus in felis.",
-    "available ": false,
-    "inventory": 25
-  },
-  {
-    "title": "Rappini - Andy Boy",
-    "category": "category-3",
-    "price": 3462,
-    "description":
-      "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
-    "available ": false,
-    "inventory": 12
-  },
-  {
-    "title": "Piping - Bags Quizna",
-    "category": "category-2",
-    "price": 2469,
-    "description":
-      "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
-    "available ": true,
-    "inventory": 1
-  },
-  {
-    "title": "Crackers - Water",
-    "category": "category-4",
-    "price": 4978,
-    "description":
-      "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.",
-    "available ": false,
-    "inventory": 78
-  },
-  {
-    "title": "Ranchero - Primerba, Paste",
-    "category": "category-3",
-    "price": 615,
-    "description":
-      "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
-    "available ": true,
-    "inventory": 78
-  },
-  {
-    "title": "Nut - Walnut, Pieces",
-    "category": "category-5",
-    "price": 8636,
-    "description": "Praesent blandit. Nam nulla.",
-    "available ": false,
-    "inventory": 82
-  },
-  {
-    "title": "Sauce - White, Mix",
-    "category": "category-4",
-    "price": 779,
-    "description":
-      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.",
-    "available ": false,
-    "inventory": 79
-  },
-  {
-    "title": "Wine - Peller Estates Late",
-    "category": "category-4",
-    "price": 5311,
-    "description":
-      "Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.",
-    "available ": false,
-    "inventory": 84
-  },
-  {
-    "title": "Soup - Campbells, Cream Of",
-    "category": "category-5",
-    "price": 2354,
-    "description":
-      "Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
-    "available ": true,
-    "inventory": 63
-  },
-  {
-    "title": "Veal - Osso Bucco",
-    "category": "category-2",
-    "price": 655,
-    "description":
-      "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
-    "available ": false,
-    "inventory": 10
-  },
-  {
-    "title": "Pastry - Lemon Danish - Mini",
-    "category": "category-3",
-    "price": 9312,
-    "description":
-      "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.",
-    "available ": false,
-    "inventory": 35
-  },
-  {
-    "title": "Muffin - Mix - Strawberry Rhubarb",
-    "category": "category-2",
-    "price": 519,
-    "description": "In sagittis dui vel nisl.",
-    "available ": false,
-    "inventory": 52
-  },
-  {
-    "title": "Eel Fresh",
-    "category": "category-5",
-    "price": 2722,
-    "description":
-      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.",
-    "available ": false,
-    "inventory": 7
-  },
-  {
-    "title": "Beef - Cow Feet Split",
-    "category": "category-1",
-    "price": 9858,
-    "description":
-      "Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
-    "available ": true,
-    "inventory": 24
-  },
-  {
-    "title": "Beef - Rib Roast, Capless",
-    "category": "category-1",
-    "price": 374,
-    "description":
-      "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-    "available ": true,
-    "inventory": 31
-  },
-  {
-    "title": "Pork Loin Cutlets",
-    "category": "category-2",
-    "price": 953,
-    "description": "Duis at velit eu est congue elementum.",
-    "available ": true,
-    "inventory": 14
-  },
-  {
-    "title": "Potatoes - Idaho 100 Count",
-    "category": "category-4",
-    "price": 614,
-    "description":
-      "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.",
-    "available ": true,
-    "inventory": 32
-  },
-  {
-    "title": "Vol Au Vents",
-    "category": "category-4",
-    "price": 480,
-    "description":
-      "Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus.",
-    "available ": true,
-    "inventory": 66
-  },
-  {
-    "title": "Appetizer - Tarragon Chicken",
-    "category": "category-2",
-    "price": 2565,
-    "description": "Nulla justo.",
-    "available ": true,
-    "inventory": 95
-  },
-  {
-    "title": "Seedlings - Mix, Organic",
-    "category": "category-2",
-    "price": 47,
-    "description":
-      "Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.",
-    "available ": true,
-    "inventory": 29
-  },
-  {
-    "title": "Cookies - Englishbay Oatmeal",
-    "category": "category-1",
-    "price": 1348,
-    "description":
-      "Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.",
-    "available ": false,
-    "inventory": 59
-  },
-  {
-    "title": "Sauce - Mint",
-    "category": "category-5",
-    "price": 8319,
-    "description":
-      "Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.",
-    "available ": true,
-    "inventory": 28
-  },
-  {
-    "title": "Ice Cream - Strawberry",
-    "category": "category-5",
-    "price": 7615,
-    "description": "Nullam varius.",
-    "available ": true,
-    "inventory": 25
-  },
-  {
-    "title": "Pepper - Chipotle, Canned",
-    "category": "category-1",
-    "price": 1865,
-    "description":
-      "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.",
-    "available ": true,
-    "inventory": 72
-  },
-  {
-    "title": "Smirnoff Green Apple Twist",
-    "category": "category-3",
-    "price": 6345,
-    "description": "Nam dui.",
-    "available ": true,
-    "inventory": 2
-  },
-  {
-    "title": "Ecolab Silver Fusion",
-    "category": "category-2",
-    "price": 2782,
-    "description":
-      "Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.",
-    "available ": true,
-    "inventory": 61
-  },
-  {
-    "title": "Pear - Asian",
-    "category": "category-5",
-    "price": 8565,
-    "description":
-      "Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.",
-    "available ": true,
-    "inventory": 75
-  },
-  {
-    "title": "Cheese - Comte",
-    "category": "category-5",
-    "price": 9938,
-    "description": "Nunc rhoncus dui vel sem.",
-    "available ": true,
-    "inventory": 48
-  },
-  {
-    "title": "Rum - Light, Captain Morgan",
-    "category": "category-2",
-    "price": 919,
-    "description": "Duis mattis egestas metus. Aenean fermentum.",
-    "available ": false,
-    "inventory": 27
-  },
-  {
-    "title": "Potatoes - Peeled",
-    "category": "category-3",
-    "price": 1352,
-    "description":
-      "Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.",
-    "available ": true,
-    "inventory": 47
-  },
-  {
-    "title": "Bacardi Breezer - Tropical",
-    "category": "category-1",
-    "price": 2304,
-    "description":
-      "Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
-    "available ": false,
-    "inventory": 87
-  },
-  {
-    "title": "Sobe - Liz Blizz",
-    "category": "category-4",
-    "price": 4062,
-    "description":
-      "Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
-    "available ": false,
-    "inventory": 26
-  },
-  {
-    "title": "Jam - Blackberry, 20 Ml Jar",
-    "category": "category-2",
-    "price": 3202,
-    "description":
-      "Nullam sit amet turpis elementum ligula vehicula consequat.",
-    "available ": false,
-    "inventory": 72
-  },
-  {
-    "title": "Daves Island Stinger",
-    "category": "category-5",
-    "price": 2701,
-    "description":
-      "Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
-    "available ": false,
-    "inventory": 43
-  },
-  {
-    "title": "Yogurt - Banana, 175 Gr",
-    "category": "category-1",
-    "price": 461,
-    "description": "Etiam faucibus cursus urna.",
-    "available ": true,
-    "inventory": 64
-  },
-  {
-    "title": "Veal - Kidney",
-    "category": "category-2",
-    "price": 4509,
-    "description":
-      "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
-    "available ": false,
-    "inventory": 33
-  },
-  {
-    "title": "Lettuce - Baby Salad Greens",
-    "category": "category-5",
-    "price": 7009,
-    "description":
-      "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
-    "available ": false,
-    "inventory": 97
-  },
-  {
-    "title": "Duck - Breast",
-    "category": "category-4",
-    "price": 4076,
-    "description":
-      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
-    "available ": true,
-    "inventory": 44
-  },
-  {
-    "title": "Flax Seed",
-    "category": "category-2",
-    "price": 9419,
-    "description":
-      "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
-    "available ": true,
-    "inventory": 30
-  },
-  {
-    "title": "Cheese - Mozzarella, Buffalo",
-    "category": "category-2",
-    "price": 5748,
-    "description": "Nulla facilisi.",
-    "available ": true,
-    "inventory": 80
-  },
-  {
-    "title": "Banana - Green",
-    "category": "category-4",
-    "price": 1264,
-    "description":
-      "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
-    "available ": true,
-    "inventory": 59
-  },
-  {
-    "title": "Cheese - Wine",
-    "category": "category-5",
-    "price": 5913,
-    "description":
-      "Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
-    "available ": true,
-    "inventory": 30
-  },
-  {
-    "title": "Cream - 10%",
-    "category": "category-3",
-    "price": 478,
-    "description":
-      "Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
-    "available ": false,
-    "inventory": 17
-  },
-  {
-    "title": "Peas - Frozen",
-    "category": "category-1",
-    "price": 3075,
-    "description":
-      "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl.",
-    "available ": true,
-    "inventory": 46
-  },
-  {
-    "title": "Wine - Redchard Merritt",
-    "category": "category-5",
-    "price": 781,
-    "description":
-      "Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
-    "available ": true,
-    "inventory": 81
-  },
-  {
-    "title": "Gatorade - Cool Blue Raspberry",
-    "category": "category-4",
-    "price": 9004,
-    "description":
-      "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
-    "available ": false,
+      "A majestic rider surrounded by birds and attended by a winged deity greets you as the wine recedes.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/Rider_BM_B1.jpg",
+    "availability": true,
     "inventory": 9
   },
   {
-    "title": "Longos - Grilled Veg Sandwiches",
-    "category": "category-2",
-    "price": 3863,
+    "title": "Vase with Beats",
+    "category": "Vases",
+    "price": 88404,
     "description":
-      "Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.",
-    "available ": true,
-    "inventory": 14
-  },
-  {
-    "title": "Numi - Assorted Teas",
-    "category": "category-5",
-    "price": 7712,
-    "description":
-      "In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.",
-    "available ": false,
-    "inventory": 25
-  },
-  {
-    "title": "Cookie Trail Mix",
-    "category": "category-4",
-    "price": 253,
-    "description":
-      "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-    "available ": true,
-    "inventory": 99
-  },
-  {
-    "title": "Ice Cream - Turtles Stick Bar",
-    "category": "category-2",
-    "price": 8943,
-    "description": "Etiam pretium iaculis justo.",
-    "available ": false,
-    "inventory": 66
-  },
-  {
-    "title": "Salmon - Canned",
-    "category": "category-5",
-    "price": 6344,
-    "description": "In sagittis dui vel nisl.",
-    "available ": true,
-    "inventory": 58
-  },
-  {
-    "title": "Iced Tea - Lemon, 460 Ml",
-    "category": "category-5",
-    "price": 9921,
-    "description":
-      "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
-    "available ": true,
-    "inventory": 47
-  },
-  {
-    "title": "Wine - Blue Nun Qualitatswein",
-    "category": "category-2",
-    "price": 2306,
-    "description": "Fusce consequat. Nulla nisl. Nunc nisl.",
-    "available ": false,
-    "inventory": 23
-  },
-  {
-    "title": "Wine - Clavet Saint Emilion",
-    "category": "category-1",
-    "price": 5936,
-    "description":
-      "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.",
-    "available ": true,
-    "inventory": 24
-  },
-  {
-    "title": "Flour - Corn, Fine",
-    "category": "category-5",
-    "price": 6539,
-    "description":
-      "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.",
-    "available ": false,
-    "inventory": 22
-  },
-  {
-    "title": "Ham - Virginia",
-    "category": "category-4",
-    "price": 103,
-    "description":
-      "Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
-    "available ": true,
-    "inventory": 66
-  },
-  {
-    "title": "Rum - Light, Captain Morgan",
-    "category": "category-1",
-    "price": 6479,
-    "description":
-      "Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
-    "available ": false,
-    "inventory": 43
-  },
-  {
-    "title": "Cream - 35%",
-    "category": "category-2",
-    "price": 378,
-    "description":
-      "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.",
-    "available ": false,
-    "inventory": 13
-  },
-  {
-    "title": "Arctic Char - Fresh, Whole",
-    "category": "category-1",
-    "price": 8453,
-    "description":
-      "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
-    "available ": false,
-    "inventory": 80
-  },
-  {
-    "title": "Amarula Cream",
-    "category": "category-2",
-    "price": 869,
-    "description": "Nullam varius.",
-    "available ": true,
-    "inventory": 37
-  },
-  {
-    "title": "Chinese Foods - Plain Fried Rice",
-    "category": "category-5",
-    "price": 9475,
-    "description":
-      "Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.",
-    "available ": false,
-    "inventory": 77
-  },
-  {
-    "title": "Wine - Savigny - Les - Beaune",
-    "category": "category-1",
-    "price": 1003,
-    "description":
-      "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.",
-    "available ": true,
-    "inventory": 5
-  },
-  {
-    "title": "Chutney Sauce",
-    "category": "category-4",
-    "price": 1242,
-    "description":
-      "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
-    "available ": true,
-    "inventory": 14
-  },
-  {
-    "title": "Pears - Bartlett",
-    "category": "category-1",
-    "price": 2907,
-    "description":
-      "Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus.",
-    "available ": false,
-    "inventory": 48
-  },
-  {
-    "title": "Appetizer - Escargot Puff",
-    "category": "category-3",
-    "price": 8185,
-    "description": "Nulla facilisi.",
-    "available ": true,
-    "inventory": 77
-  },
-  {
-    "title": "Foie Gras",
-    "category": "category-3",
-    "price": 7361,
-    "description": "Proin at turpis a pede posuere nonummy.",
-    "available ": true,
-    "inventory": 80
-  },
-  {
-    "title": "Milk - Chocolate 250 Ml",
-    "category": "category-4",
-    "price": 1903,
-    "description": "In quis justo. Maecenas rhoncus aliquam lacus.",
-    "available ": true,
-    "inventory": 53
-  },
-  {
-    "title": "Sambuca - Ramazzotti",
-    "category": "category-5",
-    "price": 7167,
-    "description": "Duis bibendum.",
-    "available ": false,
-    "inventory": 38
-  },
-  {
-    "title": "Beets - Candy Cane, Organic",
-    "category": "category-2",
-    "price": 4218,
-    "description":
-      "Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti.",
-    "available ": true,
-    "inventory": 99
-  },
-  {
-    "title": "Muffin - Mix - Creme Brule 15l",
-    "category": "category-2",
-    "price": 6016,
-    "description":
-      "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
-    "available ": false,
-    "inventory": 22
-  },
-  {
-    "title": "Otomegusa Dashi Konbu",
-    "category": "category-2",
-    "price": 7851,
-    "description":
-      "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.",
-    "available ": false,
+      "Various mythical and powerful creatures decorate this striking 6th Century Corinthian vase. It's resemblance to temple friezes is certainly not accidental.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/Corinthian_jug_animal_frieze_580_BC_Staatliche_Antikensammlungen.jpg",
+    "availability": true,
     "inventory": 3
   },
   {
-    "title": "Flour - Buckwheat, Dark",
-    "category": "category-5",
-    "price": 3057,
+    "title": "Zeus versus Typhon",
+    "category": "Vases",
+    "price": 57613,
     "description":
-      "Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
-    "available ": true,
-    "inventory": 63
+      "This 6th century amphora depicts the confrontation between the king of the gods, Zeus, and the hideous, winged, serpentine giant, Typhon. With Typhon's defeat, the thunderbolt-weilding deity secured his status as supreme Hellenic deity. For some reason the painter chose to depict Typhon with pointed ears.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/Zeus_Typhon_Staatliche_Antikensammlungen_596.jpg",
+    "availability": true,
+    "inventory": 8
   },
   {
-    "title": "Longos - Cheese Tortellini",
-    "category": "category-5",
-    "price": 5019,
+    "title": "Dionysus Reclining on the Waves",
+    "category": "Drinking cups",
+    "price": 58534,
     "description":
-      "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
-    "available ": true,
-    "inventory": 47
+      "This kylix was painted by the unparalleled Exekias, a master of the Athenian black-figure technique. Here he has depicted the the god of the vine and madness, Dionysus, reclining while on a trireme. Dolphins surround the ship and the mast is overtaken by a climbing and fruitful vine that reaches to the heavens.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/Exekias_Dionysos_Staatliche_Antikensammlungen_2044_n2.jpg",
+    "availability": true,
+    "inventory": 5
   },
   {
-    "title": "Sauce - Apple, Unsweetened",
-    "category": "category-1",
-    "price": 9225,
+    "title": "Achilles and Patroclus",
+    "category": "Drinking cups",
+    "price": 52818,
     "description":
-      "Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
-    "available ": true,
+      "The great warrior Achilles tends to a wound of his mentor and beloved friend Patroclus. The young hero focuses with sublime serenity on his task while the older fighter strains against the very edge of the painting in pain.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/Akhilleus_Patroklos_Antikensammlung_Berlin_F2278.jpg",
+    "availability": true,
+    "inventory": 7
+  },
+  {
+    "title": "Bust of Homer",
+    "category": "Statues",
+    "price": 85129,
+    "description":
+      "If you listen closely, you can almost hear whispered tales of unwilting heroic glory from this famous bust of the famed bard.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/statues/Homeros_Caetani_Louvre_Ma440_n1.jpg",
+    "availability": true,
+    "inventory": 7
+  },
+  {
+    "title": "Vale of York Cup",
+    "category": "Trinkets",
+    "price": 50162,
+    "description":
+      "This beauteous little cup once held a great tresure. Perhaps it will bring this blessing to you.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/trinkets/Vale_of_York_Hoard_Cup.jpg",
+    "availability": true,
+    "inventory": 6
+  },
+  {
+    "title": "Kithara player",
+    "category": "Drinking cups",
+    "price": 78121,
+    "description":
+      "A young woman steps around the border on her way to play at her next drinking party.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/Woman_kithara_CdM_581.jpg",
+    "availability": true,
+    "inventory": 9
+  },
+  {
+    "title": "Heracles and the Hydra - Etruscan",
+    "category": "Vases",
+    "price": 29009,
+    "description":
+      "The greatest of all Greek heroes, Heracles, faces off against the many-headed Hydra. Heracles prepares to smash one head of the beast with his club, while his nephew slices off another. But they'll need to use fire to keep the heads from growing back!",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/Herakles_and_the_Hydra_Water_Jar_(Etruscan%2C_c._525_BC)_--_Getty_Villa_-_Collection.jpg",
+    "availability": true,
+    "inventory": 5
+  },
+  {
+    "title": "Mycenean hunting dagger",
+    "category": "Arms and armaments",
+    "price": 62820,
+    "description":
+      "This bronze dagger was inlaid with gold and silver to depict a lion hunt. Though this dagger is ancient, a little buffing will have it shining like new. That's the miracle of bronze!",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/arms_and_armor/Hunting_Mycenaean_Dagger.jpg",
+    "availability": true,
     "inventory": 10
   },
   {
-    "title": "Wine - Wyndham Estate Bin 777",
-    "category": "category-1",
-    "price": 724,
+    "title": "Writing tablet",
+    "category": "Writing",
+    "price": 93207,
     "description":
-      "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
-    "available ": false,
-    "inventory": 41
+      "Students learned to write on such a writing tablet. The writing surface was made of wax. With a little smudging previous incisions could be erased, permitting easy reuse.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/writing/Schoolchild_excercies-IMG_6288.jpg",
+    "availability": true,
+    "inventory": 7
   },
   {
-    "title": "Soup Campbells Beef With Veg",
-    "category": "category-2",
-    "price": 439,
-    "description": "Aenean sit amet justo.",
-    "available ": false,
-    "inventory": 89
-  },
-  {
-    "title": "Wine - Clavet Saint Emilion",
-    "category": "category-3",
-    "price": 3689,
+    "title": "Boar tusk helmet",
+    "category": "Arms and armaments",
+    "price": 34612,
     "description":
-      "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
-    "available ": true,
-    "inventory": 11
+      "Only the most elite warriors could afford to adorn themselves with a helmet made out of the tusks of wild boars.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/arms_and_armor/Eberzahnhelm_01.jpg",
+    "availability": true,
+    "inventory": 8
   },
   {
-    "title": "Shrimp - Black Tiger 8 - 12",
-    "category": "category-1",
-    "price": 375,
+    "title": "Bronze Segmented Armor",
+    "category": "Arms and armaments",
+    "price": 77769,
     "description":
-      "Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
-    "available ": true,
-    "inventory": 37
+      "No spear ever penetrated this cozy armor. Your whole torso is protected without sacrificing mobility. A perfect match with a boar-tusk helmet. (Helemt not included)",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/arms_and_armor/Mycenaean_armour_from_chamber_tomb_12_of_Dendra_1.JPG",
+    "availability": true,
+    "inventory": 9
   },
   {
-    "title": "Berry Brulee",
-    "category": "category-3",
-    "price": 9078,
+    "title": "Minoan board game",
+    "category": "Cool",
+    "price": 24691,
     "description":
-      "Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.",
-    "available ": false,
-    "inventory": 37
-  },
-  {
-    "title": "Glycerine",
-    "category": "category-3",
-    "price": 9283,
-    "description":
-      "Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
-    "available ": false,
-    "inventory": 65
-  },
-  {
-    "title": "Sambuca Cream",
-    "category": "category-3",
-    "price": 8701,
-    "description":
-      "Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.",
-    "available ": false,
-    "inventory": 35
-  },
-  {
-    "title": "Cod - Black Whole Fillet",
-    "category": "category-1",
-    "price": 9773,
-    "description": "Sed accumsan felis.",
-    "available ": true,
+      "We have the pieces and the board for this game from the Bronze Age; we couldn't figure out the rules, so that's up to you.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/cool/Zatrikion.jpg",
+    "availability": true,
     "inventory": 1
   },
   {
-    "title": "Water - Tonic",
-    "category": "category-2",
-    "price": 8336,
+    "title": "Wild boar",
+    "category": "Drinking cups",
+    "price": 14978,
     "description":
-      "Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
-    "available ": false,
-    "inventory": 39
+      "This stylized piece depicts that legendary boar which once drew many great heroes to the slopes of Aetolia. The heavens and earth seem to bend to the will of this monstrous creature.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/Calydonian_Hunt_British_Museum.jpg",
+    "availability": true,
+    "inventory": 7
   },
   {
-    "title": "Soup - Cream Of Broccoli, Dry",
-    "category": "category-4",
-    "price": 5162,
+    "title": "Standard of Ur",
+    "category": "Cool",
+    "price": 61215,
     "description":
-      "Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo.",
-    "available ": false,
-    "inventory": 41
+      "Though this wooden box never seems to have been used, what it lacks in content it handily makes up in decoration. On one side is depicted scense of piece; on the other scenes of war. The cylce between war and peace characterized urban human life in the Bronze Age.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/cool/standard+of+ur.jpg",
+    "availability": true,
+    "inventory": 8
   },
   {
-    "title": "Basil - Seedlings Cookstown",
-    "category": "category-3",
-    "price": 2117,
+    "title": "Heracles and the Hydra - Athenaian",
+    "category": "Vases",
+    "price": 86236,
     "description":
-      "Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
-    "available ": false,
-    "inventory": 62
+      "This 6th century amphora shows Heracles and his nephew Iphicles struggling agains the many-headed hydra. Heracles wears the impenetrable hide of the Nemean lion for protection, but has forgone his trusty club for a sword for this battle.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/Anfora_attica_con_heraclee_l'idra%2C_560-540_ac_ca.%2C_da_tarquinia_(MAN_tarquiniense).jpg",
+    "availability": true,
+    "inventory": 5
   },
   {
-    "title": "Cookie Dough - Chocolate Chip",
-    "category": "category-2",
-    "price": 6583,
+    "title": "Terracotta house",
+    "category": "Trinkets",
+    "price": 53110,
     "description":
-      "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.",
-    "available ": true,
-    "inventory": 88
+      "Few houses from the Bronze Age survive for us to examine. But this charming little model gives us a good idea of what they looked like.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/trinkets/Clay_model_of_a_house_from_Archanes_02.jpg",
+    "availability": true,
+    "inventory": 4
   },
   {
-    "title": "Tray - 16in Rnd Blk",
-    "category": "category-5",
-    "price": 4074,
+    "title": "Gold wreath",
+    "category": "Cool",
+    "price": 23540,
     "description":
-      "Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.",
-    "available ": false,
-    "inventory": 38
+      "Victors of the ancient athletic games won an olive or laurel wreath. Rest assured, as this gold crown resembles an ivy wreath, you won't be accused of resting on your laurels.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/trinkets/SF643047.jpg",
+    "availability": true,
+    "inventory": 6
   },
   {
-    "title": "Wine - Trimbach Pinot Blanc",
-    "category": "category-1",
-    "price": 3012,
-    "description": "Duis aliquam convallis nunc.",
-    "available ": true,
-    "inventory": 36
-  },
-  {
-    "title": "Dip - Tapenade",
-    "category": "category-1",
-    "price": 2142,
-    "description": "Pellentesque viverra pede ac diam.",
-    "available ": false,
-    "inventory": 41
-  },
-  {
-    "title": "Vermacelli - Sprinkles, Assorted",
-    "category": "category-3",
-    "price": 9807,
+    "title": "Terracotta swing",
+    "category": "Trinkets",
+    "price": 655,
     "description":
-      "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.",
-    "available ": false,
-    "inventory": 58
+      "This charming little model is unlike any ancient artifact you have ever seen. The significance of the swinging figure is a mystery yet uncovered. Is it a deity? An acrobat? A child's plaything?",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/trinkets/The_Swing_archmus_Heraklion.jpg",
+    "availability": true,
+    "inventory": 10
+  },
+  {
+    "title": "Phaistos Disk",
+    "category": "Cool",
+    "price": 93128,
+    "description":
+      "The jury is still out on the authenticity of this strange disk. If it is real, great rewards await whoever manages to decipher these glyphs!",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/writing/%CE%94%CE%AF%CF%83%CE%BA%CE%BF%CF%82_%CF%84%CE%B7%CF%82_%CE%A6%CE%B1%CE%B9%CF%83%CF%84%CE%BF%CF%8D_%CF%80%CE%BB%CE%B5%CF%85%CF%81%CE%AC_%CE%91_6380.jpg",
+    "availability": true,
+    "inventory": 4
+  },
+  {
+    "title": "Terracotta temple",
+    "category": "Trinkets",
+    "price": 51819,
+    "description":
+      "What is likely depicted here is a temple or shrine within which sits either a goddess or priestess. The two figures peering in to the roof of the model have brought with them a calf. We have here a many-layered, irresistible mystery.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/trinkets/%CE%9F%CE%BC%CE%BF%CE%AF%CF%89%CE%BC%CE%B1_%CE%BD%CE%B1%CE%BF%CF%8D_%CF%84%CE%BF%CF%85_%CF%84%CF%8D%CF%80%CE%BF%CF%85_%CF%84%CE%B7%CF%82_%CE%B8%CE%B5%CE%AC%CF%82_%CE%BC%CE%B5_%CF%85%CF%88%CF%89%CE%BC%CE%AD%CE%BD%CE%B1_%CF%87%CE%AD%CF%81%CE%B9%CE%B1_%CE%91%CE%9C%CE%97_9145.jpg",
+    "availability": true,
+    "inventory": 5
+  },
+  {
+    "title": "Bronze shield",
+    "category": "Arms and armaments",
+    "price": 27224,
+    "description":
+      "This beautiful bronze shield is undamaged; it is unlikely to have ever been used in battle. The bestial head is nevertheless imposing in the center of this shield. Scenes of hunts of wild animals, like those depicted around the periphery of this piece, were a common preoccupation in ancient art.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/statues/%CE%A7%CE%AC%CE%BB%CE%BA%CE%B9%CE%BD%CE%B7_%CE%B1%CF%83%CF%80%CE%AF%CE%B4%CE%B1_%CE%B1%CF%80%CF%8C_%CF%84%CE%BF_%CE%99%CE%B4%CE%B1%CE%AF%CE%BF_%CE%86%CE%BD%CE%B4%CF%81%CE%BF_9101.jpg",
+    "availability": true,
+    "inventory": 7
+  },
+  {
+    "title": "Students",
+    "category": "Drinking cups",
+    "price": 98584,
+    "description":
+      "As you finish your wine, you see on the bottom of your kylix two women. On further inspection you notice the female on the left holding a stylus and writing tablets, reluctantly drawn by her companion. Perhaps the reluctant student neglected to finish carving her homework into her tablet.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/DT11671.jpg",
+    "availability": true,
+    "inventory": 7
+  },
+  {
+    "title": "Geometric vase",
+    "category": "Vases",
+    "price": 37480,
+    "description":
+      "This extraordinary piece evidences a mind that has a developed a reverential approach to the natural world. The geometric patterns that decorate the vase are abstracted from observations of nature. Various ungulates draw attention to the center of the vase, with the centerpiece being the deer or goat that nibble on a tree. These contrast with the horses tied within stbles. The solemnity of this piece is apropos, as this was once used as this oversized vase as originally used as a grave marker.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/DT7212.jpg",
+    "availability": true,
+    "inventory": 6
+  },
+  {
+    "title": "Boars",
+    "category": "Vases",
+    "price": 95301,
+    "description":
+      "Two wild boars come head-to-head on this vase. The two stand in metaphorical place of two warriors vying to excel in combat.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/DT1067.jpg",
+    "availability": true,
+    "inventory": 4
+  },
+  {
+    "title": "Octopus",
+    "category": "Vases",
+    "price": 61564,
+    "description":
+      "Octopuses? Octopi? Octopodes? However you choose to pluralize the name of this creature, rest easy, for this vase only depicts one.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/vases/DT255.jpg",
+    "availability": true,
+    "inventory": 8
+  },
+  {
+    "title": "Plate of fish",
+    "category": "Trinkets",
+    "price": 48010,
+    "description":
+      "For the fine diner who wants the appeal of having a plate full of fish without the fish.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/DT4896.jpg",
+    "availability": true,
+    "inventory": 6
+  },
+  {
+    "title": "Dionysus",
+    "category": "Drinking cups",
+    "price": 2565,
+    "description":
+      "The god of wine and madness is in pure ecstasy here, as vines grow from him in every direction. Such is the bountiful power of Dionysus.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/Coupe_%C3%A0_l'oiseleur_Louvre_F68.jpg",
+    "availability": true,
+    "inventory": 5
+  },
+  {
+    "title": "Medusa Triskelion",
+    "category": "Arms and armaments",
+    "price": 47021,
+    "description":
+      "This bronze boss is ideal for a warrior's shield. The gorgon head strikes fear into your enemies, while the three wings lighten your load in battle.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/arms_and_armor/OlympiaGorgo_retouched.jpg",
+    "availability": true,
+    "inventory": 9
+  },
+  {
+    "title": "Cup of Nestor",
+    "category": "Cool",
+    "price": 13480,
+    "description":
+      "This fragmentary cup seems unremarkable at first glance, but a knowledgeable consumer, like you, knows well that the cup of Nestor is one of the earlies examples of the Greek alphabet.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/writing/Nestorbecher_Ischia.jpg",
+    "availability": true,
+    "inventory": 5
+  },
+  {
+    "title": "Rosetta Stone",
+    "category": "Cool",
+    "price": 8816319,
+    "description": "Yes, THE Rosetta Stone. It's a one-of-a-kind, so act now!",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/writing/The_Rosetta_Stone_(1878)_-_TIMEA.jpg",
+    "availability": true,
+    "inventory": 1
+  },
+  {
+    "title": "Mycenean Dagger with Animals",
+    "category": "Arms and armaments",
+    "price": 761501,
+    "description":
+      "This beautiful bronze dagger is decorated with dynamic animals.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/arms_and_armor/Dagger_with_animals_Mycenean_culture%2C_NAMA_8340_080876.jpg",
+    "availability": true,
+    "inventory": 10
+  },
+  {
+    "title": "Terracotta Animal Cup",
+    "category": "Trinkets",
+    "price": 186215,
+    "description":
+      "What is this strange animal? A pig? A bear? A badger? Why was this animal chosen? There's only one way to find out, and that's with hands-on examination!",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/trinkets/Rhyton_pig_ECII_NAMA_N6176_080765.jpg",
+    "availability": true,
+    "inventory": 72
+  },
+  {
+    "title": "Lion Statue",
+    "category": "Statues",
+    "price": 63450,
+    "description":
+      "This larger-than-life statue depicts a lion, in a way. By the time this was carved, lions were nearly extinct in Europe. The sculptor had little refrence for a lion, so modeled the creature's pose on that of a dog. Thus we have an intimidating, but playful lion.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/statues/lion-acts-like-dog.jpg",
+    "availability": true,
+    "inventory": 2
+  },
+  {
+    "title": "Sheep Rhyton",
+    "category": "Cool",
+    "price": 27082,
+    "description":
+      "This lovely piece is ideal for libations. The head of the sheep is stunningly lifelike and the small figures on the periphery seem playful.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/GR1036.jpg",
+    "availability": true,
+    "inventory": 6
+  },
+  {
+    "title": "Teacher/Student Writing tablet",
+    "category": "Cool",
+    "price": 80565,
+    "description":
+      "We have a marvellous find here: On the top lines, a master scribe has written a text for a student to copy. On the bottom four lines, the student has made their best attempt at the assignment. The text reads, «Σοφοῦ παρ’ ἀνδρὸς προσδέχου συμβουλίαν» «Μὴ πᾶσιν εἰκῇ τοῖς φίλοις πιστεύεται» i.e. 'Accept advice from wise men' and 'Do not trust your friends haphazardly.' Shrewed advice from a man who mispelled the last word.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/writing/Wax_writing_tablet_(2nd_C)_-_BL_Add_MS_34186.jpg",
+    "availability": true,
+    "inventory": 7
+  },
+  {
+    "title": "Bronze griffin head",
+    "category": "Statues",
+    "price": 99138,
+    "description":
+      "Griffins have appeared through Eurasian art for millenia. This griffin head would be as home in Ancient Persia as it would in the late Byzantine Empire.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/statues/DT7204.jpg",
+    "availability": true,
+    "inventory": 4
+  },
+  {
+    "title": "Eyes cup",
+    "category": "Drinking cups",
+    "price": 91901,
+    "description":
+      "The eyes have it! Between two wide eyes, sits Dionysus attended by maenads and satyrs. Doubtlessly this cup would be all the rage at any drinking party, as your guests briefly take on the comic appearance of a character from a comedy while downing the last dregs of wine.",
+    "image":
+      "https://s3.us-east-2.amazonaws.com/basileuskorax/artifacts/drinking/DP273730.jpg",
+    "availability": true,
+    "inventory": 7
   }
 ]
