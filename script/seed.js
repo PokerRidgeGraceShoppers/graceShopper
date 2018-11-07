@@ -9,7 +9,7 @@ const {
 } = require('../server/db/models')
 const userData = require('./data/users.json')
 const reviewData = require('./data/reviews.json')
-const productData = require('./data/products.json')
+const productData = require('./data/artifacts.json')
 
 const getIndex = l => Math.floor(Math.random() * l)
 
@@ -42,31 +42,36 @@ async function seed() {
       lastName: user.lastName,
       address: user.address,
       userId: user.id,
-      total: 100,
       status
     })
 
     const transactions = []
+    let newTotal = 0
 
     for (let i = 0; i < items; i++) {
       const product = products[Math.floor(Math.random() * products.length)]
+      const quantity = Math.floor(Math.random() * 5) + 1
+      const total = quantity * product.price
+      newTotal += total
       const t = Transaction.create({
         status,
         price: product.price,
         userId: user.id,
         productId: product.id,
         orderId: order.id,
-        quantity: Math.floor(Math.random() * 5) + 1
+        quantity,
+        total
       })
 
       transactions.push(t)
     }
 
+    transactions.push(order.update({total: newTotal}))
+
     await Promise.all(transactions)
   }
 
   await Promise.all([
-    createOrder('pending', user1, 3),
     createOrder('purchased', user1, 5),
     createOrder('purchased', user1, 5),
     createOrder('purchased', user1, 5),

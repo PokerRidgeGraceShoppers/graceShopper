@@ -3,53 +3,33 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store/actions'
-import {Menu, Header, Button} from 'semantic-ui-react'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
-  <Menu inverted>
-    <Header as="h1" inverted color="red">
-      PokerRidgeGraceShopper
-    </Header>
-
-    <Menu.Item>
-      <Link to="/products">See all Products</Link>
-    </Menu.Item>
-
-    <Menu.Item>
-      <Link to="/cart">Cart</Link>
-    </Menu.Item>
-
-    {isLoggedIn ? (
-      <Menu.Menu position="right">
-        {/* The navbar will show these links after you log in */}
-        <Menu.Item>
+  <div style={{position: 'relative'}} className="section-navbar">
+    <h1>PokerRidgeGraceShopper</h1>
+    <nav className="nav-items">
+      <div className="nav-item">
+        <Link to="/cart">Cart</Link>
+        <Link to="/products">See all Products</Link>
+      </div>
+      {isLoggedIn ? (
+        <div className="nav-item">
+          {/* The navbar will show these links after you log in */}
           <Link to="/home">Home</Link>
-        </Menu.Item>
-        <Menu.Item>
           <Link to="/profile">Profile</Link>
-        </Menu.Item>
-        <Menu.Item>
           <a href="#" onClick={handleClick}>
             Logout
           </a>
-        </Menu.Item>
-      </Menu.Menu>
-    ) : (
-      <Menu.Menu position="right">
-        {/* The navbar will show these links before you log in */}
-        <Menu.Item>
-          <Button primary>
-            <Link to="/signup">Sign Up</Link>
-          </Button>
-        </Menu.Item>
-        <Menu.Item>
-          <Button>
-            <Link to="/login">Login</Link>
-          </Button>
-        </Menu.Item>
-      </Menu.Menu>
-    )}
-  </Menu>
+        </div>
+      ) : (
+        <div className="nav-item">
+          {/* The navbar will show these links before you log in */}
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Sign Up</Link>
+        </div>
+      )}
+    </nav>
+  </div>
 )
 
 /**

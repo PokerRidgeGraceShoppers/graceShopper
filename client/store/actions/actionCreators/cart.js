@@ -109,3 +109,10 @@ export const removeCartThunk = id => {
     }
   }
 }
+
+export const deleteCart = () => {
+  return dispatch => {
+    dispatch(getCart({}))
+    window.localStorage.removeItem('cart')
+  }
+}

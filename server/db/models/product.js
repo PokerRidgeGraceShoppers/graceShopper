@@ -21,7 +21,7 @@ const Product = db.define('product', {
     type: Sequelize.TEXT
   },
   image: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     defaultValue: 'https://image.flaticon.com/icons/svg/1170/1170628.svg',
     validate: {
       isUrl: true

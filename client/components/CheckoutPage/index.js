@@ -2,6 +2,7 @@ import React from 'react'
 import Checkout from './Checkout'
 import ShippingAddressForm from './ShippingAddressForm'
 import {Elements, StripeProvider} from 'react-stripe-elements'
+import {SectionColumn} from '../common'
 
 class CheckoutPage extends React.Component {
   constructor() {
@@ -37,21 +38,23 @@ class CheckoutPage extends React.Component {
 
   render() {
     return (
-      <div>
-        {!this.state.hasOrderInfo ? (
-          <ShippingAddressForm
-            {...this.state}
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-          />
-        ) : (
-          <StripeProvider apiKey="pk_test_H4ovcpVmhZxbl2vCUQqrLIEx">
-            <Elements>
-              <Checkout {...this.state} changeShipping={this.changeShipping} />
-            </Elements>
-          </StripeProvider>
-        )}
-      </div>
+      <SectionColumn>
+        <div className="checkout-page">
+          {!this.state.hasOrderInfo ? (
+            <ShippingAddressForm
+              {...this.state}
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+            />
+          ) : (
+            <StripeProvider apiKey="pk_test_H4ovcpVmhZxbl2vCUQqrLIEx">
+              <Elements>
+                <Checkout {...this.state} />
+              </Elements>
+            </StripeProvider>
+          )}
+        </div>
+      </SectionColumn>
     )
   }
 }

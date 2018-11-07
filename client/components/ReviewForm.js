@@ -7,7 +7,6 @@ import {
   editReview,
   deleteReview
 } from '../store/actions'
-import {Button, Form, TextArea, Dropdown} from 'semantic-ui-react'
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -24,7 +23,6 @@ class ReviewForm extends React.Component {
 
   handleSubmit(evt) {
     evt.preventDefault()
-    console.log('hit handleSubmit in reviewForm & evt', evt.target)
     const {productId, userId} = this.props
     this.props.makeReview({...this.state, productId, userId})
   }
@@ -42,26 +40,26 @@ class ReviewForm extends React.Component {
   render() {
     return (
       <div>
-        <Form onSubmit={this.handleSubmit}>
-          <div>
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-group">
             <label htmlFor="title">
               <small>Title</small>
             </label>
-            <TextArea
+            <textarea
               onChange={this.handleChange}
               name="title"
               type="text"
               placeholder="review must have a name"
             />
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="body">
               <small>Review</small>
             </label>
-            <TextArea
+            <textarea
+              style={{height: '100px', width: '500px'}}
               onChange={this.handleChange}
               name="body"
-              type="text"
               placeholder="must be over 100 characters"
             />
           </div>
@@ -77,14 +75,14 @@ class ReviewForm extends React.Component {
 
           <div>
             {this.state.body.length <= 99 ? (
-              <Button type="submit" disabled>
+              <button type="submit" disabled>
                 Submit
-              </Button>
+              </button>
             ) : (
-              <Button type="submit">Submit</Button>
+              <button type="submit">Submit</button>
             )}
           </div>
-        </Form>
+        </form>
       </div>
     )
   }

@@ -7,8 +7,12 @@ const Quantity = ({quantity, id, handleClickQuantity}) => {
     <SectionRow>
       <p>{quantity}</p>
       <SectionColumn>
-        <Button onClick={() => handleClickQuantity(1, id)}>+</Button>
-        <Button onClick={() => handleClickQuantity(-1, id)}>-</Button>
+        <button className="btn-inc" onClick={() => handleClickQuantity(1, id)}>
+          +
+        </button>
+        <button className="btn-inc" onClick={() => handleClickQuantity(-1, id)}>
+          -
+        </button>
       </SectionColumn>
     </SectionRow>
   )

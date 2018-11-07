@@ -2,8 +2,28 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {CardElement, injectStripe} from 'react-stripe-elements'
 import axios from 'axios'
-import {fetchCart, getCart} from '../../store/actions'
+import {fetchCart, deleteCart} from '../../store/actions'
 import CheckoutSuccess from './CheckoutSuccess'
+import {withRouter} from 'react-router-dom'
+
+const style = {
+  base: {
+    iconColor: '#8898AA',
+    color: 'black',
+    lineHeight: '36px',
+    fontWeight: 300,
+    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+    fontSize: '19px',
+
+    '::placeholder': {
+      color: '#8898AA'
+    }
+  },
+  invalid: {
+    iconColor: '#e85746',
+    color: '#e85746'
+  }
+}
 
 class Checkout extends Component {
   constructor(props) {
@@ -11,22 +31,13 @@ class Checkout extends Component {
     this.state = {
       complete: false,
       error: false,
-      completedOrder: {},
-      errorMessage: ''
+      order: null
     }
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchCart()
-  }
-  handleChange = ({error}) => {
-    if (error) {
-      this.setState({errorMessage: error.message})
-    } else {
-      this.setState({errorMessage: ''})
-    }
   }
 
   async handleSubmit() {
@@ -40,12 +51,15 @@ class Checkout extends Component {
         token: token.id,
         total
       })
-      this.setState({complete: true})
-      let order = await axios.post(
+
+      const {data} = await axios.post(
         `/api/orders/${this.props.user.id ? this.props.user.id : 'guest'}`,
         {total, address, firstName, lastName, cart}
       )
-      this.setState({completedOrder: order})
+
+      this.setState({order: data, complete: true})
+
+      this.props.deleteCart()
     } catch (err) {
       this.setState({error: true})
     }
@@ -55,37 +69,26 @@ class Checkout extends Component {
     if (this.state.complete)
       return (
         <CheckoutSuccess
-          order={this.state.completedOrder}
           products={this.props.products}
+          data={this.state.order}
+          history={this.props.history}
         />
       )
-    const total =
-      Object.keys(this.props.cart).reduce((acc, currItem) => {
-        return acc + this.props.cart[currItem].total
-      }, 0) / 100
+
     return (
-      <div>
-        <h1>Checkout</h1>
+      <div className="checkout-container">
+        <h2>Checkout Page:</h2>
         <div className="checkout">
-          <h3>Shipping Address:</h3>
-          <div>
-            {this.props.firstName} {this.props.lastName} <br />
-            {this.props.address} <br />
-            <button onClick={this.props.changeShipping}>
-              Edit Shipping Info
-            </button>
-          </div>
-          <h3> Grand Total: ${total}</h3>
-          {this.state.error ? (
-            <p>Invalid Card info - try again</p>
-          ) : (
+          <p>{`Name:  ${this.props.firstName} ${this.props.lastName}`}</p>
+          <p>{`Address:  ${this.props.address}`}</p>
+          {this.state.error && <p>Invalid Card info - try again</p>}
+          {!this.state.error && (
             <p>Please enter in your card info below to complete your order: </p>
           )}
-          <CardElement onChange={this.handleChange} />
-          <div className="error" role="alert">
-            {this.state.errorMessage}
-          </div>
-          <button onClick={this.handleSubmit}>Place your order</button>
+          <CardElement style={style} />
+          <button className="btn-submit" onClick={this.handleSubmit}>
+            Submit
+          </button>
         </div>
       </div>
     )
@@ -98,6 +101,6 @@ const mapStateToProps = ({cart, user, products}) => ({
   products: products.products
 })
 
-export default connect(mapStateToProps, {fetchCart, getCart})(
-  injectStripe(Checkout)
+export default withRouter(
+  connect(mapStateToProps, {fetchCart, deleteCart})(injectStripe(Checkout))
 )
