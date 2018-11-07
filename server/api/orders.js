@@ -4,7 +4,6 @@ const {isLoggedIn, isAdmin, isLoggedInAsSelf} = require('./userTypeChecker')
 module.exports = router
 
 router.post('/guest', async (req, res, next) => {
-  console.log(req.body)
   const {firstName, lastName, address, total, cart} = req.body
 
   try {
@@ -34,7 +33,6 @@ router.post('/guest', async (req, res, next) => {
 })
 
 router.post('/:userId', isLoggedInAsSelf, async (req, res, next) => {
-  console.log(req.body)
   const {firstName, lastName, address, total, cart} = req.body
 
   try {
