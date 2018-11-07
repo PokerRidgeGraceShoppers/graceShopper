@@ -24,7 +24,7 @@ const ShippingAddressForm = props => {
           placeholder="Street Address"
           onChange={props.handleChange}
         />
-        <Button onSubmit={props.handleSubmit}>Submit</Button>
+        <Button onSubmit={props.handleSubmit}>Continue to Checkout</Button>
       </form>
     </div>
   )
