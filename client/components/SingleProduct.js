@@ -1,13 +1,22 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import ReviewForm from './ReviewForm'
 import {
   fetchSingleProduct,
   updateQuantity,
   addCartThunk
 } from '../store/actions'
-import {SectionColumn, SmallSection, SectionRow, Input} from './common'
-import ReviewForm from './ReviewForm'
-import {Button} from 'semantic-ui-react'
+import {SectionColumn, SmallSection, SectionRow} from './common'
+import {
+  Button,
+  Card,
+  Image,
+  Icon,
+  Input,
+  Dropdown,
+  Label,
+  Loader
+} from 'semantic-ui-react'
 
 class SingleProduct extends React.Component {
   constructor() {
@@ -16,9 +25,10 @@ class SingleProduct extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleChange(e, id) {
+    console.log(e.target)
     const updatedProduct = {
       ...this.props.products[id],
-      quantity: Number(e.target.value)
+      quantity: Number(e.target.children[0].textContent)
     }
     this.props.updateQuantity(id, updatedProduct)
   }
@@ -34,39 +44,46 @@ class SingleProduct extends React.Component {
   }
 
   render() {
-    const {singleProduct} = this.props
-    console.log(singleProduct)
-    return (
+    const {singleProduct, products} = this.props
+    const id = this.props.match.params.productId
+    const inventoryOptions = []
+    for (let i = 1; i <= singleProduct.inventory; i++) {
+      inventoryOptions.push({key: i, value: i, text: `${i}`})
+    }
+
+    return !Object.keys(products).length ? (
+      <Loader active inline="centered" size="massive" />
+    ) : (
       <SectionColumn>
         <h1>Single Product </h1>
-        <h2>{singleProduct.title}</h2>
-        <SmallSection>
-          <img className="product-list-img" src={singleProduct.image} />
-        </SmallSection>
+        <Card>
+          <Card.Content>
+            <Card.Header>{singleProduct.title}</Card.Header>
+          </Card.Content>
+          <Image src={singleProduct.image} />
+        </Card>
         <h3>{`Category: ${singleProduct.category}`}</h3>
-        <SmallSection style={{marginBottom: '40px'}}>
-          <h3>{`Price: $${Number.parseFloat(singleProduct.price / 100).toFixed(
-            2
-          )}`}</h3>
-          <form
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between'
-            }}
-          >
-            <Input
-              handleChange={this.handleChange}
-              value={singleProduct.quantity}
-              id={singleProduct.id}
-              name="quantity"
-              label="Quantity:"
-            />
-          </form>
-          <Button onClick={() => this.handleSubmit(singleProduct.id)}>
-            Add To Cart
-          </Button>
-        </SmallSection>
-        <h3>{`Inventory: ${singleProduct.inventory}`}</h3>
+
+        <Card>
+          <Card.Content>
+            <Card.Header>{`Price: $${Number.parseFloat(
+              singleProduct.price / 100
+            ).toFixed(2)}`}</Card.Header>
+            <Button onClick={() => this.handleSubmit(singleProduct.id)}>
+              Add To Cart
+            </Button>
+          </Card.Content>
+          <Label>Quantity</Label>
+          <Dropdown
+            button
+            floating
+            selection
+            compact
+            options={inventoryOptions}
+            value={products[id].quantity}
+            onChange={e => this.handleChange(e, singleProduct.id)}
+          />
+        </Card>
         <h3>Description</h3>
         <p>{singleProduct.description}</p>
         <SectionColumn>

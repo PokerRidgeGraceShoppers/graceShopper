@@ -7,7 +7,7 @@ export const Input = ({handleChange, value, id, name, label}) => {
         {label}
       </label>
       <input
-        style={{width: '20px'}}
+        style={{width: '50px'}}
         onChange={e => handleChange(e, id)}
         value={value}
         name={name}
