@@ -9,7 +9,8 @@ import {
   ProductPage,
   SingleProduct,
   Cart,
-  CheckoutPage
+  CheckoutPage,
+  MissingPage
 } from './components'
 import UserPage from './components/UserPage/UserPage'
 import {me, fetchProducts, fetchCart} from './store/actions'
@@ -40,6 +41,7 @@ class Routes extends Component {
             <Route path="/home" component={UserHome} />
           </Switch>
         )}
+
         <Route component={Login} />
       </Switch>
     )
